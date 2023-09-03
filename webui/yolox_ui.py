@@ -66,7 +66,7 @@ if __name__ == '__main__':
                 gr.inputs.Radio(["cpu", "cuda"], label="Device", default="cpu"),
                 gr.inputs.Radio(["yolox_n", "yolox_s", "yolox_m", "yolox_l","yolox_t"],
                                 label="Model Type", default="yolo_nas_s"),
-                gr.inputs.Textbox(default="yolox_s.pt", label="Model Path")],
+                gr.inputs.Textbox(default="yolox_n.pt", label="Model Path")],
         outputs="image",
         title="YOLOX_WebUI Object Detector",
         description="Detect objects in an image using YOLO-NAS model.",
