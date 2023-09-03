@@ -40,12 +40,13 @@ class SAMModel:
             with gr.Tabs():
                 # Point-predict-button Tab
                 with gr.TabItem("point-predict"):
-                    inputs = [
-                        gr.inputs.Image(type='pil', label='Input Image'),
-                        gr.inputs.Number(default=900, label='X Coordinate'),
-                        gr.inputs.Number(default=370, label='Y Coordinate'),
-                    ]
-                    # output = gr.Image()
+                    with gr.Column():
+                        inputs = [
+                            gr.inputs.Image(type='pil', label='Input Image'),
+                            gr.inputs.Number(default=900, label='X Coordinate'),
+                            gr.inputs.Number(default=370, label='Y Coordinate'),
+                        ]
+
                     output = gr.outputs.Image(type='pil', label='Output Image')
                     point_predict_button = gr.Button("inference")
 
@@ -57,7 +58,7 @@ class SAMModel:
                 # Bbox-predict-button Tab
                 with gr.TabItem("bbox-predict"):
                     image_input = gr.inputs.Image(type='pil')
-                    text_input = gr.inputs.Textbox(lines=1, label="Bounding Box (x1, y1, x2, y2)")
+                    text_input = gr.inputs.Textbox(lines=1, label="Bounding Box (x1, y1, x2, y2)", default="439, 437, 524, 709")
                     image_output = gr.outputs.Image('pil')
                     inputs = [image_input, text_input]
                     output = image_output
