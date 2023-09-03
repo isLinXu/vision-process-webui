@@ -1,6 +1,10 @@
 import gradio as gr
 from ultralytics import YOLO
 
+import warnings
+
+warnings.filterwarnings("ignore")
+
 class YOLOv8WebUI:
     def __init__(self):
         pass
@@ -16,13 +20,13 @@ class YOLOv8WebUI:
         """Runs object detection on the input image."""
         # Load models
         if type == "detect":
-            model = YOLO("yolov8l.pt")
+            model = YOLO("../weights/yolov8/yolov8n.pt")
         elif type == "seg":
-            model = YOLO('yolov8n-seg.pt')
+            model = YOLO('../weights/yolov8/yolov8n-seg.pt')
         elif type == "cls":
-            model = YOLO('yolov8n-cls.pt')
+            model = YOLO('../weights/yolov8/yolov8n-cls.pt')
         elif type == "pose":
-            model = YOLO("yolov8n-pose.pt")
+            model = YOLO("../weights/yolov8/yolov8n-pose.pt")
 
         # Set device to CPU if specified
         if cpu:
