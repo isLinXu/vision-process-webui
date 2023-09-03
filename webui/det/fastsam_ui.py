@@ -7,7 +7,7 @@ from PIL import ImageDraw
 import numpy as np
 
 # Load the pre-trained model
-model = YOLO('../weights/fastsam/FastSAM-s.pt')
+model = YOLO('../../weights/fastsam/FastSAM-s.pt')
 
 device = torch.device(
     "cuda"

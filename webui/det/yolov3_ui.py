@@ -8,31 +8,31 @@ import warnings
 warnings.filterwarnings("ignore")
 
 
-class YOLOv5WebUI:
+class YOLOv3WebUI:
     def __init__(self):
         pass
 
     def detect_objects(self, img, conf, iou, line_width, device, model_type, model_path):
         # choose model type
-        if model_type == "yolov5n":
-            self.model = torch.hub.load('ultralytics/yolov5', 'custom', path='../weights/yolov5/yolov5n.pt',device=device)
-        elif model_type == "yolov5s":
-            self.model = torch.hub.load('ultralytics/yolov5', 'custom', path='../weights/yolov5/yolov5s.pt', device=device)
-        elif model_type == "yolov5m":
-            self.model = torch.hub.load('ultralytics/yolov5', 'custom', path='../weights/yolov5/yolov5m.pt',device=device)
-        elif model_type == "yolov5l":
-            self.model = torch.hub.load('ultralytics/yolov5', 'custom', path='../weights/yolov5/yolov5l.pt',device=device)
-        elif model_type == "yolov5x":
-            self.model = torch.hub.load('ultralytics/yolov5', 'custom', path='../weights/yolov5/yolov5x.pt',device=device)
-
-        if model_type not in ["yolov5n", "yolov5s", "yolov5m", "yolov5l", "yolov5x"]:
-            self.model = torch.hub.load('ultralytics/yolov5', 'custom', path=model_path, device=device)
+        if model_type == "yolov3":
+            self.model = torch.hub.load('ultralytics/yolov3', 'custom', path='../../weights/yolov3/yolov3.pt',
+                                        device=device)
+        elif model_type == "yolov3-tiny":
+            self.model = torch.hub.load('ultralytics/yolov3', 'custom', path='../../weights/yolov3/yolov3-tiny.pt',
+                                        device=device)
+        elif model_type == "yolov3-spp":
+            self.model = torch.hub.load('ultralytics/yolov3', 'custom', path='../../weights/yolov3/yolov3-spp.pt',
+                                        device=device)
+        else:
+            self.model = torch.hub.load('ultralytics/yolov3', 'custom', path=model_path, device=device)
+        if model_type not in ["yolov3", "yolov3-tiny", "yolov3-spp"]:
+            self.model = torch.hub.load('ultralytics/yolov3', 'custom', path=model_path, device=device)
 
         # Convert input image to numpy array
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         # Convert numpy array to PIL image
         img = Image.fromarray(img)
-        # Use YOLOv5 model for inference
+        # Use YOLOv3 model for inference
         results = self.model(img)
         xyxy = results.pandas().xyxy[0]
         img = cv2.cvtColor(np.array(img), cv2.COLOR_RGB2BGR)
@@ -59,7 +59,7 @@ class YOLOv5WebUI:
 
 if __name__ == '__main__':
     # Instantiate YOLOv3WebUI class
-    detector = YOLOv5WebUI()
+    detector = YOLOv3WebUI()
 
     # Define Gradio interface
     iface = gr.Interface(
@@ -72,12 +72,11 @@ if __name__ == '__main__':
                                  label="IoU Threshold"),
                 gr.inputs.Number(default=2, label="Line Width"),
                 gr.inputs.Radio(["cpu", "cuda"], label="Device", default="cpu"),
-                gr.inputs.Radio(["yolov5n", "yolov5s", "yolov5m", "yolov5l", "yolov5x"],
-                                label="Model Type", default="yolov5s"),
-                gr.inputs.Textbox(default="yolov5s.pt", label="Model Path")],
+                gr.inputs.Radio(["yolov3", "yolov3-tiny", "yolov3-spp"], label="Model Type", default="yolov3"),
+                gr.inputs.Textbox(default="yolov3.pt", label="Model Path")],
         outputs="image",
-        title="YOLOv5 Object Detector",
-        description="Detect objects in an image using YOLOv5 model.",
+        title="YOLOv3 Object Detector",
+        description="Detect objects in an image using YOLOv3 model.",
         theme="default",
         layout="vertical",
         allow_flagging=False,

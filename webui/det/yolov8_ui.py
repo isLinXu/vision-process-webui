@@ -20,13 +20,13 @@ class YOLOv8WebUI:
         """Runs object detection on the input image."""
         # Load models
         if type == "detect":
-            model = YOLO("../weights/yolov8/yolov8n.pt")
+            model = YOLO("../../weights/yolov8/yolov8n.pt")
         elif type == "seg":
-            model = YOLO('../weights/yolov8/yolov8n-seg.pt')
+            model = YOLO('../../weights/yolov8/yolov8n-seg.pt')
         elif type == "cls":
-            model = YOLO('../weights/yolov8/yolov8n-cls.pt')
+            model = YOLO('../../weights/yolov8/yolov8n-cls.pt')
         elif type == "pose":
-            model = YOLO("../weights/yolov8/yolov8n-pose.pt")
+            model = YOLO("../../weights/yolov8/yolov8n-pose.pt")
 
         # Set device to CPU if specified
         if cpu:

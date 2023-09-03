@@ -15,9 +15,9 @@ class RT_DETR_WebUI:
     def predict(self, image, conf, iou, line_width, device, model_type, model_path):
         # choose model type
         if model_type == "rtdetr-l":
-            self.model = RTDETR('../weights/rtdetr/rtdetr-l.pt')
+            self.model = RTDETR('../../weights/rtdetr/rtdetr-l.pt')
         elif model_type == "rtdetr-x":
-            self.model = RTDETR('../weights/rtdetr/rtdetr-x.pt')
+            self.model = RTDETR('../../weights/rtdetr/rtdetr-x.pt')
         else:
             self.model = RTDETR(model_path)
         results = self.model(image)
