@@ -78,7 +78,7 @@ class YOLOv8WebUI:
                         ["half", "show", "save", "save_txt", "save_conf", "save_crop", "hide_labels", "hide_conf", "vid_stride",
                          "visualize", "augment", "agnostic_nms", "retina_masks", "boxes"], label="Options", value=["boxes"])
 
-                    device = gr.Number(value=0, label="device", interactive=True, precision=0)
+                    device = gr.Number(value=0, label="device", interactive=True, default="cpu",precision=0)
                     cpu = gr.Checkbox(label="cpu", interactive=True)
                     max_det = gr.Number(value=300, label="max_det", interactive=True, precision=0)
                     line_width = gr.Number(value=0, label="line_width", interactive=True, precision=0)
@@ -91,7 +91,7 @@ class YOLOv8WebUI:
             inference_button.click(self.inference, inputs=[type, input, checkbox, conf, iou, device, max_det, line_width, cpu],
                                    outputs=output)
 
-        app.launch()
+        app.launch(share=True)
 
 if __name__ == '__main__':
     web_ui = YOLOv8WebUI()
