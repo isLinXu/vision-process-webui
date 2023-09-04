@@ -9,7 +9,7 @@ warnings.filterwarnings("ignore")
 
 class SAMModel:
     def __init__(self):
-        model_path = 'mobile_sam.pt'
+        model_path = '../../weights/mobile_sam/mobile_sam.pt'
         self.model = SAM(model_path)
 
     def mobilesam_point_predict(self, image, x, y):

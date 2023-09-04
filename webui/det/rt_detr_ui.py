@@ -3,7 +3,7 @@ import gradio as gr
 import numpy as np
 from ultralytics import RTDETR
 import warnings
-
+from PIL import Image
 warnings.filterwarnings("ignore")
 
 
@@ -20,13 +20,19 @@ class RT_DETR_WebUI:
             self.model = RTDETR('../../weights/rtdetr/rtdetr-x.pt')
         else:
             self.model = RTDETR(model_path)
-        results = self.model(image)
+        # results = self.model(image)
+        results = self.model.predict(image,save_dir='output/')
+        # results.save(save_dir='output/')
         res = results[0]
+        print("res:", res)
         save_dir = res.save_dir
         path = res.path
-        from PIL import Image
-        dst = Image.open(save_dir + '/' + path)
-        dst = cv2.cvtColor(np.array(dst), cv2.COLOR_RGB2BGR)
+        # img_path = save_dir + path
+        # print("img_path:", path)
+        # dst = Image.open(path)
+        # dst = cv2.cvtColor(np.array(dst), cv2.COLOR_RGB2BGR)
+        # dst = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
+        dst = image
         return dst
 
 if __name__ == '__main__':
@@ -51,7 +57,7 @@ if __name__ == '__main__':
         description="Detect objects in an image using RT_DETR model.",
         theme="default",
         layout="vertical",
-        allow_flagging=False,
+        allow_flagging=True,
         analytics_enabled=True,
         server_port=None,
         server_name=None,
