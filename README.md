@@ -10,9 +10,6 @@
 # performance&demo
 
 ## classification
-
-![](https://user-images.githubusercontent.com/59380685/265589543-e255edad-11a9-4be4-8a8d-870dcd00cc08.png)
-
 | ![](https://user-images.githubusercontent.com/59380685/265667039-ce3f2122-4317-4c57-9bab-9ebc792ca23b.png) |
 | ------------------------------------------------------------ |
 | ![](https://user-images.githubusercontent.com/59380685/265667095-6a0d4513-cb21-42ff-b77c-723da474d0fe.png) |
