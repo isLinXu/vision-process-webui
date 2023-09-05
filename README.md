@@ -8,14 +8,19 @@
 ---
 
 # 🛜Online running
+## detection
 - [x] 📦[**yolov8-app**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/yolov8-webui)
 - [x] 📦[**yolov5-app**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/yolov5-webui)
 - [x] 📦[**yolov3-app**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/yolov3-webui)
 - [x] 📦[**yolonas-app**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/yolonas-webui)
 - [x] 📦[**ppyoloe-app**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/ppyoloe_webui)
 - [x] 📦[**torchvision-detection-webui**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/torchvision-detection-webui)
+## classification
 - [x] 📦[**torchvision-classification-app**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/torchvision-classification-webui#build-configuration)
 - [x] 📦[**timm-classification-webui**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/timm-classification-webui)
+## segmentation
+- [x] 📦[**torchvision-segmentation-app**]():
+        [![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/torchvision-segmention-webui)
 - [x] 📦[**mobile-sam-app**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mobile-sam-webui)
 
 # 🧙performance&demo
@@ -110,8 +115,15 @@ model_name=xxxx
 python webui/model_app.py
 ```
 model_app=classification|detection|segmentation
+or
 
+```shell
+cd webui/app
+python [model_app].py
+```
+model_app=yolov3|yolov5|yolov8|yolonas|ppyoloe|torchvision-detection|torchvision-classification|torchvision-segmentation|mobile-sam|fast-sam
 
+```
 # TODO
 
 
