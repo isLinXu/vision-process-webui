@@ -5,7 +5,6 @@ torchvision~=0.14.1
 pillow~=9.4.0
 gradio~=3.42.0
 ultralytics~=8.0.169
-yaml~=0.2.5
 pyyaml~=6.0
 wandb~=0.13.11
 tqdm~=4.65.0
