@@ -9,7 +9,7 @@
 
 # 🛜Online running
 
-- 📦[yolov8-app](https://openxlab.org.cn/apps/detail/gatilin/yolov8-webui)
+- 📦**yolov8-app**:[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/yolov8-webui)
 
 
 # 🧙performance&demo
