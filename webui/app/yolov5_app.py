@@ -15,15 +15,15 @@ class YOLOv5WebUI:
     def detect_objects(self, img, conf, iou, line_width, device, model_type, model_path):
         # choose model type
         if model_type == "yolov5n":
-            self.model = torch.hub.load('ultralytics/yolov5', 'yolov5n.pt', device=device)
+            self.model = torch.hub.load('ultralytics/yolov5', 'yolov5n', device=device)
         elif model_type == "yolov5s":
-            self.model = torch.hub.load('ultralytics/yolov5', 'yolov5s.pt', device=device)
+            self.model = torch.hub.load('ultralytics/yolov5', 'yolov5s', device=device)
         elif model_type == "yolov5m":
-            self.model = torch.hub.load('ultralytics/yolov5', 'yolov5m.pt', device=device)
+            self.model = torch.hub.load('ultralytics/yolov5', 'yolov5m', device=device)
         elif model_type == "yolov5l":
-            self.model = torch.hub.load('ultralytics/yolov5', 'yolov5l.pt', device=device)
+            self.model = torch.hub.load('ultralytics/yolov5', 'yolov5l', device=device)
         elif model_type == "yolov5x":
-            self.model = torch.hub.load('ultralytics/yolov5', 'yolov5x.pt', device=device)
+            self.model = torch.hub.load('ultralytics/yolov5', 'yolov5x', device=device)
 
         if model_type not in ["yolov5n", "yolov5s", "yolov5m", "yolov5l", "yolov5x"]:
             self.model = torch.hub.load('ultralytics/yolov5', 'custom', path=model_path, device=device)
