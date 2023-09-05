@@ -74,4 +74,31 @@
 - [x] **mobile_sam**([src](https://docs.ultralytics.com/models/mobile-sam/) | [code](webui/seg/mobilesam_ui.py))
 - [x] **fast_sam**([src](https://docs.ultralytics.com/models/fast-sam/) | [code](webui/seg/fastsam_ui.py))
 
+# Usage
+## 1. install
+```shell
+git clone https://github.com/isLinXu/vision-process-webui.git
+cd vision-process-webui
+pip install -r requirements.txt
+```
 
+## 2. download weights
+```shell
+cd weights
+cd [model_name]
+sh download_weights.sh
+```
+model_name=xxxx
+
+
+## 3. run
+```shell
+python webui/model_app.py
+```
+model_app=classification|detection|segmentation
+
+
+# TODO
+
+
+# Reference
