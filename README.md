@@ -42,6 +42,7 @@
 - [ ] **yolov7**([src](https://docs.ultralytics.com/models/yolov7/) | [code](webui/yolov7_ui.py))
 - [x] **yolox**([src](https://github.com/Deci-AI/super-gradients/blob/master/src/super_gradients/training/models/detection_models/yolox.py) | [code](webui/yolox_ui.py)))
 - [x] **ppyoloe**([src](https://github.com/Deci-AI/super-gradients/tree/master/src/super_gradients/training/models/detection_models/pp_yolo_e) | [code](webui/ppyoloe_ui.py)))
+- [x] **yolo-nas**([src](https://github.com/Deci-AI/super-gradients/blob/master/YOLONAS.md) | [code](webui/yolonas_ui.py)))
 - [x] **yolov8**([src](https://docs.ultralytics.com/models/yolov8/) | [code](webui/det/yolov8_ui.py))
 - [x] **rtdetr-l**([src](https://docs.ultralytics.com/models/rtdetr/) | [code](webui/det/rt_detr_ui.py)))
 
