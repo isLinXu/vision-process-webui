@@ -1,3 +1,4 @@
+
 import cv2
 import numpy as np
 import torch
@@ -6,7 +7,13 @@ from torchvision import models, transforms
 import gradio as gr
 
 # 加载模型
-model = models.segmentation.fcn_resnet101(pretrained=True).eval()
+models_dict = {
+    'DeepLabv3': models.segmentation.deeplabv3_resnet50(pretrained=True).eval(),
+    'DeepLabv3+': models.segmentation.deeplabv3_resnet101(pretrained=True).eval(),
+    'FCN-ResNet50': models.segmentation.fcn_resnet50(pretrained=True).eval(),
+    'FCN-ResNet101': models.segmentation.fcn_resnet101(pretrained=True).eval(),
+    'LRR': models.segmentation.lraspp_mobilenet_v3_large(pretrained=True).eval(),
+}
 
 # 图像预处理
 image_transforms = transforms.Compose([
@@ -20,13 +27,13 @@ image_transforms = transforms.Compose([
 ])
 
 # 定义推理函数
-def predict_segmentation(image):
+def predict_segmentation(image, model_name):
     # 图像预处理
     image_tensor = image_transforms(image).unsqueeze(0)
 
     # 模型推理
     with torch.no_grad():
-        output = model(image_tensor)['out'][0]
+        output = models_dict[model_name](image_tensor)['out'][0]
         output_predictions = output.argmax(0)
         segmentation = F.interpolate(
             output.float().unsqueeze(0),
@@ -46,9 +53,15 @@ def predict_segmentation(image):
     return segmentation_image, blend_image
 
 # Gradio 接口
-inputs = gr.inputs.Image(type='pil', label='原始图像')
-outputs = [gr.outputs.Image(type='pil',label='分割图'),
-           gr.outputs.Image(type='pil',label='融合图')]
+model_list = ['DeepLabv3', 'DeepLabv3+', 'FCN-ResNet50', 'FCN-ResNet101', 'LRR']
+inputs = [
+    gr.inputs.Image(type='pil', label='原始图像'),
+    gr.inputs.Dropdown(model_list, label='选择模型')
+]
+outputs = [
+    gr.outputs.Image(type='pil',label='分割图'),
+    gr.outputs.Image(type='pil',label='融合图')
+]
 interface = gr.Interface(
     predict_segmentation,
     inputs,
