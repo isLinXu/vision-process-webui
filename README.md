@@ -49,17 +49,24 @@
 # support list
 
 ## classification
+- [x] **VGG16**([src](https://arxiv.org/abs/1409.1556) | [code](webui/cls/torchvision_cls_ui.py))
+- [x] **AlexNet**([src](https://arxiv.org/abs/1404.5997) | [code](webui/cls/torchvision_cls_ui.py))
+- [x] **ResNet18**([src](https://arxiv.org/abs/1512.03385) | [code](webui/cls/torchvision_cls_ui.py))
+- [x] **ResNet50**([src](https://arxiv.org/abs/1512.03385) | [code](webui/cls/torchvision_cls_ui.py))
+- [x] **GoogLeNet**([src](https://arxiv.org/abs/1409.4842) | [code](webui/cls/torchvision_cls_ui.py))
+- [x] **DenseNet121**([src](https://arxiv.org/abs/1608.06993) | [code](webui/cls/torchvision_cls_ui.py))
+- [x] **MobileNetV2**([src](https://arxiv.org/abs/1801.04381) | [code](webui/cls/torchvision_cls_ui.py))
 
 
 ## detection
-- [x] **yolov3**([src](https://docs.ultralytics.com/models/yolov3/) | [code](webui/yolov3_ui.py))
-- [ ] **yolov4**([src](https://docs.ultralytics.com/models/yolov4/) | [code](webui/yolov4_ui.py))
+- [x] **yolov3**([src](https://docs.ultralytics.com/models/yolov3/) | [code](webui/det/yolov3_ui.py))
+- [ ] **yolov4**([src](https://docs.ultralytics.com/models/yolov4/) | [code](webui/det/yolov4_ui.py))
 - [x] **yolov5**([src](https://docs.ultralytics.com/models/yolov5/) | [code](webui/det/yolov5_ui.py))
 - [ ] **yolov6**([src](https://docs.ultralytics.com/models/yolov6/) | [code](webui/det/yolov6_ui.py))
-- [ ] **yolov7**([src](https://docs.ultralytics.com/models/yolov7/) | [code](webui/yolov7_ui.py))
-- [x] **yolox**([src](https://github.com/Deci-AI/super-gradients/blob/master/src/super_gradients/training/models/detection_models/yolox.py) | [code](webui/yolox_ui.py)))
-- [x] **ppyoloe**([src](https://github.com/Deci-AI/super-gradients/tree/master/src/super_gradients/training/models/detection_models/pp_yolo_e) | [code](webui/ppyoloe_ui.py)))
-- [x] **yolo-nas**([src](https://github.com/Deci-AI/super-gradients/blob/master/YOLONAS.md) | [code](webui/yolonas_ui.py)))
+- [ ] **yolov7**([src](https://docs.ultralytics.com/models/yolov7/) | [code](webui/det/yolov7_ui.py))
+- [x] **yolox**([src](https://github.com/Deci-AI/super-gradients/blob/master/src/super_gradients/training/models/detection_models/yolox.py) | [code](webui/det/yolox_ui.py)))
+- [x] **ppyoloe**([src](https://github.com/Deci-AI/super-gradients/tree/master/src/super_gradients/training/models/detection_models/pp_yolo_e) | [code](webui/det/ppyoloe_ui.py)))
+- [x] **yolo-nas**([src](https://github.com/Deci-AI/super-gradients/blob/master/YOLONAS.md) | [code](webui/det/yolonas_ui.py)))
 - [x] **yolov8**([src](https://docs.ultralytics.com/models/yolov8/) | [code](webui/det/yolov8_ui.py))
 - [x] **rtdetr-l**([src](https://docs.ultralytics.com/models/rtdetr/) | [code](webui/det/rt_detr_ui.py)))
 
