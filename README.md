@@ -76,7 +76,10 @@
 - [x] **yolo-nas**([src](https://github.com/Deci-AI/super-gradients/blob/master/YOLONAS.md) | [code](webui/det/yolonas_ui.py)))
 - [x] **yolov8**([src](https://docs.ultralytics.com/models/yolov8/) | [code](webui/det/yolov8_ui.py))
 - [x] **rtdetr-l**([src](https://docs.ultralytics.com/models/rtdetr/) | [code](webui/det/rt_detr_ui.py)))
-
+- [x] **fasterrcnn_resnet50_fpn**([src]() | [code](webui/det/torchvision_det_ui.py)))
+- [x] **maskrcnn_resnet50_fpn**([src]() | [code](webui/det/torchvision_det_ui.py)))
+- [x] **keypointrcnn_resnet50_fpn**([src]() | [code](webui/det/torchvision_det_ui.py)))
+- [x] **retinanet_resnet50_fpn**([src]() | [code](webui/det/torchvision_det_ui.py)))
 ---
 
 ## 🔨segmentation
