@@ -4,6 +4,7 @@ from PIL import Image
 import numpy as np
 import gradio as gr
 import warnings
+import wget
 
 warnings.filterwarnings("ignore")
 
@@ -12,17 +13,25 @@ class YOLOv3WebUI:
     def __init__(self):
         pass
 
+    def download_weights(self, url):
+        filename = wget.download(url)
+        print(filename)
+
     def detect_objects(self, img, conf, iou, line_width, device, model_type, model_path):
+
         # choose model type
         if model_type == "yolov3":
-            self.model = torch.hub.load('ultralytics/yolov3', 'yolov3',
-                                        device=device)
+            url = 'https://github.com/ultralytics/yolov3/releases/download/v9.0/yolov3.pt'
+            self.download_weights(url)
+            self.model = torch.hub.load('ultralytics/yolov3', 'custom', path='yolov3.pt', device=device)
         elif model_type == "yolov3-tiny":
-            self.model = torch.hub.load('ultralytics/yolov3', 'yolov3-tiny',
-                                        device=device)
+            url = 'https://github.com/ultralytics/yolov3/releases/download/v9.0/yolov3-tiny.pt'
+            self.download_weights(url)
+            self.model = torch.hub.load('ultralytics/yolov3', 'custom', path='yolov3-tiny.pt', device=device)
         elif model_type == "yolov3-spp":
-            self.model = torch.hub.load('ultralytics/yolov3', 'yolov3-spp',
-                                        device=device)
+            url = 'https://github.com/ultralytics/yolov3/releases/download/v9.6.0/yolov3-spp.pt'
+            self.download_weights(url)
+            self.model = torch.hub.load('ultralytics/yolov3', 'custom', path='yolov3-spp.pt', device=device)
         else:
             self.model = torch.hub.load('ultralytics/yolov3', 'custom', path=model_path, device=device)
         if model_type not in ["yolov3", "yolov3-tiny", "yolov3-spp"]:
