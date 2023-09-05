@@ -17,7 +17,6 @@ psutil~=5.9.4
 thop~=0.1.1-2209072238
 tensorflow~=2.11.0
 onnx~=1.13.0
-yolov6~=0.0.1
 pycocotools~=2.0.6
 clip~=1.0
 setuptools~=65.6.3
