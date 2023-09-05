@@ -18,4 +18,3 @@ tensorflow~=2.11.0
 onnx~=1.13.0
 pycocotools~=2.0.6
 setuptools~=65.6.3
-fastsam~=0.1.1
