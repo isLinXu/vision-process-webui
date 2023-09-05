@@ -5,6 +5,8 @@ import torchvision.models as models
 import torchvision.transforms as transforms
 from PIL import Image
 import numpy as np
+import warnings
+warnings.filterwarnings("ignore")
 
 
 class ImageClassifier:
