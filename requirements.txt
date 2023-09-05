@@ -1,3 +1,4 @@
+wget~=3.2
 opencv-python~=4.6.0.66
 numpy~=1.23.0
 torch~=1.13.1
