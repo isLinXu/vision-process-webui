@@ -2,6 +2,9 @@ import torch
 import torchvision
 import gradio as gr
 from PIL import Image, ImageDraw
+import warnings
+
+warnings.filterwarnings("ignore")
 
 # 定义模型列表
 model_list = [

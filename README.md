@@ -13,6 +13,7 @@
 - [x] 📦[**yolov3-app**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/yolov3-webui)
 - [x] 📦[**yolonas-app**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/yolonas-webui)
 - [x] 📦[**ppyoloe-app**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/ppyoloe_webui)
+- [x] 📦[**torchvision-detection-webui**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/torchvision-detection-webui)
 - [x] 📦[**torchvision-classification-app**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/torchvision-classification-webui#build-configuration)
 - [x] 📦[**timm-classification-webui**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/timm-classification-webui)
 - [x] 📦[**mobile-sam-app**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mobile-sam-webui)
