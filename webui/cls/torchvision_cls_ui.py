@@ -5,9 +5,9 @@ import torchvision.models as models
 import torchvision.transforms as transforms
 from PIL import Image
 import numpy as np
+
 import warnings
 warnings.filterwarnings("ignore")
-
 
 class ImageClassifier:
     def __init__(self, model_name):
@@ -74,7 +74,7 @@ class ImageClassifier:
         input_image = gr.inputs.Image(type='pil')
         output_image = gr.outputs.Image(type='pil')
         output_text = gr.outputs.Textbox()
-        model_name = gr.inputs.Dropdown(["ResNet18", "AlexNet", "VGG16", "GoogLeNet", "ResNet50", "DenseNet121", "MobileNetV2"], label="Model", default="VGG16")
+        model_name = gr.inputs.Dropdown(["ResNet18", "AlexNet", "VGG16", "GoogLeNet", "ResNet50", "DenseNet121", "MobileNetV2", "ShuffleNetV2", "SqueezeNet", "InceptionV3", "ResNet101", "ResNet152", "WideResNet50", "WideResNet101"], label="Model", default="VGG16")
 
         def predict(image, model_name):
             self.model = self.load_model(model_name)
@@ -82,9 +82,9 @@ class ImageClassifier:
             return result_image, result_class
 
         gr.Interface(fn=predict, inputs=[input_image, model_name], outputs=[output_image, output_text],
-                     title="Image Classification", description="Upload an image and classify it.").launch()
+                     title="Image Classification", description="Upload an image and classify，it.").launch()
 
 
-if __name__ == "__main__":
-    classifier = ImageClassifier("VGG16")
+if __name__ == '__main__':
+    classifier = ImageClassifier("ResNet18")
     classifier.classify_interactive()
