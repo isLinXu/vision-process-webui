@@ -68,7 +68,7 @@ if __name__ == '__main__':
                 gr.inputs.Textbox(default="yolox_n.pt", label="Model Path")],
         outputs="image",
         title="YOLOX_WebUI Object Detector",
-        description="Detect objects in an image using YOLO-NAS model.",
+        description="Detect objects in an image using YOLOX model.",
         theme="default",
         layout="vertical",
         allow_flagging=False,
