@@ -5,7 +5,16 @@
 ![GitHub watchers](https://img.shields.io/github/watchers/isLinXu/vision-process-webui.svg?style=social) ![GitHub stars](https://img.shields.io/github/stars/isLinXu/vision-process-webui.svg?style=social) ![GitHub forks](https://img.shields.io/github/forks/isLinXu/vision-process-webui.svg?style=social) ![GitHub followers](https://img.shields.io/github/followers/isLinXu.svg?style=social)
  [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fatrox%2Fsync-dotenv%2Fbadge&style=flat)](https://github.com/isLinXu/vision-process-webui)  ![img](https://badgen.net/badge/icon/learning?icon=deepscan&label)![GitHub repo size](https://img.shields.io/github/repo-size/isLinXu/vision-process-webui.svg?style=flat-square) ![GitHub language count](https://img.shields.io/github/languages/count/isLinXu/vision-process-webui)  ![GitHub last commit](https://img.shields.io/github/last-commit/isLinXu/vision-process-webui) ![GitHub](https://img.shields.io/github/license/isLinXu/vision-process-webui.svg?style=flat-square)![img](https://hits.dwyl.com/isLinXu/vision-process-webui.svg)
 
+**language**: [en ｜ [中文](README_zh.md)]
+
 ---
+
+# 🎤Introduction
+
+Due to the increasing complexity of the theory and models of computer vision, in order to facilitate intuitive understanding and reproduction, 
+reduce the threshold of use, and quickly verify image processing effects, inspired by the stable-diffusion-webui project in the promotion of the stable-diffusion model application, 
+some models based on tasks such as object detection, image segmentation, and image classification are deployed and demonstrated on Gradio for inference.
+More people are welcome to contribute and use!
 
 # 🛜Online running
 
@@ -35,7 +44,6 @@
 | ![](https://user-images.githubusercontent.com/59380685/265667360-20438bef-91ee-4847-a5e2-16ef4e658935.png) |
 
 ---
-
 
 ## 🔨detection
 | ![](https://user-images.githubusercontent.com/59380685/265492490-9353cd87-052d-4dcb-9115-afb7954c00dd.png) | ![](https://user-images.githubusercontent.com/59380685/265493664-939d5c5f-f571-4a84-b6e9-6193f4613f37.png) | ![](https://user-images.githubusercontent.com/59380685/265493715-e920d82e-c85d-43e1-a7ae-c0a706c0bb95.png) | ![](https://user-images.githubusercontent.com/59380685/265493821-19954089-befb-4cec-baac-688427a84589.png) |
