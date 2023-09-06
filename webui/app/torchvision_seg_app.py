@@ -5,6 +5,10 @@ import torch
 import torch.nn.functional as F
 from torchvision import models, transforms
 
+import warnings
+
+warnings.filterwarnings("ignore")
+
 # 加载模型
 models_dict = {
     'DeepLabv3': models.segmentation.deeplabv3_resnet50(pretrained=True).eval(),
