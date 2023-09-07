@@ -1,5 +1,12 @@
 
 import os
+
+os.system("pip install -U openmim")
+os.system("mim install 'mmengine>=0.6.0'")
+os.system("mim install 'mmcv>=2.0.0rc4,<2.1.0'")
+os.system("mim install 'mmyolo'")
+
+
 import PIL.Image
 import gradio as gr
 from argparse import Namespace
@@ -18,17 +25,7 @@ from mmyolo.utils.labelme_utils import LabelmeFormat
 from mmyolo.utils.misc import get_file_list, show_data_classes
 from mim import download
 
-def mim_install_mmyolo():
-    '''
-    pip install -U openmim
-    mim install "mmengine>=0.6.0"
-    mim install "mmcv>=2.0.0rc4,<2.1.0"
-    mim install "mmdet>=3.0.0,<4.0.0"
-    '''
-    os.system("pip install -U openmim")
-    os.system("mim install 'mmengine>=0.6.0'")
-    os.system("mim install 'mmcv>=2.0.0rc4,<2.1.0'")
-    os.system("mim install 'mmyolo'")
+
 def download_test_image():
     # Images
     torch.hub.download_url_to_file(
@@ -43,7 +40,8 @@ def download_test_image():
 
 def download_cfg_checkpoint():
     download(package='mmyolo',
-             configs=['yolov5_s-v61_syncbn_fast_8xb16-300e_coco'],
+             configs=['s'],
+             # configs=['yolov5_s-v61_syncbn_fast_8xb16-300e_coco'],
              dest_root='.')
 
 def detect_objects(args):
@@ -130,9 +128,6 @@ def object_detection(img_path, config, checkpoint, out_dir, device, show, score_
     img_out = PIL.Image.open(os.path.join(out_dir, os.path.basename(img_path)))
     return img_src, img_out, out_dir
 
-
-
-mim_install_mmyolo()
 download_test_image()
 download_cfg_checkpoint()
 
