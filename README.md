@@ -20,8 +20,16 @@ More people are welcome to contribute and use!
 
 - ❗️Currently, the app application of this repository has been deployed on [**OpenXLab**](https://openxlab.org.cn/apps) and [**ModelScope**](https://www.modelscope.cn/studios). Welcome to test and use.
 
-## detection
+## OpenMMLab
+- [x] 📦[**mmyolo**]():
+        [![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmyolo-webui)
+- [ ] 📦[**mmdetection**]():
+- [ ] 📦[**mmpretrain**]():
+- [ ] 📦[**mmsegmentation**]():
+- [ ] 📦[**mmpose**]():
+- [ ] 📦[**mmagics**]():
 
+## detection
 - [x] 📦[**yolov8-app**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/yolov8-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/yolov8-webui/summary)
 - [x] 📦[**yolov5-app**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/yolov5-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/yolov5-webui/summary)
 - [x] 📦[**yolov3-app**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/yolov3-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/yolov3-webui/summary)
