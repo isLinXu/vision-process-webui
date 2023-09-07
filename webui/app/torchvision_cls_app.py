@@ -6,6 +6,7 @@ import torchvision.transforms as transforms
 from PIL import Image
 import numpy as np
 import warnings
+
 warnings.filterwarnings("ignore")
 
 
@@ -13,6 +14,19 @@ class ImageClassifier:
     def __init__(self, model_name):
         self.model = self.load_model(model_name)
         self.classes = self.load_classes()
+        self.download_test_img()
+
+    def download_test_img(self):
+        # Images
+        torch.hub.download_url_to_file(
+            'https://user-images.githubusercontent.com/59380685/266264420-21575a83-4057-41cf-8a4a-b3ea6f332d79.jpg',
+            'bus.jpg')
+        torch.hub.download_url_to_file(
+            'https://user-images.githubusercontent.com/59380685/266264536-82afdf58-6b9a-4568-b9df-551ee72cb6d9.jpg',
+            'dogs.jpg')
+        torch.hub.download_url_to_file(
+            'https://user-images.githubusercontent.com/59380685/266264600-9d0c26ca-8ba6-45f2-b53b-4dc98460c43e.jpg',
+            'zidane.jpg')
 
     def load_model(self, model_name):
         if model_name == "ResNet18":
@@ -29,6 +43,20 @@ class ImageClassifier:
             model = models.densenet121(pretrained=True)
         elif model_name == "MobileNetV2":
             model = models.mobilenet_v2(pretrained=True)
+        elif model_name == "ShuffleNetV2":
+            model = models.shufflenet_v2_x1_0(pretrained=True)
+        elif model_name == "SqueezeNet":
+            model = models.squeezenet1_1(pretrained=True)
+        elif model_name == "InceptionV3":
+            model = models.inception_v3(pretrained=True)
+        elif model_name == "ResNet101":
+            model = models.resnet101(pretrained=True)
+        elif model_name == "ResNet152":
+            model = models.resnet152(pretrained=True)
+        elif model_name == "WideResNet50":
+            model = models.wide_resnet50_2(pretrained=True)
+        elif model_name == "WideResNet101":
+            model = models.wide_resnet101_2(pretrained=True)
         else:
             raise ValueError("Invalid model name")
         return model
@@ -36,17 +64,27 @@ class ImageClassifier:
     def load_classes(self):
         classes = ['0, tench', '1, goldfish', '2, great_white_shark', '3, tiger_shark', '4, hammerhead',
                    '5, electric_ray', '6, stingray',
-                   '7, cock', '8, hen', '9, ostrich', '10, brambling', '11, goldfinch', '12, house_finch', '13, junco','14, indigo_bunting',
-                   '15, robin', '16, bulbul', '17, jay', '18, magpie', '19, chickadee', '20, water_ouzel', '21, kite','22, bald_eagle',
-                   '23, vulture', '24, great_grey_owl', '25, European_fire_salamander', '26, common_newt', '27, eft','28, spotted_salamander',
-                   '29, axolotl', '30, bullfrog', '31, tree_frog', '32, tailed_frog', '33, loggerhead','34, leatherback_turtle', '35, mud_turtle',
-                   '36, terrapin', '37, box_turtle', '38, banded_gecko', '39, common_iguana', '40, American_chameleon','41, whiptail',
-                   '42, agama', '43, frilled_lizard', '44, alligator_lizard', '45, Gila_monster', '46, green_lizard','47, African_chameleon',
-                   '48, Komodo_dragon', '49, African_crocodile', '50, American_alligator', '51, triceratops','52, thunder_snake', '53, ringneck_snake',
+                   '7, cock', '8, hen', '9, ostrich', '10, brambling', '11, goldfinch', '12, house_finch', '13, junco',
+                   '14, indigo_bunting',
+                   '15, robin', '16, bulbul', '17, jay', '18, magpie', '19, chickadee', '20, water_ouzel', '21, kite',
+                   '22, bald_eagle',
+                   '23, vulture', '24, great_grey_owl', '25, European_fire_salamander', '26, common_newt', '27, eft',
+                   '28, spotted_salamander',
+                   '29, axolotl', '30, bullfrog', '31, tree_frog', '32, tailed_frog', '33, loggerhead',
+                   '34, leatherback_turtle', '35, mud_turtle',
+                   '36, terrapin', '37, box_turtle', '38, banded_gecko', '39, common_iguana', '40, American_chameleon',
+                   '41, whiptail',
+                   '42, agama', '43, frilled_lizard', '44, alligator_lizard', '45, Gila_monster', '46, green_lizard',
+                   '47, African_chameleon',
+                   '48, Komodo_dragon', '49, African_crocodile', '50, American_alligator', '51, triceratops',
+                   '52, thunder_snake', '53, ringneck_snake',
                    '54, hognose_snake', '55, green_snake', '56, king_snake', '57, garter_snake', '58, water_snake',
-                   '59, vine_snake', '60, night_snake','61, boa_constrictor', '62, rock_python', '63, Indian_cobra', '64, green_mamba', '65, sea_snake',
-                   '66, horned_viper', '67, diamondback','68, sidewinder', '69, trilobite', '70, harvestman', '71, scorpion',
-                   '72, black_and_gold_garden_spider', '73, barn_spider','74, garden_spider', '75, black_widow', '76, tarantula',
+                   '59, vine_snake', '60, night_snake', '61, boa_constrictor', '62, rock_python', '63, Indian_cobra',
+                   '64, green_mamba', '65, sea_snake',
+                   '66, horned_viper', '67, diamondback', '68, sidewinder', '69, trilobite', '70, harvestman',
+                   '71, scorpion',
+                   '72, black_and_gold_garden_spider', '73, barn_spider', '74, garden_spider', '75, black_widow',
+                   '76, tarantula',
                    '77, wolf_spider', '78, tick', '79, centipede', '80, black_grouse',
                    '81, ptarmigan', '82, ruffed_grouse', '83, prairie_chicken', '84, peacock', '85, quail',
                    '86, partridge', '87, African_grey',
@@ -265,6 +303,11 @@ class ImageClassifier:
         return results
 
     def classify_interactive(self):
+        examples = [
+            ['bus.jpg', 'VGG16'],
+            ['dogs.jpg', 'VGG16'],
+            ['zidane.jpg', 'VGG16']
+        ]
         input_image = gr.inputs.Image(type='pil')
         output_image = gr.outputs.Image(type='pil')
         output_text = gr.outputs.Textbox()
@@ -278,6 +321,7 @@ class ImageClassifier:
             return result_image, result_class
 
         gr.Interface(fn=predict, inputs=[input_image, model_name], outputs=[output_image, output_text],
+                     examples=examples, live=True, capture_session=True,
                      title="Image Classification", description="Upload an image and classify it.").launch()
 
 
