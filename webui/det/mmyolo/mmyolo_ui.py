@@ -63,9 +63,8 @@ def download_test_image():
         'https://user-images.githubusercontent.com/59380685/266264600-9d0c26ca-8ba6-45f2-b53b-4dc98460c43e.jpg',
         'zidane.jpg')
 
-import shutil
-
 def clear_folder(folder_path):
+    import shutil
     for filename in os.listdir(folder_path):
         file_path = os.path.join(folder_path, filename)
         try:

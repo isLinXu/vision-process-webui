@@ -195,7 +195,7 @@ inputs = [
     gr.inputs.Textbox(default=None, label="class_name"),
 ]
 
-# download_test_image()
+download_test_image()
 
 examples = [
     ['bus.jpg', 'yolov5_n-v61_syncbn_fast_8xb16-300e_coco', './output', "cpu", False, 0.3, None],
