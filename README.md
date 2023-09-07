@@ -153,6 +153,19 @@ model_app=yolov3|yolov5|yolov8|yolonas|ppyoloe|torchvision-detection|torchvision
 
 ```
 # TODO
-
+support more models and libraries
+[] mmyolo
+[] mmdetection
+[] mmpretrain
+[] mmpose
+[] mmagics
+[] mmsegmentation
+[] mmaction2
+[] mmtracking
+[] mmclassification
+[] mmgenomics
+[] mmfashion
+[] mmocr
+[] mmsegmentat
 
 # Reference
