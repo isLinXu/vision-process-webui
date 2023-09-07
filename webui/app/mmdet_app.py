@@ -487,7 +487,7 @@ def main(inputs, model_name, out_dir, texts, device, pred_score_thr, batch_size,
 
 
 if __name__ == '__main__':
-    # download_test_image()
+    download_test_image()
     examples = [
         ['bus.jpg', 'rtmdet_tiny_8xb32-300e_coco', './output', '', "cpu"],
         ['dogs.jpg', 'mask-rcnn_r50_fpn_albu-1x_coco', './output', '', "cpu"],
@@ -495,7 +495,7 @@ if __name__ == '__main__':
     ]
 
     title = "MMDetection detection web demo"
-    description = "<img src='https://github.com/open-mmlab/mmdetection/blob/main/resources/mmdet-logo.png'>" \
+    description = "<img src='https://raw.githubusercontent.com/open-mmlab/mmdetection/main/resources/mmdet-logo.png'>" \
                   "<p style='text-align: center'><a href='https://github.com/open-mmlab/mmdetection'>MMDetection</a> 是一个开源的物体检测工具箱，提供了丰富的检测模型和数据增强方式。" \
                   "OpenMMLab Detection Toolbox and Benchmark.</p>"
     article = "<p style='text-align: center'><a href='https://github.com/open-mmlab/mmdetection'>MMDetection</a></p>" \
