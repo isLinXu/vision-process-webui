@@ -83,7 +83,7 @@ class YOLOv8WebUI:
                          "visualize", "augment", "agnostic_nms", "retina_masks", "boxes"], label="Options", value=["boxes"])
 
                     device = gr.Number(value=0, label="device", interactive=True, default="cpu",precision=0)
-                    cpu = gr.Checkbox(label="cpu", interactive=True)
+                    cpu = gr.Checkbox(label="cpu", interactive=True, default=True)
                     max_det = gr.Number(value=300, label="max_det", interactive=True, precision=0)
                     line_width = gr.Number(value=0, label="line_width", interactive=True, precision=0)
 
