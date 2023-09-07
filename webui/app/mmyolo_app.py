@@ -1,13 +1,14 @@
 
 import os
 
-os.system("pip install -U openmim")
-os.system("mim install 'mmengine>=0.6.0'")
-os.system("mim install 'mmcv>=2.0.0rc4,<2.1.0'")
-os.system("mim install 'mmyolo'")
+os.system("pip install 'mmengine>=0.6.0'")
+os.system("pip install 'mmcv>=2.0.0rc4,<2.1.0'")
+os.system("pip install 'mmyolo'")
 
 
+import os
 import PIL.Image
+import cv2
 import gradio as gr
 from argparse import Namespace
 from pathlib import Path
@@ -38,10 +39,10 @@ def download_test_image():
         'https://user-images.githubusercontent.com/59380685/266264600-9d0c26ca-8ba6-45f2-b53b-4dc98460c43e.jpg',
         'zidane.jpg')
 
+
 def download_cfg_checkpoint():
     download(package='mmyolo',
-             configs=['s'],
-             # configs=['yolov5_s-v61_syncbn_fast_8xb16-300e_coco'],
+             configs=['yolov5_s-v61_syncbn_fast_8xb16-300e_coco'],
              dest_root='.')
 
 def detect_objects(args):
@@ -112,7 +113,9 @@ def detect_objects(args):
             out_file=out_file,
             pred_score_thr=args.score_thr)
 
-def object_detection(img_path, config, checkpoint, out_dir, device, show, score_thr, class_name):
+def object_detection(img, config, checkpoint, out_dir, device, show, score_thr, class_name):
+    img_path = "input_img.jpg"
+    img.save("input_img.jpg")
     args = Namespace(
         img=img_path,
         config=config,
@@ -125,14 +128,11 @@ def object_detection(img_path, config, checkpoint, out_dir, device, show, score_
     )
     detect_objects(args)
     img_src = PIL.Image.open(img_path)
-    img_out = PIL.Image.open(os.path.join(out_dir, os.path.basename(img_path)))
-    return img_src, img_out, out_dir
-
-download_test_image()
-download_cfg_checkpoint()
+    img_out = PIL.Image.open(os.path.join(out_dir, img_path))
+    return img_out
 
 inputs = [
-    gr.inputs.Textbox(default="bus.jpg", label="img-dir"),
+    gr.inputs.Image(type="pil", label="input"),
     gr.inputs.Textbox(
         default="yolov5_s-v61_syncbn_fast_8xb16-300e_coco.py", label="config"),
     gr.inputs.Textbox(
@@ -143,7 +143,8 @@ inputs = [
     gr.inputs.Slider(minimum=0.1, maximum=1.0, step=0.1, default=0.3, label="score_thr"),
     gr.inputs.Textbox(default=None, label="class_name"),
 ]
-
+download_test_image()
+download_cfg_checkpoint()
 examples = [
     ['bus.jpg', 'yolov5_s-v61_syncbn_fast_8xb16-300e_coco.py',
      'yolov5_s-v61_syncbn_fast_8xb16-300e_coco_20220918_084700-86e02187.pth', './output', "cpu", False, 0.3,None],
@@ -161,6 +162,7 @@ title = "MMYOLO detection web demo"
 description = "use mmyolo detection"
 article = "<p style='text-align: center'><a href='https://github.com/open-mmlab/mmdetection'>MMDetection</a> 是一个开源的物体检测工具箱，提供了丰富的检测模型和数据增强方式，本项目基于 MMDetection 实现 Faster R-CNN 检测算法。</p>"
 
-gr.Interface(fn=object_detection, inputs=inputs, outputs=[src_image, output_image, text_output],
+gr.Interface(fn=object_detection, inputs=inputs, outputs=output_image,
              examples=examples, title=title,
              description=description, article=article, allow_flagging=False).launch()
+
