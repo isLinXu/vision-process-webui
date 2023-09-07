@@ -76,16 +76,23 @@ More people are welcome to contribute and use!
 # 🗓support list
 
 ## 🔨classification
+
 - [x] **VGG16**([src](https://arxiv.org/abs/1409.1556) | [code](webui/cls/torchvision_cls_ui.py))
 - [x] **AlexNet**([src](https://arxiv.org/abs/1404.5997) | [code](webui/cls/torchvision_cls_ui.py))
 - [x] **ResNet18**([src](https://arxiv.org/abs/1512.03385) | [code](webui/cls/torchvision_cls_ui.py))
 - [x] **ResNet50**([src](https://arxiv.org/abs/1512.03385) | [code](webui/cls/torchvision_cls_ui.py))
+- [x] **ResNet101**([src](https://arxiv.org/abs/1512.03385) | [code](webui/cls/torchvision_cls_ui.py))
+- [x] **ResNet152**([src](https://arxiv.org/abs/1512.03385) | [code](webui/cls/torchvision_cls_ui.py))
 - [x] **GoogLeNet**([src](https://arxiv.org/abs/1409.4842) | [code](webui/cls/torchvision_cls_ui.py))
 - [x] **DenseNet121**([src](https://arxiv.org/abs/1608.06993) | [code](webui/cls/torchvision_cls_ui.py))
 - [x] **MobileNetV2**([src](https://arxiv.org/abs/1801.04381) | [code](webui/cls/torchvision_cls_ui.py))
-
+- [x] **SqueezeNet**([src]() | [code](webui/cls/torchvision_cls_ui.py))
+- [x] **WideResNet50**([src]() | [code](webui/cls/torchvision_cls_ui.py))
+- [x] **WideResNet101**([src]() | [code](webui/cls/torchvision_cls_ui.py))
+- [x] **InceptionV3**([src]() | [code](webui/cls/torchvision_cls_ui.py))
 
 ## 🔨detection
+
 - [x] **yolov3**([src](https://docs.ultralytics.com/models/yolov3/) | [code](webui/det/yolov3_ui.py))
 - [ ] **yolov4**([src](https://docs.ultralytics.com/models/yolov4/) | [code](webui/det/yolov4_ui.py))
 - [x] **yolov5**([src](https://docs.ultralytics.com/models/yolov5/) | [code](webui/det/yolov5_ui.py))
@@ -106,8 +113,15 @@ More people are welcome to contribute and use!
 
 - [x] **mobile_sam**([src](https://docs.ultralytics.com/models/mobile-sam/) | [code](webui/seg/mobilesam_ui.py))
 - [x] **fast_sam**([src](https://docs.ultralytics.com/models/fast-sam/) | [code](webui/seg/fastsam_ui.py))
+- [x] **DeepLabv3**([src]() | [code](webui/seg/torchvision_seg_ui.py))
+- [x] **DeepLabv3+**([src]() | [code](webui/seg/torchvision_seg_ui.py))
+- [x] **FCN-ResNet50**([src]() | [code](webui/seg/torchvision_seg_ui.py))
+- [x] **FCN-ResNet101**([src]() | [code](webui/seg/torchvision_seg_ui.py))
+- [x] **LRR**([src]() | [code](webui/seg/torchvision_seg_ui.py))
+- [ ] UNet()
 
 # 📖Usage
+
 ## 1. install
 ```shell
 git clone https://github.com/isLinXu/vision-process-webui.git
