@@ -1,3 +1,6 @@
+import os
+
+import requests
 import torch
 import cv2
 from PIL import Image
@@ -7,10 +10,21 @@ import warnings
 
 warnings.filterwarnings("ignore")
 
-
 class YOLOv5WebUI:
     def __init__(self):
-        pass
+        self.download_test_img()
+
+    def download_test_img(self):
+        # Images
+        torch.hub.download_url_to_file(
+            'https://user-images.githubusercontent.com/59380685/266264420-21575a83-4057-41cf-8a4a-b3ea6f332d79.jpg',
+            'bus.jpg')
+        torch.hub.download_url_to_file(
+            'https://user-images.githubusercontent.com/59380685/266264536-82afdf58-6b9a-4568-b9df-551ee72cb6d9.jpg',
+            'dogs.jpg')
+        torch.hub.download_url_to_file(
+            'https://user-images.githubusercontent.com/59380685/266264600-9d0c26ca-8ba6-45f2-b53b-4dc98460c43e.jpg',
+            'zidane.jpg')
 
     def detect_objects(self, img, conf, iou, line_width, device, model_type, model_path):
         # choose model type
@@ -58,13 +72,15 @@ class YOLOv5WebUI:
 
 
 if __name__ == '__main__':
-    # Instantiate YOLOv3WebUI class
+    # Instantiate YOLOv5WebUI class
     detector = YOLOv5WebUI()
+
     examples = [
-        ['../../images/bus.jpg'],
-        ['../../images/dogs.jpg'],
-        ['../../images/zidane.jpg']
+        ['bus.jpg', 0.25, 0.45, 2, "cpu", "yolov5n", "yolov5s.pt"],
+        ['dogs.jpg', 0.25, 0.45, 2, "cpu", "yolov5s", "yolov5s.pt"],
+        ['zidane.jpg', 0.25, 0.45, 2, "cpu", "yolov5m", "yolov5s.pt"]
     ]
+
     # Define Gradio interface
     iface = gr.Interface(
         fn=detector.detect_objects,
@@ -76,7 +92,7 @@ if __name__ == '__main__':
                 gr.inputs.Number(default=2, label="Line Width"),
                 gr.inputs.Radio(["cpu", "cuda"], label="Device", default="cpu"),
                 gr.inputs.Radio(["yolov5n", "yolov5s", "yolov5m", "yolov5l", "yolov5x"],
-                                label="Model Type", default="yolov5s"),
+                                label="Model Type", default="yolov5n"),
                 gr.inputs.Textbox(default="yolov5s.pt", label="Model Path")],
         outputs="image",
         examples=examples,

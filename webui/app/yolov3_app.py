@@ -8,10 +8,21 @@ import wget
 
 warnings.filterwarnings("ignore")
 
-
 class YOLOv3WebUI:
     def __init__(self):
-        pass
+        self.download_test_img()
+
+    def download_test_img(self):
+        # Images
+        torch.hub.download_url_to_file(
+            'https://user-images.githubusercontent.com/59380685/266264420-21575a83-4057-41cf-8a4a-b3ea6f332d79.jpg',
+            'bus.jpg')
+        torch.hub.download_url_to_file(
+            'https://user-images.githubusercontent.com/59380685/266264536-82afdf58-6b9a-4568-b9df-551ee72cb6d9.jpg',
+            'dogs.jpg')
+        torch.hub.download_url_to_file(
+            'https://user-images.githubusercontent.com/59380685/266264600-9d0c26ca-8ba6-45f2-b53b-4dc98460c43e.jpg',
+            'zidane.jpg')
 
     def download_weights(self, url):
         filename = wget.download(url)
@@ -70,9 +81,9 @@ if __name__ == '__main__':
     # Instantiate YOLOv3WebUI class
     detector = YOLOv3WebUI()
     examples = [
-        ['../../images/bus.jpg'],
-        ['../../images/dogs.jpg'],
-        ['../../images/zidane.jpg']
+        ['bus.jpg', 0.25, 0.45, 2, "cpu", "yolov3", "yolov3.pt"],
+        ['dogs.jpg', 0.25, 0.45, 2, "cpu", "yolov3", "yolov3.pt"],
+        ['zidane.jpg', 0.25, 0.45, 2, "cpu", "yolov3", "yolov3.pt"]
     ]
     # Define Gradio interface
     iface = gr.Interface(

@@ -65,6 +65,19 @@ class_names = [
 ]
 
 
+def download_test_img():
+    # Images
+    torch.hub.download_url_to_file(
+        'https://user-images.githubusercontent.com/59380685/266264420-21575a83-4057-41cf-8a4a-b3ea6f332d79.jpg',
+        'bus.jpg')
+    torch.hub.download_url_to_file(
+        'https://user-images.githubusercontent.com/59380685/266264536-82afdf58-6b9a-4568-b9df-551ee72cb6d9.jpg',
+        'dogs.jpg')
+    torch.hub.download_url_to_file(
+        'https://user-images.githubusercontent.com/59380685/266264600-9d0c26ca-8ba6-45f2-b53b-4dc98460c43e.jpg',
+        'zidane.jpg')
+
+
 # 预处理函数
 def preprocess(image):
     # 将图像转换为 PyTorch 张量
@@ -95,6 +108,7 @@ def postprocess(output, score_threshold):
 
 # 定义推理函数
 def predict(image, model_name, score_threshold):
+    download_test_img()
     # 获取模型参数
     model_info = next((m for m in model_list if m['name'] == model_name), None)
     if model_info is None:
@@ -121,15 +135,16 @@ def predict(image, model_name, score_threshold):
     # 返回检测结果和效果图
     return img, results
 
-examples = [
-        ['../../images/bus.jpg'],
-        ['../../images/dogs.jpg'],
-        ['../../images/zidane.jpg']
-]
 
+examples = [
+    ['bus.jpg', 'fasterrcnn_resnet50_fpn'],
+    ['dogs.jpg', 'fasterrcnn_resnet50_fpn'],
+    ['zidane.jpg', 'fasterrcnn_resnet50_fpn']
+]
 iface = gr.Interface(fn=predict,
                      inputs=[gr.inputs.Image(),
-                             gr.inputs.Dropdown(choices=[m['name'] for m in model_list], label='Model'),
+                             gr.inputs.Dropdown(choices=[m['name'] for m in model_list], label='Model',
+                                                default='fasterrcnn_resnet50_fpn'),
                              gr.inputs.Slider(minimum=0, maximum=1, step=0.05, default=0.5, label='Score Threshold')],
                      outputs=[gr.outputs.Image(type='pil'), gr.outputs.JSON()],
                      examples=examples,

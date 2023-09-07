@@ -2,6 +2,7 @@
 import cv2
 import numpy as np
 import gradio as gr
+import torch
 
 from super_gradients.training import models
 import warnings
@@ -9,7 +10,19 @@ import warnings
 warnings.filterwarnings("ignore")
 class YOLOX_WebUI:
     def __init__(self):
-        pass
+        self.download_test_img()
+
+    def download_test_img(self):
+        # Images
+        torch.hub.download_url_to_file(
+            'https://user-images.githubusercontent.com/59380685/266264420-21575a83-4057-41cf-8a4a-b3ea6f332d79.jpg',
+            'bus.jpg')
+        torch.hub.download_url_to_file(
+            'https://user-images.githubusercontent.com/59380685/266264536-82afdf58-6b9a-4568-b9df-551ee72cb6d9.jpg',
+            'dogs.jpg')
+        torch.hub.download_url_to_file(
+            'https://user-images.githubusercontent.com/59380685/266264600-9d0c26ca-8ba6-45f2-b53b-4dc98460c43e.jpg',
+            'zidane.jpg')
 
     def predict(self, image_path,conf, iou, line_width, device, model_type, model_path):
         self.device = device
@@ -52,7 +65,11 @@ class YOLOX_WebUI:
 if __name__ == '__main__':
     # Instantiate YOLO_NAS_WebUI class
     detector = YOLOX_WebUI()
-
+    examples = [
+        ['bus.jpg', 0.25, 0.45, 2, "cpu", "yolox_n", "yolox_n.pt"],
+        ['dogs.jpg', 0.25, 0.45, 2, "cpu", "yolox_n", "yolox_n.pt"],
+        ['zidane.jpg', 0.25, 0.45, 2, "cpu", "yolox_n", "yolox_n.pt"]
+    ]
     # Define Gradio interface
     iface = gr.Interface(
         fn=detector.predict,
@@ -67,6 +84,7 @@ if __name__ == '__main__':
                                 label="Model Type", default="yolo_nas_s"),
                 gr.inputs.Textbox(default="yolox_n.pt", label="Model Path")],
         outputs="image",
+        examples=examples,
         title="YOLOX_WebUI Object Detector",
         description="Detect objects in an image using YOLOX model.",
         theme="default",

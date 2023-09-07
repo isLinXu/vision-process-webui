@@ -29,8 +29,20 @@ image_transforms = transforms.Compose([
     )
 ])
 
-def predict_segmentation(image, model_name):
+def download_test_img():
+    # Images
+    torch.hub.download_url_to_file(
+        'https://user-images.githubusercontent.com/59380685/266264420-21575a83-4057-41cf-8a4a-b3ea6f332d79.jpg',
+        'bus.jpg')
+    torch.hub.download_url_to_file(
+        'https://user-images.githubusercontent.com/59380685/266264536-82afdf58-6b9a-4568-b9df-551ee72cb6d9.jpg',
+        'dogs.jpg')
+    torch.hub.download_url_to_file(
+        'https://user-images.githubusercontent.com/59380685/266264600-9d0c26ca-8ba6-45f2-b53b-4dc98460c43e.jpg',
+        'zidane.jpg')
 
+def predict_segmentation(image, model_name):
+    download_test_img()
     # 图像预处理
     image_tensor = image_transforms(image).unsqueeze(0)
 
@@ -59,15 +71,15 @@ def predict_segmentation(image, model_name):
 import gradio as gr
 
 examples = [
-            ['../../images/bus.jpg'],
-            ['../../images/dogs.jpg'],
-            ['../../images/zidane.jpg']
-        ]
+    ['bus.jpg', 'DeepLabv3'],
+    ['dogs.jpg', 'DeepLabv3'],
+    ['zidane.jpg', 'DeepLabv3']
+]
 
 model_list = ['DeepLabv3', 'DeepLabv3+', 'FCN-ResNet50', 'FCN-ResNet101', 'LRR']
 inputs = [
     gr.inputs.Image(type='pil', label='原始图像'),
-    gr.inputs.Dropdown(model_list, label='选择模型')
+    gr.inputs.Dropdown(model_list, label='选择模型', default='DeepLabv3')
 ]
 outputs = [
     gr.outputs.Image(type='pil',label='分割图'),
