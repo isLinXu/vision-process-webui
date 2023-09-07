@@ -225,6 +225,19 @@ imagenet_classes = ['0, tench', '1, goldfish', '2, great_white_shark', '3, tiger
                     '995, earthstar', '996, hen-of-the-woods', '997, bolete', '998, ear', '999, toilet_tissue']
 
 
+def download_test_img():
+    # Images
+    torch.hub.download_url_to_file(
+        'https://user-images.githubusercontent.com/59380685/266264420-21575a83-4057-41cf-8a4a-b3ea6f332d79.jpg',
+        'bus.jpg')
+    torch.hub.download_url_to_file(
+        'https://user-images.githubusercontent.com/59380685/266264536-82afdf58-6b9a-4568-b9df-551ee72cb6d9.jpg',
+        'dogs.jpg')
+    torch.hub.download_url_to_file(
+        'https://user-images.githubusercontent.com/59380685/266264600-9d0c26ca-8ba6-45f2-b53b-4dc98460c43e.jpg',
+        'zidane.jpg')
+
+
 # 预处理
 def preprocess(image: Image.Image) -> torch.Tensor:
     transform = T.Compose([
@@ -246,6 +259,7 @@ def postprocess(output: torch.Tensor) -> (str, float):
 
 
 def predict(image: Image.Image, model_name: str) -> (str, float):
+    download_test_img()
     model = get_model(model_name)
     input_tensor = preprocess(image)
     with torch.no_grad():
@@ -277,12 +291,10 @@ def predict_and_draw(image: Image.Image, model_name: str) -> Image.Image:
     return image_output, label, confidence
 
 
-
-
 examples = [
-            ['../../images/bus.jpg'],
-            ['../../images/dogs.jpg'],
-            ['../../images/zidane.jpg']
+    ['bus.jpg', 'resnet50'],
+    ['dogs.jpg', 'efficientnet_b0'],
+    ['zidane.jpg', 'vgg16_bn']
 ]
 
 # 定义输入和输出
