@@ -487,7 +487,7 @@ def main(inputs, model_name, out_dir, texts, device, pred_score_thr, batch_size,
 
 
 if __name__ == '__main__':
-    # download_test_image()
+    download_test_image()
     examples = [
         ['bus.jpg', 'rtmdet_tiny_8xb32-300e_coco', './outputs', '', "cpu"],
         ['dogs.jpg', 'mask-rcnn_r50_fpn_albu-1x_coco', './outputs', '', "cpu"],
