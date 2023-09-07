@@ -154,6 +154,7 @@ def detect_objects(args):
 
 def object_detection(img, model_name, out_dir, device, show, score_thr, class_name):
     download_cfg_checkpoint_model_name(model_name)
+    path = "./checkpoint"
     config = [f for f in os.listdir(path) if fnmatch.fnmatch(f, model_name + "*.py")][0]
     config = path + "/" + config
 
@@ -185,6 +186,7 @@ inputs = [
     gr.inputs.Slider(minimum=0.1, maximum=1.0, step=0.1, default=0.3, label="score_thr"),
     gr.inputs.Textbox(default=None, label="class_name"),
 ]
+
 download_test_image()
 
 examples = [
