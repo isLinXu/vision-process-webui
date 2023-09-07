@@ -1,5 +1,6 @@
 import os
 import PIL.Image
+import cv2
 import gradio as gr
 from argparse import Namespace
 from pathlib import Path
@@ -104,7 +105,9 @@ def detect_objects(args):
             out_file=out_file,
             pred_score_thr=args.score_thr)
 
-def object_detection(img_path, config, checkpoint, out_dir, device, show, score_thr, class_name):
+def object_detection(img, config, checkpoint, out_dir, device, show, score_thr, class_name):
+    img_path = "input_img.jpg"
+    img.save("input_img.jpg")
     args = Namespace(
         img=img_path,
         config=config,
@@ -117,12 +120,11 @@ def object_detection(img_path, config, checkpoint, out_dir, device, show, score_
     )
     detect_objects(args)
     img_src = PIL.Image.open(img_path)
-    img_out = PIL.Image.open(os.path.join(out_dir, os.path.basename(img_path)))
-    return img_src, img_out, out_dir
-
+    img_out = PIL.Image.open(os.path.join(out_dir, img_path))
+    return img_out
 
 inputs = [
-    gr.inputs.Textbox(default="bus.jpg", label="img-dir"),
+    gr.inputs.Image(type="pil", label="input"),
     gr.inputs.Textbox(
         default="yolov5_s-v61_syncbn_fast_8xb16-300e_coco.py", label="config"),
     gr.inputs.Textbox(
@@ -152,6 +154,6 @@ title = "MMYOLO detection web demo"
 description = "use mmyolo detection"
 article = "<p style='text-align: center'><a href='https://github.com/open-mmlab/mmdetection'>MMDetection</a> 是一个开源的物体检测工具箱，提供了丰富的检测模型和数据增强方式，本项目基于 MMDetection 实现 Faster R-CNN 检测算法。</p>"
 
-gr.Interface(fn=object_detection, inputs=inputs, outputs=[src_image, output_image, text_output],
+gr.Interface(fn=object_detection, inputs=inputs, outputs=output_image,
              examples=examples, title=title,
              description=description, article=article, allow_flagging=False).launch()
