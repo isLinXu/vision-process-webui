@@ -5,6 +5,7 @@ import PIL
 import gradio as gr
 from argparse import ArgumentParser
 
+import torch
 from mim import download
 from mmengine.logging import print_log
 
@@ -318,6 +319,17 @@ mmdet_list = ['mask-rcnn_r50_fpn_albu-1x_coco', 'atss_r50_fpn_1x_coco', 'atss_r1
               'glip_atss_swin-t_fpn_dyhead_pretrain_obj365-goldg-cc3m-sub',
               'glip_atss_swin-l_fpn_dyhead_pretrain_mixeddata']
 
+def download_test_image():
+    # Images
+    torch.hub.download_url_to_file(
+        'https://user-images.githubusercontent.com/59380685/266264420-21575a83-4057-41cf-8a4a-b3ea6f332d79.jpg',
+        'bus.jpg')
+    torch.hub.download_url_to_file(
+        'https://user-images.githubusercontent.com/59380685/266264536-82afdf58-6b9a-4568-b9df-551ee72cb6d9.jpg',
+        'dogs.jpg')
+    torch.hub.download_url_to_file(
+        'https://user-images.githubusercontent.com/59380685/266264600-9d0c26ca-8ba6-45f2-b53b-4dc98460c43e.jpg',
+        'zidane.jpg')
 
 def parse_args():
     parser = ArgumentParser()
@@ -468,6 +480,7 @@ def main(inputs, model_name, out_dir, texts, device, pred_score_thr, batch_size,
 
 
 if __name__ == '__main__':
+    download_test_image()
     examples = [
         ['bus.jpg', 'rtmdet_tiny_8xb32-300e_coco', './output', '', "cpu"],
         ['dogs.jpg', 'mask-rcnn_r50_fpn_albu-1x_coco', './output', '', "cpu"],
