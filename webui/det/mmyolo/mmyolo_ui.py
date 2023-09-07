@@ -20,6 +20,10 @@ from mmyolo.utils.labelme_utils import LabelmeFormat
 from mmyolo.utils.misc import get_file_list, show_data_classes
 from mim import download
 
+import warnings
+
+warnings.filterwarnings("ignore")
+
 model_list = ['yolov5_n-v61_syncbn_fast_8xb16-300e_coco', 'yolov5_s-v61_syncbn_fast_8xb16-300e_coco',
               'yolov5_n-p6-v62_syncbn_fast_8xb16-300e_coco', 'yolov5_s-p6-v62_syncbn_fast_8xb16-300e_coco',
               'yolov5_n-v61_fast_1xb64-50e_voc', 'yolov5_s-v61_fast_1xb64-50e_voc',
@@ -146,8 +150,6 @@ def detect_objects(args):
 
 def object_detection(img, model_name, out_dir, device, show, score_thr, class_name):
     download_cfg_checkpoint_model_name(model_name)
-    # config = os.path.join('./checkpoint', config)
-    # checkpoint = os.path.join('./checkpoint', checkpoint)
     path = "./checkpoint"
     config = [f for f in os.listdir(path) if fnmatch.fnmatch(f, model_name + "*.py")][0]
     config = path + "/" + config
@@ -193,9 +195,12 @@ src_image = gr.outputs.Image(type="pil")
 output_image = gr.outputs.Image(type="pil")
 
 title = "MMYOLO detection web demo"
-description = "<p style='text-align: center'><a href='https://github.com/open-mmlab/mmyolo'>MMYOLO</a> 是一个开源的物体检测工具箱，提供了丰富的检测模型和数据增强方式。" \
+description = "<img src='https://user-images.githubusercontent.com/27466624/222385101-516e551c-49f5-480d-a135-4b24ee6dc308.png'>" \
+              "<p style='text-align: center'><a href='https://github.com/open-mmlab/mmyolo'>MMYOLO</a> 是一个开源的物体检测工具箱，提供了丰富的检测模型和数据增强方式。" \
               "OpenMMLab YOLO series toolbox and benchmark. Implemented RTMDet, RTMDet-Rotated,YOLOv5, YOLOv6, YOLOv7, YOLOv8,YOLOX, PPYOLOE, etc.</p>"
-article = "<p style='text-align: center'><a href='https://github.com/open-mmlab/mmyolo'>MMDetection</a></p>"
+article = "<p style='text-align: center'><a href='https://github.com/open-mmlab/mmyolo'>MMYOLO</a></p>" \
+          "<p style='text-align: center'><a href='https://github.com/isLinXu'>gradio build by gatilin</a></a></p>" \
+
 
 gr.Interface(fn=object_detection, inputs=inputs, outputs=output_image,
              examples=examples,
