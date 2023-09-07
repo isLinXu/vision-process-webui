@@ -42,7 +42,7 @@ def download_test_img():
         'zidane.jpg')
 
 def predict_segmentation(image, model_name):
-    download_test_img()
+
     # 图像预处理
     image_tensor = image_transforms(image).unsqueeze(0)
 
@@ -75,7 +75,7 @@ examples = [
     ['dogs.jpg', 'DeepLabv3'],
     ['zidane.jpg', 'DeepLabv3']
 ]
-
+download_test_img()
 model_list = ['DeepLabv3', 'DeepLabv3+', 'FCN-ResNet50', 'FCN-ResNet101', 'LRR']
 inputs = [
     gr.inputs.Image(type='pil', label='原始图像'),
