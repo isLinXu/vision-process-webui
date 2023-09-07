@@ -30,6 +30,7 @@ image_transforms = transforms.Compose([
 ])
 
 def predict_segmentation(image, model_name):
+
     # 图像预处理
     image_tensor = image_transforms(image).unsqueeze(0)
 
@@ -57,6 +58,12 @@ def predict_segmentation(image, model_name):
 
 import gradio as gr
 
+examples = [
+            ['../../images/bus.jpg'],
+            ['../../images/dogs.jpg'],
+            ['../../images/zidane.jpg']
+        ]
+
 model_list = ['DeepLabv3', 'DeepLabv3+', 'FCN-ResNet50', 'FCN-ResNet101', 'LRR']
 inputs = [
     gr.inputs.Image(type='pil', label='原始图像'),
@@ -70,6 +77,7 @@ interface = gr.Interface(
     predict_segmentation,
     inputs,
     outputs,
+    examples=examples,
     capture_session=True,
     title='torchvision-segmentation-webui',
     description='torchvision segmentation webui on gradio'

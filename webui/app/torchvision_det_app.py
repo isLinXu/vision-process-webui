@@ -121,12 +121,18 @@ def predict(image, model_name, score_threshold):
     # 返回检测结果和效果图
     return img, results
 
+examples = [
+        ['../../images/bus.jpg'],
+        ['../../images/dogs.jpg'],
+        ['../../images/zidane.jpg']
+]
 
 iface = gr.Interface(fn=predict,
                      inputs=[gr.inputs.Image(),
                              gr.inputs.Dropdown(choices=[m['name'] for m in model_list], label='Model'),
                              gr.inputs.Slider(minimum=0, maximum=1, step=0.05, default=0.5, label='Score Threshold')],
                      outputs=[gr.outputs.Image(type='pil'), gr.outputs.JSON()],
+                     examples=examples,
                      title='Torchvision-detection-webui',
                      description='Torchvision-detection-webui on gradio')
 

@@ -60,11 +60,14 @@ class YOLOv5WebUI:
 if __name__ == '__main__':
     # Instantiate YOLOv3WebUI class
     detector = YOLOv5WebUI()
-
+    examples = [
+        ['../../images/bus.jpg'],
+        ['../../images/dogs.jpg'],
+        ['../../images/zidane.jpg']
+    ]
     # Define Gradio interface
     iface = gr.Interface(
         fn=detector.detect_objects,
-        # inputs="image",
         inputs=["image",
                 gr.inputs.Slider(minimum=0, maximum=1, step=0.01, default=0.25,
                                  label="Confidence Threshold"),
@@ -76,6 +79,7 @@ if __name__ == '__main__':
                                 label="Model Type", default="yolov5s"),
                 gr.inputs.Textbox(default="yolov5s.pt", label="Model Path")],
         outputs="image",
+        examples=examples,
         title="YOLOv5 Object Detector",
         description="Detect objects in an image using YOLOv5 model.",
         theme="default",

@@ -51,7 +51,11 @@ class PP_YOLOE_WebUI:
 if __name__ == '__main__':
     # Instantiate YOLO_NAS_WebUI class
     detector = PP_YOLOE_WebUI()
-
+    examples = [
+        ['../../images/bus.jpg'],
+        ['../../images/dogs.jpg'],
+        ['../../images/zidane.jpg']
+    ]
     # Define Gradio interface
     iface = gr.Interface(
         fn=detector.predict,
@@ -66,6 +70,7 @@ if __name__ == '__main__':
                                 label="Model Type", default="ppyoloe_s"),
                 gr.inputs.Textbox(default="ppyoloe_s.pt", label="Model Path")],
         outputs="image",
+        examples=examples,
         title="PP-YOLOE Object Detector",
         description="PP-YOLOE Detect objects in an image using YOLO-NAS model.",
         theme="default",
