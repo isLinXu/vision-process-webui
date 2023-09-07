@@ -29,6 +29,20 @@ class ImageClassifier:
             model = models.densenet121(pretrained=True)
         elif model_name == "MobileNetV2":
             model = models.mobilenet_v2(pretrained=True)
+        elif model_name == "ShuffleNetV2":
+            model = models.shufflenet_v2_x1_0(pretrained=True)
+        elif model_name == "SqueezeNet":
+            model = models.squeezenet1_1(pretrained=True)
+        elif model_name == "InceptionV3":
+            model = models.inception_v3(pretrained=True)
+        elif model_name == "ResNet101":
+            model = models.resnet101(pretrained=True)
+        elif model_name == "ResNet152":
+            model = models.resnet152(pretrained=True)
+        elif model_name == "WideResNet50":
+            model = models.wide_resnet50_2(pretrained=True)
+        elif model_name == "WideResNet101":
+            model = models.wide_resnet101_2(pretrained=True)
         else:
             raise ValueError("Invalid model name")
         return model
