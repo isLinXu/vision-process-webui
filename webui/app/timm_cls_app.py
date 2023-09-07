@@ -259,7 +259,6 @@ def postprocess(output: torch.Tensor) -> (str, float):
 
 
 def predict(image: Image.Image, model_name: str) -> (str, float):
-    download_test_img()
     model = get_model(model_name)
     input_tensor = preprocess(image)
     with torch.no_grad():
@@ -296,7 +295,7 @@ examples = [
     ['dogs.jpg', 'efficientnet_b0'],
     ['zidane.jpg', 'vgg16_bn']
 ]
-
+download_test_img()
 # 定义输入和输出
 image_input = gr.inputs.Image(type="pil")
 model_input = gr.inputs.Dropdown(
