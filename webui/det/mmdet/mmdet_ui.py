@@ -24,6 +24,107 @@ import warnings
 
 warnings.filterwarnings("ignore")
 
+
+
+
+from argparse import ArgumentParser
+
+from mmengine.logging import print_log
+
+from mmdet.apis import DetInferencer
+
+
+def parse_args():
+    parser = ArgumentParser()
+    parser.add_argument(
+        'inputs', type=str, help='Input image file or folder path.')
+    parser.add_argument(
+        'model',
+        type=str,
+        help='Config or checkpoint .pth file or the model name '
+        'and alias defined in metafile. The model configuration '
+        'file will try to read from .pth if the parameter is '
+        'a .pth weights file.')
+    parser.add_argument('--weights', default=None, help='Checkpoint file')
+    parser.add_argument(
+        '--out-dir',
+        type=str,
+        default='outputs',
+        help='Output directory of images or prediction results.')
+    parser.add_argument('--texts', help='text prompt')
+    parser.add_argument(
+        '--device', default='cuda:0', help='Device used for inference')
+    parser.add_argument(
+        '--pred-score-thr',
+        type=float,
+        default=0.3,
+        help='bbox score threshold')
+    parser.add_argument(
+        '--batch-size', type=int, default=1, help='Inference batch size.')
+    parser.add_argument(
+        '--show',
+        action='store_true',
+        help='Display the image in a popup window.')
+    parser.add_argument(
+        '--no-save-vis',
+        action='store_true',
+        help='Do not save detection vis results')
+    parser.add_argument(
+        '--no-save-pred',
+        action='store_true',
+        help='Do not save detection json results')
+    parser.add_argument(
+        '--print-result',
+        action='store_true',
+        help='Whether to print the results.')
+    parser.add_argument(
+        '--palette',
+        default='none',
+        choices=['coco', 'voc', 'citys', 'random', 'none'],
+        help='Color palette used for visualization')
+    # only for GLIP
+    parser.add_argument(
+        '--custom-entities',
+        '-c',
+        action='store_true',
+        help='Whether to customize entity names? '
+        'If so, the input text should be '
+        '"cls_name1 . cls_name2 . cls_name3 ." format')
+
+    call_args = vars(parser.parse_args())
+
+    if call_args['no_save_vis'] and call_args['no_save_pred']:
+        call_args['out_dir'] = ''
+
+    if call_args['model'].endswith('.pth'):
+        print_log('The model is a weight file, automatically '
+                  'assign the model to --weights')
+        call_args['weights'] = call_args['model']
+        call_args['model'] = None
+
+    init_kws = ['model', 'weights', 'device', 'palette']
+    init_args = {}
+    for init_kw in init_kws:
+        init_args[init_kw] = call_args.pop(init_kw)
+
+    return init_args, call_args
+
+
+def main():
+    init_args, call_args = parse_args()
+    # TODO: Video and Webcam are currently not supported and
+    #  may consume too much memory if your input folder has a lot of images.
+    #  We will be optimized later.
+    inferencer = DetInferencer(**init_args)
+    inferencer(**call_args)
+
+    if call_args['out_dir'] != '' and not (call_args['no_save_vis']
+                                           and call_args['no_save_pred']):
+        print_log(f'results have been saved at {call_args["out_dir"]}')
+
+
+
+
 model_list = ['yolov5_n-v61_syncbn_fast_8xb16-300e_coco', 'yolov5_s-v61_syncbn_fast_8xb16-300e_coco',
               'yolov5_n-p6-v62_syncbn_fast_8xb16-300e_coco', 'yolov5_s-p6-v62_syncbn_fast_8xb16-300e_coco',
               'yolov5_n-v61_fast_1xb64-50e_voc', 'yolov5_s-v61_fast_1xb64-50e_voc',
@@ -151,8 +252,6 @@ def detect_objects(args):
 def object_detection(img, model_name, out_dir, device, show, score_thr, class_name):
     download_cfg_checkpoint_model_name(model_name)
     path = "./checkpoint"
-    if not os.path.exists(path):
-        os.makedirs(path)
     config = [f for f in os.listdir(path) if fnmatch.fnmatch(f, model_name + "*.py")][0]
     config = path + "/" + config
 
@@ -177,7 +276,7 @@ def object_detection(img, model_name, out_dir, device, show, score_thr, class_na
 
 inputs = [
     gr.inputs.Image(type="pil", label="input"),
-    gr.inputs.Dropdown(choices=[m for m in model_list], label='Model', default='yolov5_s-v61_syncbn_fast_8xb16-300e_coco'),
+    gr.inputs.Dropdown(choices=[m for m in model_list], label='Model', default='rtmdet_tiny_8xb32-300e_coco'),
     gr.inputs.Textbox(default="./output", label="output"),
     gr.inputs.Radio(["cuda:0", "cpu"], default="cpu", label="device"),
     gr.inputs.Checkbox(default=False, label="show"),
@@ -187,9 +286,9 @@ inputs = [
 download_test_image()
 
 examples = [
-    ['bus.jpg', 'yolov5_n-v61_syncbn_fast_8xb16-300e_coco', './output', "cpu", False, 0.3, None],
-    ['dogs.jpg', 'yolov6_s_syncbn_fast_8xb32-400e_coco', './output', "cpu", False, 0.3, None],
-    ['zidane.jpg', 'rtmdet_tiny_syncbn_fast_8xb32-300e_coco', './output', "cpu", False, 0.3, None]
+    ['bus.jpg', 'rtmdet_tiny_8xb32-300e_coco', './output', "cpu", False, 0.3, None],
+    ['dogs.jpg', 'rtmdet_tiny_8xb32-300e_coco', './output', "cpu", False, 0.3, None],
+    ['zidane.jpg', 'rtmdet_tiny_8xb32-300e_coco', './output', "cpu", False, 0.3, None]
 ]
 
 text_output = gr.outputs.Textbox(label="输出路径")
