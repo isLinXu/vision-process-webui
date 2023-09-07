@@ -32,6 +32,10 @@ import warnings
 
 warnings.filterwarnings("ignore")
 
+ckpt_path = "./checkpoint"
+if not os.path.exists(ckpt_path):
+    os.makedirs(ckpt_path)
+
 model_list = ['yolov5_n-v61_syncbn_fast_8xb16-300e_coco', 'yolov5_s-v61_syncbn_fast_8xb16-300e_coco',
               'yolov5_n-p6-v62_syncbn_fast_8xb16-300e_coco', 'yolov5_s-p6-v62_syncbn_fast_8xb16-300e_coco',
               'yolov5_n-v61_fast_1xb64-50e_voc', 'yolov5_s-v61_fast_1xb64-50e_voc',
@@ -158,9 +162,6 @@ def detect_objects(args):
 
 def object_detection(img, model_name, out_dir, device, show, score_thr, class_name):
     download_cfg_checkpoint_model_name(model_name)
-    path = "./checkpoint"
-    if not os.path.exists(path):
-        os.makedirs(path)
     config = [f for f in os.listdir(path) if fnmatch.fnmatch(f, model_name + "*.py")][0]
     config = path + "/" + config
 
