@@ -3,6 +3,8 @@ import timm
 import torch
 import torchvision.transforms as T
 from PIL import Image, ImageDraw, ImageFont
+import warnings
+warnings.filterwarnings("ignore")
 
 # 获取 ImageNet 类别列表
 imagenet_classes = []
