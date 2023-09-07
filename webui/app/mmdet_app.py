@@ -1,3 +1,10 @@
+
+import os
+
+os.system("pip install 'mmengine>=0.6.0'")
+os.system("pip install 'mmcv>=2.0.0rc4,<2.1.0'")
+os.system("pip install 'mmdet>=3.0.0,<4.0.0'")
+
 import fnmatch
 import os
 
@@ -480,7 +487,7 @@ def main(inputs, model_name, out_dir, texts, device, pred_score_thr, batch_size,
 
 
 if __name__ == '__main__':
-    download_test_image()
+    # download_test_image()
     examples = [
         ['bus.jpg', 'rtmdet_tiny_8xb32-300e_coco', './output', '', "cpu"],
         ['dogs.jpg', 'mask-rcnn_r50_fpn_albu-1x_coco', './output', '', "cpu"],
