@@ -171,7 +171,7 @@ python [model_app].py
 model_app=yolov3|yolov5|yolov8|yolonas|ppyoloe|torchvision-detection|torchvision-classification|torchvision-segmentation|mobile-sam|fast-sam
 
 
-# TODO
+# 🧾TODO
 support more models and libraries
 - [x] 📦[**MMYOLO**]()
 - [x] 📦[**MMDetection**]()
@@ -191,12 +191,14 @@ support more models and libraries
 - [ ] 📦[**MMRazor**]():
 - [ ] 📦[**MMFewShot**]():
 
-# Reference
-- [**stable-diffusion-webui**](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
-- [**torchvision**](https://github.com/pytorch/vision)
-- [**timm**](https://github.com/huggingface/pytorch-image-models)
-- [**ultralytics**](https://github.com/ultralytics/ultralytics)
-- [**super-gradients**](https://github.com/Deci-AI/super-gradients)
+# 🌸Reference
+- [**stable-diffusion-webui**](https://github.com/AUTOMATIC1111/stable-diffusion-webui): Stable Diffusion web UI
+- [**torchvision**](https://github.com/pytorch/vision): Datasets, Transforms and Models specific to Computer Vision
+- [**timm**](https://github.com/huggingface/pytorch-image-models): PyTorch image models, scripts, pretrained weights -- ResNet, ResNeXT, EfficientNet, NFNet, Vision Transformer (ViT), MobileNet-V3/V2, RegNet, DPN, CSPNet, Swin Transformer, MaxViT, CoAtNet, ConvNeXt, and more
+- [**yolov3**](https://github.com/ultralytics/yolov3): YOLOv3 in PyTorch > ONNX > CoreML > TFLite
+- [**yolov5**](https://github.com/ultralytics/yolov5): YOLOv5 🚀 in PyTorch > ONNX > CoreML > TFLite
+- [**ultralytics**](https://github.com/ultralytics/ultralytics): NEW - YOLOv8 🚀 in PyTorch > ONNX > OpenVINO > CoreML > TFLite
+- [**super-gradients**](https://github.com/Deci-AI/super-gradients): Easily train or fine-tune SOTA computer vision models with one open source training library. The home of Yolo-NAS.
 - [**MMEngine**](https://github.com/open-mmlab/mmengine): OpenMMLab foundational library for training deep learning models.
 - [**MMCV**](https://github.com/open-mmlab/mmcv): OpenMMLab foundational library for computer vision.
 - [**MMPreTrain**](https://github.com/open-mmlab/mmpretrain): OpenMMLab pre-training toolbox and benchmark.
