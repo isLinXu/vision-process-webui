@@ -1,6 +1,10 @@
 
 import os
 
+import cv2
+import numpy as np
+from PIL.Image import Image
+
 os.system("pip install 'mmengine>=0.6.0'")
 os.system("pip install 'mmcv>=2.0.0rc4,<2.1.0'")
 os.system("pip install 'mmdet>=3.0.0,<4.0.0'")
@@ -421,6 +425,11 @@ def download_cfg_checkpoint_model_name(model_name):
              configs=[model_name],
              dest_root='./checkpoint')
 
+def save_image(img, img_path):
+    # Convert PIL image to OpenCV image
+    img = cv2.cvtColor(np.array(img), cv2.COLOR_RGB2BGR)
+    # Save OpenCV image
+    cv2.imwrite(img_path, img)
 
 def detect_objects(img_path, model, weights, out_dir, texts, device, pred_score_thr, batch_size, show, no_save_vis,
                    no_save_pred, print_result, palette, custom_entities):
@@ -461,7 +470,8 @@ def main(inputs, model_name, out_dir, texts, device, pred_score_thr, batch_size,
          print_result, palette, custom_entities):
     download_cfg_checkpoint_model_name(model_name)
     img_path = "input_img.jpg"
-    inputs.save("input_img.jpg")
+    save_image(inputs,img_path)
+    # inputs.save("input_img.jpg")
     path = "./checkpoint"
     model = [f for f in os.listdir(path) if fnmatch.fnmatch(f, model_name + "*.py")][0]
     model = path + "/" + model

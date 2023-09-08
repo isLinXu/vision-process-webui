@@ -2,10 +2,13 @@ import fnmatch
 import os
 
 import PIL
+import cv2
 import gradio as gr
 from argparse import ArgumentParser
 
+import numpy as np
 import torch
+from PIL.Image import Image
 from mim import download
 from mmengine.logging import print_log
 
@@ -331,6 +334,12 @@ def download_test_image():
         'https://user-images.githubusercontent.com/59380685/266264600-9d0c26ca-8ba6-45f2-b53b-4dc98460c43e.jpg',
         'zidane.jpg')
 
+def save_image(img, img_path):
+    # Convert PIL image to OpenCV image
+    img = cv2.cvtColor(np.array(img), cv2.COLOR_RGB2BGR)
+    # Save OpenCV image
+    cv2.imwrite(img_path, img)
+
 def parse_args():
     parser = ArgumentParser()
     parser.add_argument(
@@ -454,7 +463,8 @@ def main(inputs, model_name, out_dir, texts, device, pred_score_thr, batch_size,
          print_result, palette, custom_entities):
     download_cfg_checkpoint_model_name(model_name)
     img_path = "input_img.jpg"
-    inputs.save("input_img.jpg")
+    save_image(inputs, img_path)
+    # inputs.save("input_img.jpg")
     path = "./checkpoint"
     model = [f for f in os.listdir(path) if fnmatch.fnmatch(f, model_name + "*.py")][0]
     model = path + "/" + model
