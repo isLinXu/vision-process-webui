@@ -21,12 +21,24 @@ More people are welcome to contribute and use!
 - ❗️Currently, the app application of this repository has been deployed on [**OpenXLab**](https://openxlab.org.cn/apps) and [**ModelScope**](https://www.modelscope.cn/studios). Welcome to test and use.
 
 ## OpenMMLab
-- [x] 📦[**mmyolo**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmyolo-webui)
-- [x] 📦[**mmdetection**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmdetection-webui)
-- [ ] 📦[**mmpretrain**]():
-- [ ] 📦[**mmsegmentation**]():
-- [ ] 📦[**mmpose**]():
-- [ ] 📦[**mmagics**]():
+- [x] 📦[**MMYOLO**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmyolo-webui)
+- [x] 📦[**MMDetection**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmdetection-webui)
+- [ ] 📦[**MMDetection3D**]():
+- [ ] 📦[**MMSegmentation**]():
+- [ ] 📦[**MMOCR**]():
+- [ ] 📦[**MMHuman3D**]():
+- [ ] 📦[**MMAction2**]():
+- [ ] 📦[**MMTracking**]():
+- [ ] 📦[**MMPreTrain**]():
+- [ ] 📦[**MMPose**]():
+- [ ] 📦[**MMagic**]():
+- [ ] 📦[**MMagic**]():
+- [ ] 📦[**MMGeneration**]():
+- [ ] 📦[**MMEditing**]():
+- [ ] 📦[**MMFlow**]():
+- [ ] 📦[**MMRazor**]():
+- [ ] 📦[**MMFewShot**]():
+
 
 ## detection
 - [x] 📦[**yolov8-app**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/yolov8-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/yolov8-webui/summary)
@@ -158,21 +170,56 @@ python [model_app].py
 ```
 model_app=yolov3|yolov5|yolov8|yolonas|ppyoloe|torchvision-detection|torchvision-classification|torchvision-segmentation|mobile-sam|fast-sam
 
-```
+
 # TODO
 support more models and libraries
-[x] mmyolo
-[x] mmdetection
-[] mmpretrain
-[] mmpose
-[] mmagics
-[] mmsegmentation
-[] mmaction2
-[] mmtracking
-[] mmclassification
-[] mmgenomics
-[] mmfashion
-[] mmocr
-[] mmsegmentat
+- [x] 📦[**MMYOLO**]()
+- [x] 📦[**MMDetection**]()
+- [ ] 📦[**MMDetection3D**]():
+- [ ] 📦[**MMSegmentation**]():
+- [ ] 📦[**MMOCR**]():
+- [ ] 📦[**MMHuman3D**]():
+- [ ] 📦[**MMAction2**]():
+- [ ] 📦[**MMTracking**]():
+- [ ] 📦[**MMPreTrain**]():
+- [ ] 📦[**MMPose**]():
+- [ ] 📦[**MMagic**]():
+- [ ] 📦[**MMagic**]():
+- [ ] 📦[**MMGeneration**]():
+- [ ] 📦[**MMEditing**]():
+- [ ] 📦[**MMFlow**]():
+- [ ] 📦[**MMRazor**]():
+- [ ] 📦[**MMFewShot**]():
 
 # Reference
+- [**stable-diffusion-webui**](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
+- [**torchvision**](https://github.com/pytorch/vision)
+- [**timm**](https://github.com/huggingface/pytorch-image-models)
+- [**ultralytics**](https://github.com/ultralytics/ultralytics)
+- [**super-gradients**](https://github.com/Deci-AI/super-gradients)
+- [**MMEngine**](https://github.com/open-mmlab/mmengine): OpenMMLab foundational library for training deep learning models.
+- [**MMCV**](https://github.com/open-mmlab/mmcv): OpenMMLab foundational library for computer vision.
+- [**MMPreTrain**](https://github.com/open-mmlab/mmpretrain): OpenMMLab pre-training toolbox and benchmark.
+- [**MMagic**](https://github.com/open-mmlab/mmagic): Open**MM**Lab **A**dvanced, **G**enerative and **I**ntelligent **C**reation toolbox.
+- [**MMDetection**](https://github.com/open-mmlab/mmdetection): OpenMMLab detection toolbox and benchmark.
+- [**MMDetection3D**](https://github.com/open-mmlab/mmdetection3d): OpenMMLab's next-generation platform for general 3D object detection.
+- [**MMRotate**](https://github.com/open-mmlab/mmrotate): OpenMMLab rotated object detection toolbox and benchmark.
+- [**MMYOLO**](https://github.com/open-mmlab/mmyolo): OpenMMLab YOLO series toolbox and benchmark.
+- [**MMSegmentation**](https://github.com/open-mmlab/mmsegmentation): OpenMMLab semantic segmentation toolbox and benchmark.
+- [**MMOCR**](https://github.com/open-mmlab/mmocr): OpenMMLab text detection, recognition, and understanding toolbox.
+- [**MMPose**](https://github.com/open-mmlab/mmpose): OpenMMLab pose estimation toolbox and benchmark.
+- [**MMHuman3D**](https://github.com/open-mmlab/mmhuman3d): OpenMMLab 3D human parametric model toolbox and benchmark.
+- [**MMSelfSup**](https://github.com/open-mmlab/mmselfsup): OpenMMLab self-supervised learning toolbox and benchmark.
+- [**MMRazor**](https://github.com/open-mmlab/mmrazor): OpenMMLab model compression toolbox and benchmark.
+- [**MMFewShot**](https://github.com/open-mmlab/mmfewshot): OpenMMLab fewshot learning toolbox and benchmark.
+- [**MMAction2**](https://github.com/open-mmlab/mmaction2): OpenMMLab's next-generation action understanding toolbox and benchmark.
+- [**MMTracking**](https://github.com/open-mmlab/mmtracking): OpenMMLab video perception toolbox and benchmark.
+- [**MMFlow**](https://github.com/open-mmlab/mmflow): OpenMMLab optical flow toolbox and benchmark.
+- [**MMEditing**](https://github.com/open-mmlab/mmediting): OpenMMLab image and video editing toolbox.
+- [**MMGeneration**](https://github.com/open-mmlab/mmgeneration): OpenMMLab image and video generative models toolbox.
+- [**MMDeploy**](https://github.com/open-mmlab/mmdeploy): OpenMMLab model deployment framework.
+- [**MIM**](https://github.com/open-mmlab/mim): MIM installs OpenMMLab packages.
+- [**MMEval**](https://github.com/open-mmlab/mmeval): OpenMMLab machine learning evaluation library.
+- [**Playground**](https://github.com/open-mmlab/playground): A central hub for gathering and showcasing amazing projects built upon OpenMMLab.
+
+
