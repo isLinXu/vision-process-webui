@@ -11,6 +11,10 @@ import numpy as np
 import torch
 from mmpretrain import ImageClassificationInferencer
 
+import warnings
+
+warnings.filterwarnings("ignore")
+
 mmpretrain_model_list = mmpretrain.list_models()
 
 def draw_text(img, point, text, drawType="custom"):
