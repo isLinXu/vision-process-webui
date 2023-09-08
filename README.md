@@ -30,8 +30,7 @@ More people are welcome to contribute and use!
 - [ ] 📦[**MMAction2**]():
 - [ ] 📦[**MMTracking**]():
 - [x] 📦[**MMPreTrain**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmpretrain-webui)
-- [x] 📦[**MMPose**]():
-- [ ] 📦[**MMagic**]():
+- [x] 📦[**MMPose**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmpose-webui)
 - [ ] 📦[**MMagic**]():
 - [ ] 📦[**MMGeneration**]():
 - [ ] 📦[**MMEditing**]():
