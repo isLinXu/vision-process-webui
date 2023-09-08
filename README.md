@@ -29,8 +29,8 @@ More people are welcome to contribute and use!
 - [ ] 📦[**MMHuman3D**]():
 - [ ] 📦[**MMAction2**]():
 - [ ] 📦[**MMTracking**]():
-- [ ] 📦[**MMPreTrain**]():
-- [ ] 📦[**MMPose**]():
+- [x] 📦[**MMPreTrain**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmpretrain-webui)
+- [x] 📦[**MMPose**]():
 - [ ] 📦[**MMagic**]():
 - [ ] 📦[**MMagic**]():
 - [ ] 📦[**MMGeneration**]():
@@ -58,6 +58,15 @@ More people are welcome to contribute and use!
 - [x] 📦[**mobile-sam-app**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mobile-sam-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/mobile_sam_webui/summary)
 
 # 🧙performance&demo
+
+## 🔨OpenMMLab
+
+| ![](https://user-images.githubusercontent.com/59380685/266564924-9bf09e70-9c3c-4970-9d99-91b8409e95d3.png) | ![](https://user-images.githubusercontent.com/59380685/266564614-9a6a296c-cdf5-4d11-9458-49501d88f1bc.png) | ![](https://user-images.githubusercontent.com/59380685/266564542-3b198cfd-6aa0-4676-8b4e-12a0f8c04de9.png) | ![](https://user-images.githubusercontent.com/59380685/266565159-831cc038-a841-4c53-9503-42daf78fcea2.png) |
+| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+|  [**MMPreTrain**](https://github.com/open-mmlab/mmpretrain)  |      [**MMYOLO**](https://github.com/open-mmlab/mmyolo)      | [**MMDetection**](https://github.com/open-mmlab/mmdetection) |      [**MMPose**](https://github.com/open-mmlab/mmpose)      |
+|                                                              |                                                              |                                                              |                                                              |
+|                                                              |                                                              |                                                              |                                                              |
+
 
 ## 🔨classification
 | ![](https://user-images.githubusercontent.com/59380685/265667039-ce3f2122-4317-4c57-9bab-9ebc792ca23b.png) |
@@ -91,6 +100,11 @@ More people are welcome to contribute and use!
 |                      mobile-sam[point]                       |                       mobile-sam[bbox]                       |
 
 ---
+
+# 🆕News
+- [x] (2023-09-08): `mmyolo、mmpretrain、mmdetection、mmpose`
+- [x] (2023-09-07): `yolov3、yolov5、yolov8、yolo_nas、yolox、torchvision-detection、mobile-sam、timm-classification`
+- [x] (2023-09-02): repo init.
 
 # 🗓support list
 
@@ -181,8 +195,8 @@ model_app=yolov3|yolov5|yolov8|yolonas|ppyoloe|torchvision-detection|torchvision
 - [ ] 📦[**MMHuman3D**]():
 - [ ] 📦[**MMAction2**]():
 - [ ] 📦[**MMTracking**]():
-- [ ] 📦[**MMPreTrain**]():
-- [ ] 📦[**MMPose**]():
+- [x] 📦[**MMPreTrain**]():
+- [x] 📦[**MMPose**]():
 - [ ] 📦[**MMagic**]():
 - [ ] 📦[**MMagic**]():
 - [ ] 📦[**MMGeneration**]():
