@@ -22,6 +22,10 @@ from mmengine.logging import print_log
 
 from mmdet.apis import DetInferencer
 
+import warnings
+
+warnings.filterwarnings("ignore")
+
 ckpt_path = "./checkpoint"
 if not os.path.exists(ckpt_path):
     os.makedirs(ckpt_path)
