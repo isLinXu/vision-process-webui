@@ -61,11 +61,11 @@ More people are welcome to contribute and use!
 
 ## 🔨OpenMMLab
 
-| ![](https://user-images.githubusercontent.com/59380685/266564924-9bf09e70-9c3c-4970-9d99-91b8409e95d3.png) | ![](https://user-images.githubusercontent.com/59380685/266564614-9a6a296c-cdf5-4d11-9458-49501d88f1bc.png) | ![](https://user-images.githubusercontent.com/59380685/266564542-3b198cfd-6aa0-4676-8b4e-12a0f8c04de9.png) | ![](https://user-images.githubusercontent.com/59380685/266565159-831cc038-a841-4c53-9503-42daf78fcea2.png) |
-| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-|  [**MMPreTrain**](https://github.com/open-mmlab/mmpretrain)  |      [**MMYOLO**](https://github.com/open-mmlab/mmyolo)      | [**MMDetection**](https://github.com/open-mmlab/mmdetection) |      [**MMPose**](https://github.com/open-mmlab/mmpose)      |
-|                                                              |                                                              |                                                              |                                                              |
-|                                                              |                                                              |                                                              |                                                              |
+| [![](https://user-images.githubusercontent.com/59380685/266564924-9bf09e70-9c3c-4970-9d99-91b8409e95d3.png)](https://openxlab.org.cn/apps/detail/gatilin/mmpretrain-webui) | [![](https://user-images.githubusercontent.com/59380685/266564614-9a6a296c-cdf5-4d11-9458-49501d88f1bc.png)](https://openxlab.org.cn/apps/detail/gatilin/mmyolo-webui) | [![](https://user-images.githubusercontent.com/59380685/266564542-3b198cfd-6aa0-4676-8b4e-12a0f8c04de9.png)](https://openxlab.org.cn/apps/detail/gatilin/mmdetection-webui) | [![](https://user-images.githubusercontent.com/59380685/266565159-831cc038-a841-4c53-9503-42daf78fcea2.png)](https://openxlab.org.cn/apps/detail/gatilin/mmpose-webui) |
+|:--------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------:|
+|                           [**MMPreTrain**](https://github.com/open-mmlab/mmpretrain)                           |                               [**MMYOLO**](https://github.com/open-mmlab/mmyolo)                               |                          [**MMDetection**](https://github.com/open-mmlab/mmdetection)                          |                               [**MMPose**](https://github.com/open-mmlab/mmpose)                               |
+|                                                                                                                |                                                                                                                |                                                                                                                |                                                                                                                |
+|                                                                                                                |                                                                                                                |                                                                                                                |                                                                                                                |
 
 
 ## 🔨classification
@@ -94,10 +94,10 @@ More people are welcome to contribute and use!
 ---
 
 ## 🔨segmentation
-| ![](https://user-images.githubusercontent.com/59380685/265508535-ce1820d2-e161-4ddf-bd7a-70c5306ee5d5.png) | ![](https://user-images.githubusercontent.com/59380685/265508607-9c07e74c-a083-4df7-bd31-38d1bb402b25.png) |
-| :----------------------------------------------------------: | :----------------------------------------------------------: |
-| ![](https://user-images.githubusercontent.com/59380685/265508557-bc5baa23-f5a0-408e-88b6-c112f9891dd8.png) | ![](https://user-images.githubusercontent.com/59380685/265508693-189b0990-149a-4fe6-bada-bb8ae7c09042.png) |
-|                      mobile-sam[point]                       |                       mobile-sam[bbox]                       |
+| [![](https://user-images.githubusercontent.com/59380685/265508535-ce1820d2-e161-4ddf-bd7a-70c5306ee5d5.png)]() | ![](https://user-images.githubusercontent.com/59380685/265508607-9c07e74c-a083-4df7-bd31-38d1bb402b25.png) |
+|:--------------------------------------------------------------------------------------------------------------:| :----------------------------------------------------------: |
+|   ![](https://user-images.githubusercontent.com/59380685/265508557-bc5baa23-f5a0-408e-88b6-c112f9891dd8.png)   | ![](https://user-images.githubusercontent.com/59380685/265508693-189b0990-149a-4fe6-bada-bb8ae7c09042.png) |
+|                                               mobile-sam[point]                                                |                       mobile-sam[bbox]                       |
 
 ---
 
