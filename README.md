@@ -172,7 +172,7 @@ model_app=yolov3|yolov5|yolov8|yolonas|ppyoloe|torchvision-detection|torchvision
 
 
 # 🧾TODO
-support more models and libraries
+## support more models and libraries
 - [x] 📦[**MMYOLO**]()
 - [x] 📦[**MMDetection**]()
 - [ ] 📦[**MMDetection3D**]():
@@ -190,6 +190,13 @@ support more models and libraries
 - [ ] 📦[**MMFlow**]():
 - [ ] 📦[**MMRazor**]():
 - [ ] 📦[**MMFewShot**]():
+
+## docker image build
+- pass
+
+## merge all ui.py in one
+- pass
+
 
 # 🌸Reference
 - [**stable-diffusion-webui**](https://github.com/AUTOMATIC1111/stable-diffusion-webui): Stable Diffusion web UI
