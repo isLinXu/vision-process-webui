@@ -119,9 +119,11 @@ output_score = gr.outputs.Textbox(label="score")
 output_label = gr.outputs.Textbox(label="label")
 
 title = "MMPretrain detection web demo"
-description = "<div style='text-align:center'><img src='https://raw.githubusercontent.com/open-mmlab/mmpretrain/main/resources/mmpt-logo.png'></div>" \
+
+description = "<div align='center'><img src='https://raw.githubusercontent.com/open-mmlab/mmpretrain/main/resources/mmpt-logo.png' width='450''/><div>" \
                   "<p style='text-align: center'><a href='https://github.com/open-mmlab/mmpretrain'>MMPretrain</a> MMPreTrain 是一款基于 PyTorch 的开源深度学习预训练工具箱，是 OpenMMLab 项目的成员之一" \
                     "OpenMMLab Pre-training Toolbox and Benchmark.</p>"
+
 article = "<p style='text-align: center'><a href='https://github.com/open-mmlab/mmpretrain'>MMPretrain</a></p>" \
               "<p style='text-align: center'><a href='https://github.com/isLinXu'>gradio build by gatilin</a></a></p>"
 iface = gr.Interface(fn=predict_with_visualization,

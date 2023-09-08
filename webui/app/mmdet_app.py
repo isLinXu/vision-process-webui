@@ -509,7 +509,7 @@ if __name__ == '__main__':
     ]
 
     title = "MMDetection detection web demo"
-    description = "<img src='https://raw.githubusercontent.com/open-mmlab/mmdetection/main/resources/mmdet-logo.png'>" \
+    description = "<div align='center'><img src='https://raw.githubusercontent.com/open-mmlab/mmdetection/main/resources/mmdet-logo.png' width='450''/><div>" \
                   "<p style='text-align: center'><a href='https://github.com/open-mmlab/mmdetection'>MMDetection</a> 是一个开源的物体检测工具箱，提供了丰富的检测模型和数据增强方式。" \
                   "OpenMMLab Detection Toolbox and Benchmark.</p>"
     article = "<p style='text-align: center'><a href='https://github.com/open-mmlab/mmdetection'>MMDetection</a></p>" \
