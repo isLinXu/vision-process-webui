@@ -21,16 +21,16 @@ More people are welcome to contribute and use!
 - ❗️Currently, the app application of this repository has been deployed on ![OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)[**OpenXLab**](https://openxlab.org.cn/apps),![ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)[**ModelScope**](https://www.modelscope.cn/studios) and [<img src="https://user-images.githubusercontent.com/59380685/266640312-9d5d40f2-8578-44d4-8d72-c09ac08c75d3.png"/>]()[**huggingface**](https://huggingface.co/). Welcome to test and use.
 
 ## OpenMMLab
-- [x] 📦[**MMYOLO**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmyolo-webui)
-- [x] 📦[**MMDetection**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmdetection-webui)
+- [x] 📦[**MMYOLO**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmyolo-webui)[<img src="https://user-images.githubusercontent.com/59380685/266640312-9d5d40f2-8578-44d4-8d72-c09ac08c75d3.png"/>](https://huggingface.co/spaces/gatilin/mmyolo-webui)
+- [x] 📦[**MMDetection**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmdetection-webui)[<img src="https://user-images.githubusercontent.com/59380685/266640312-9d5d40f2-8578-44d4-8d72-c09ac08c75d3.png"/>](https://huggingface.co/spaces/gatilin/mmdetetction-webui)
 - [ ] 📦[**MMDetection3D**]():
 - [ ] 📦[**MMSegmentation**]():
 - [ ] 📦[**MMOCR**]():
 - [ ] 📦[**MMHuman3D**]():
 - [ ] 📦[**MMAction2**]():
 - [ ] 📦[**MMTracking**]():
-- [x] 📦[**MMPreTrain**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmpretrain-webui)
-- [x] 📦[**MMPose**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmpose-webui)
+- [x] 📦[**MMPreTrain**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmpretrain-webui)[<img src="https://user-images.githubusercontent.com/59380685/266640312-9d5d40f2-8578-44d4-8d72-c09ac08c75d3.png"/>](https://huggingface.co/spaces/gatilin/mmpretrain_webui)
+- [x] 📦[**MMPose**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmpose-webui)[<img src="https://user-images.githubusercontent.com/59380685/266640312-9d5d40f2-8578-44d4-8d72-c09ac08c75d3.png"/>](https://huggingface.co/spaces/gatilin/mmpose-webui)
 - [ ] 📦[**MMagic**]():
 - [ ] 📦[**MMGeneration**]():
 - [ ] 📦[**MMEditing**]():
@@ -53,7 +53,7 @@ More people are welcome to contribute and use!
 - [x] 📦[**timm-classification-webui**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/timm-classification-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/timm-classification-webui/summary)[<img src="https://user-images.githubusercontent.com/59380685/266640312-9d5d40f2-8578-44d4-8d72-c09ac08c75d3.png"/>](https://huggingface.co/spaces/gatilin/timm-classification-webui)
 
 ## segmentation
-- [x] 📦[**torchvision-segmentation-app**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/torchvision-segmention-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/timm-classification-webui/summary)[<img src="https://user-images.githubusercontent.com/59380685/266640312-9d5d40f2-8578-44d4-8d72-c09ac08c75d3.png"/>](https://huggingface.co/spaces/gatilin/timm-classification-webui)
+- [x] 📦[**torchvision-segmentation-app**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/torchvision-segmention-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/torchvision_seg_app/summary)[<img src="https://user-images.githubusercontent.com/59380685/266640312-9d5d40f2-8578-44d4-8d72-c09ac08c75d3.png"/>](https://huggingface.co/spaces/gatilin/timm-classification-webui)
 - [x] 📦[**mobile-sam-app**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mobile-sam-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/mobile_sam_webui/summary)[<img src="https://user-images.githubusercontent.com/59380685/266640312-9d5d40f2-8578-44d4-8d72-c09ac08c75d3.png"/>](https://huggingface.co/spaces/gatilin/mobile_sam_webui)
 
 # 🧙performance&demo
