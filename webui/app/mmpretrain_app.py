@@ -1,6 +1,7 @@
 import os
 
 os.system("pip install 'mmengine>=0.6.0'")
+os.system("pip install 'mmcv>=2.0.0rc4,<2.1.0'")
 os.system("pip install 'mmpretrain>=1.0.0rc8'")
 
 import gradio as gr
