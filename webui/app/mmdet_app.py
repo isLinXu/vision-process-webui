@@ -505,7 +505,7 @@ if __name__ == '__main__':
     examples = [
         ['bus.jpg', 'rtmdet_tiny_8xb32-300e_coco', './outputs', '', "cpu",0.3,1,],
         ['dogs.jpg', 'mask-rcnn_r50_fpn_albu-1x_coco', './outputs', '', "cpu",0.3,1],
-        ['zidane.jpg', 'yolov8_n_mask-refine_syncbn_fast_8xb16-500e_coco', './outputs', '', "cpu",0.3,1]
+        ['zidane.jpg', 'yolox_tiny_8x8_300e_coco', './outputs', '', "cpu",0.3,1]
     ]
 
     title = "MMDetection detection web demo"
