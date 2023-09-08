@@ -240,7 +240,7 @@ src_image = gr.outputs.Image(type="pil")
 output_image = gr.outputs.Image(type="pil")
 
 title = "MMYOLO detection web demo"
-description = "<img src='https://user-images.githubusercontent.com/27466624/222385101-516e551c-49f5-480d-a135-4b24ee6dc308.png'>" \
+description = "<div align='center'><img src='https://user-images.githubusercontent.com/27466624/222385101-516e551c-49f5-480d-a135-4b24ee6dc308.png' width='800''/><div>" \
               "<p style='text-align: center'><a href='https://github.com/open-mmlab/mmyolo'>MMYOLO</a> 是一个开源的物体检测工具箱，提供了丰富的检测模型和数据增强方式。" \
               "OpenMMLab YOLO series toolbox and benchmark. Implemented RTMDet, RTMDet-Rotated,YOLOv5, YOLOv6, YOLOv7, YOLOv8,YOLOX, PPYOLOE, etc.</p>"
 article = "<p style='text-align: center'><a href='https://github.com/open-mmlab/mmyolo'>MMYOLO</a></p>" \
