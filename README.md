@@ -21,9 +21,8 @@ More people are welcome to contribute and use!
 - ❗️Currently, the app application of this repository has been deployed on [**OpenXLab**](https://openxlab.org.cn/apps) and [**ModelScope**](https://www.modelscope.cn/studios). Welcome to test and use.
 
 ## OpenMMLab
-- [x] 📦[**mmyolo**]():
-        [![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmyolo-webui)
-- [ ] 📦[**mmdetection**]():
+- [x] 📦[**mmyolo**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmyolo-webui)
+- [x] 📦[**mmdetection**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmdetection-webui)
 - [ ] 📦[**mmpretrain**]():
 - [ ] 📦[**mmsegmentation**]():
 - [ ] 📦[**mmpose**]():
@@ -162,8 +161,8 @@ model_app=yolov3|yolov5|yolov8|yolonas|ppyoloe|torchvision-detection|torchvision
 ```
 # TODO
 support more models and libraries
-[] mmyolo
-[] mmdetection
+[x] mmyolo
+[x] mmdetection
 [] mmpretrain
 [] mmpose
 [] mmagics
