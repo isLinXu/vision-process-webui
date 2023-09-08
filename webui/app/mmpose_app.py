@@ -56,7 +56,9 @@ def predict_pose(img, model_name, out_dir):
     out_img = PIL.Image.open(out_img_path)
     return out_img
 
-
+out_dir = "./output"
+if not os.path.exists(out_dir):
+    os.makedirs(out_dir)
 download_test_image()
 input_image = gr.inputs.Image(type='pil', label="Original Image")
 model_name = gr.inputs.Dropdown(choices=[m for m in mmpose_model_list], label='Model')
