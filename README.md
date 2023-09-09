@@ -26,7 +26,7 @@ More people are welcome to contribute and use!
 - [ ] 📦[**MMDetection3D**]():
 - [x] 📦[**MMSegmentation**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmsegmentation-webui)[<img src="https://user-images.githubusercontent.com/59380685/266640312-9d5d40f2-8578-44d4-8d72-c09ac08c75d3.png"/>](https://huggingface.co/spaces/gatilin/mmsegmentation-webui)
 - [ ] 📦[**MMOCR**]():
-- [x] 📦[**MMRotate**]():
+- [x] 📦[**MMRotate**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmrotate-webui)
 - [ ] 📦[**MMHuman3D**]():
 - [ ] 📦[**MMAction2**]():
 - [ ] 📦[**MMTracking**]():
@@ -62,10 +62,10 @@ More people are welcome to contribute and use!
 ## 🔨OpenMMLab
 
 | [![](https://user-images.githubusercontent.com/59380685/266564924-9bf09e70-9c3c-4970-9d99-91b8409e95d3.png)](https://openxlab.org.cn/apps/detail/gatilin/mmpretrain-webui) | [![](https://user-images.githubusercontent.com/59380685/266564614-9a6a296c-cdf5-4d11-9458-49501d88f1bc.png)](https://openxlab.org.cn/apps/detail/gatilin/mmyolo-webui) | [![](https://user-images.githubusercontent.com/59380685/266564542-3b198cfd-6aa0-4676-8b4e-12a0f8c04de9.png)](https://openxlab.org.cn/apps/detail/gatilin/mmdetection-webui) | [![](https://user-images.githubusercontent.com/59380685/266565159-831cc038-a841-4c53-9503-42daf78fcea2.png)](https://openxlab.org.cn/apps/detail/gatilin/mmpose-webui) |
-| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-|  [**MMPreTrain**](https://github.com/open-mmlab/mmpretrain)  |      [**MMYOLO**](https://github.com/open-mmlab/mmyolo)      | [**MMDetection**](https://github.com/open-mmlab/mmdetection) |      [**MMPose**](https://github.com/open-mmlab/mmpose)      |
-| ![](https://user-images.githubusercontent.com/59380685/266798007-f91c6dbd-4385-4fb9-bc1f-8fc4099e9368.png) | ![](https://user-images.githubusercontent.com/59380685/266800686-9317f836-a3e0-4722-9701-76f246fc16d7.png) |                                                              |                                                              |
-| [**MMSegmentation**](https://github.com/open-mmlab/mmsegmentation) |    [**MMRotate**](https://github.com/open-mmlab/mmrotate)    |                                                              |                                                              |
+|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------:| :----------------------------------------------------------: | :----------------------------------------------------------: |
+|                                                         [**MMPreTrain**](https://github.com/open-mmlab/mmpretrain)                                                         |                                                           [**MMYOLO**](https://github.com/open-mmlab/mmyolo)                                                           | [**MMDetection**](https://github.com/open-mmlab/mmdetection) |      [**MMPose**](https://github.com/open-mmlab/mmpose)      |
+|                               [![](https://user-images.githubusercontent.com/59380685/266798007-f91c6dbd-4385-4fb9-bc1f-8fc4099e9368.png)](https://openxlab.org.cn/apps/detail/gatilin/mmsegmentation-webui)                               |                             [![](https://user-images.githubusercontent.com/59380685/266800686-9317f836-a3e0-4722-9701-76f246fc16d7.png)](https://openxlab.org.cn/apps/detail/gatilin/mmrotate-webui)                             |                                                              |                                                              |
+|                                                     [**MMSegmentation**](https://github.com/open-mmlab/mmsegmentation)                                                     |                                                         [**MMRotate**](https://github.com/open-mmlab/mmrotate)                                                         |                                                              |                                                              |
 
 
 ## 🔨classification
