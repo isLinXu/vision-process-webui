@@ -65,16 +65,6 @@ def download_cfg_checkpoint_model_name(model_name):
              configs=[model_name],
              dest_root='./checkpoint')
 
-config_path = [f for f in os.listdir(path) if fnmatch.fnmatch(f, "*.py")][0]
-config_path = path + "/" + config_path
-
-checkpoint_path = [f for f in os.listdir(path) if fnmatch.fnmatch(f, "*.pth")][0]
-checkpoint_path = path + "/" + checkpoint_path
-
-# 从配置文件和权重文件构建模型
-device = 'cpu'
-model = init_model(config_path, checkpoint_path, device=device)
-download_test_image()
 
 
 # 定义推理函数
@@ -83,6 +73,17 @@ def predict(img, model_name):
     img_path = 'input_image.png'
     save_image(img, img_path)
     download_cfg_checkpoint_model_name(model_name)
+
+    config_path = [f for f in os.listdir(path) if fnmatch.fnmatch(f, "*.py")][0]
+    config_path = path + "/" + config_path
+
+    checkpoint_path = [f for f in os.listdir(path) if fnmatch.fnmatch(f, "*.pth")][0]
+    checkpoint_path = path + "/" + checkpoint_path
+
+    # 从配置文件和权重文件构建模型
+    device = torch.cuda.current_device() if torch.cuda.is_available() else 'cpu'
+    model = init_model(config_path, checkpoint_path, device=device)
+
     # 推理给定图像
     result = inference_model(model, img_path)
 
@@ -94,7 +95,7 @@ def predict(img, model_name):
     # 返回输出图片
     return output_img
 
-
+download_test_image()
 # 定义输入和输出界面
 inputs_img = gr.inputs.Image(type='pil', label="Input Image")
 model_list = gr.inputs.Dropdown(choices=[m for m in mmseg_models_list], label='Model')
