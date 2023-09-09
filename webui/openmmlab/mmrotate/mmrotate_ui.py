@@ -5,6 +5,7 @@ import PIL
 import cv2
 import gradio as gr
 import numpy as np
+import torch
 from mmdet.apis import inference_detector, init_detector, show_result_pyplot
 from mim import download
 
@@ -65,7 +66,14 @@ def download_cfg_checkpoint_model_name(model_name):
     download(package='mmrotate',
              configs=[model_name],
              dest_root='./checkpoint')
-
+def download_test_image():
+    # Images
+    torch.hub.download_url_to_file(
+        'https://user-images.githubusercontent.com/59380685/266800230-e8396b83-92a7-4367-bc4b-a36348e63dbe.jpg',
+        'demo.jpg')
+    torch.hub.download_url_to_file(
+        'https://user-images.githubusercontent.com/59380685/266800231-d544d5ea-fc91-45d5-b79e-97bb9c717259.jpg',
+        'dota_demo.jpg')
 
 def save_image(img, img_path):
     # Convert PIL image to OpenCV image
@@ -98,7 +106,7 @@ def predict_image(image, model_name, palette, score_thr, device):
     img_out = PIL.Image.open(save_dir)
     return img_out
 
-
+download_test_image()
 inputs = [
     gr.inputs.Image(type='pil', label="Input Image"),
     gr.inputs.Dropdown(label="Model Name", choices=[m for m in mmrorate_model_list], default='oriented_rcnn_r50_fpn_1x_dota_le90'),
@@ -110,20 +118,22 @@ inputs = [
 
 output = gr.outputs.Image(type='pil', label="Output Image")
 
-title = "MMRotate Object Detection"
-description = "Demo for MMRotate Object Detection."
-examples = [
-    ["/Users/gatilin/PycharmProjects/detection-webui/webui/openmmlab/mmrotate/demo/demo.jpg"]
-]
-
-# download_cfg_checkpoint_model_name("oriented_rcnn")
-
+title = "MMRotate detection web demo"
+description = "<div align='center'><img src='https://raw.githubusercontent.com/open-mmlab/mmrotate/main/resources/mmrotate-logo.png' width='450''/><div>" \
+              "<p style='text-align: center'><a href='https://github.com/open-mmlab/mmrotate'>MMSegmentation</a> MMRotate 是一款基于 PyTorch 的旋转框检测的开源工具箱，是 OpenMMLab 项目的成员之一。" \
+              "OpenMMLab Rotated Object Detection Toolbox and Benchmark.</p>"
+article = "<p style='text-align: center'><a href='https://github.com/open-mmlab/mmrotate'>MMRotate</a></p>" \
+          "<p style='text-align: center'><a href='https://github.com/isLinXu'>gradio build by gatilin</a></a></p>"
+examples = [["demo.jpg", "oriented_rcnn_r50_fpn_1x_dota_le90"],
+            ["dota_demo.jpg", "r3det_r50_fpn_1x_dota_oc"],
+            ]
 gr.Interface(
     fn=predict_image,
     inputs=inputs,
     outputs=output,
     title=title,
     description=description,
+    article=article,
     examples=examples,
     allow_flagging=False,
     theme="default"
