@@ -1,6 +1,5 @@
 import os
 
-import mmcv
 from mmengine import Config
 
 os.system("pip install 'mmengine>=0.6.0'")
