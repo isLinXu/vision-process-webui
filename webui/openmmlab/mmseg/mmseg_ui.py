@@ -1,6 +1,6 @@
+import os
 import gradio as gr
 import fnmatch
-import os
 import cv2
 import numpy as np
 import torch
