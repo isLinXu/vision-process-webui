@@ -101,9 +101,9 @@ description = "<div align='center'><img src='https://raw.githubusercontent.com/o
               "OpenMMLab Semantic Segmentation Toolbox and Benchmark..</p>"
 article = "<p style='text-align: center'><a href='https://github.com/open-mmlab/mmsegmentation'>MMSegmentation</a></p>" \
           "<p style='text-align: center'><a href='https://github.com/isLinXu'>gradio build by gatilin</a></a></p>"
-examples = [["bus.jpg", "pspnet_r50-d8_4xb2-40k_cityscapes-512x1024"],
+examples = [["bus.jpg", "deeplabv3_r101-d8_4xb2-40k_cityscapes-512x1024"],
             ["dogs.jpg", "pspnet_r50-d8_4xb2-40k_cityscapes-512x1024"],
-            ["zidane.jpg", "pspnet_r50-d8_4xb2-40k_cityscapes-512x1024"]
+            ["zidane.jpg", "fcn_r101-d8_4xb4-80k_ade20k-512x512"]
             ]
 gr.Interface(fn=predict, inputs=[inputs_img, model_list], outputs=outputs_img, examples=examples,
              title=title, description=description, article=article).launch()
