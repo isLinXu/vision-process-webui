@@ -45,7 +45,7 @@ def download_test_image():
 
 
 def predict_pose(img, model_name, out_dir):
-    img_path = "intput_img.jpg"
+    img_path = "input_img.jpg"
     save_image(img, img_path)
     device = torch.cuda.current_device() if torch.cuda.is_available() else 'cpu'
     inferencer = MMPoseInferencer(model_name, device=device)
