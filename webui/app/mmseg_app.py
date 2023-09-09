@@ -1,5 +1,8 @@
 import os
 
+import mmcv
+from mmengine import Config
+
 os.system("pip install 'mmengine>=0.6.0'")
 os.system("pip install 'mmcv>=2.0.0rc4,<2.1.0'")
 os.system("pip install mmsegmentation")
@@ -82,6 +85,17 @@ def predict(img, model_name):
 
     # 从配置文件和权重文件构建模型
     device = torch.cuda.current_device() if torch.cuda.is_available() else 'cpu'
+
+    if device == 'cpu':
+        config_path = Config.fromfile(config_path)
+        # Remove pretrain model download for testing
+        config_path.model.pretrained = None
+        # Replace SyncBN with BN to inference on CPU
+        norm_cfg = dict(type='BN', requires_grad=True)
+        config_path.model.backbone.norm_cfg = norm_cfg
+        config_path.model.decode_head.norm_cfg = norm_cfg
+        config_path.model.auxiliary_head.norm_cfg = norm_cfg
+
     model = init_model(config_path, checkpoint_path, device=device)
 
     # 推理给定图像
