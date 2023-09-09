@@ -1,7 +1,5 @@
 import os
 
-from mmengine import Config
-
 os.system("pip install 'mmengine>=0.6.0'")
 os.system("pip install 'mmcv>=2.0.0rc4,<2.1.0'")
 os.system("pip install mmsegmentation")
@@ -11,6 +9,7 @@ import fnmatch
 import cv2
 import numpy as np
 import torch
+from mmengine import Config
 from mmseg.apis import init_model, inference_model, show_result_pyplot
 from mmseg.apis import MMSegInferencer
 
