@@ -24,7 +24,7 @@ More people are welcome to contribute and use!
 - [x] 📦[**MMYOLO**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmyolo-webui)[<img src="https://user-images.githubusercontent.com/59380685/266640312-9d5d40f2-8578-44d4-8d72-c09ac08c75d3.png"/>](https://huggingface.co/spaces/gatilin/mmyolo-webui)
 - [x] 📦[**MMDetection**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmdetection-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/mmdetection-weibui/summary)[<img src="https://user-images.githubusercontent.com/59380685/266640312-9d5d40f2-8578-44d4-8d72-c09ac08c75d3.png"/>](https://huggingface.co/spaces/gatilin/mmdetetction-webui)
 - [ ] 📦[**MMDetection3D**]():
-- [ ] 📦[**MMSegmentation**]():
+- [x] 📦[**MMSegmentation**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmsegmentation-webui)[<img src="https://user-images.githubusercontent.com/59380685/266640312-9d5d40f2-8578-44d4-8d72-c09ac08c75d3.png"/>](https://huggingface.co/spaces/gatilin/mmsegmentation-webui)
 - [ ] 📦[**MMOCR**]():
 - [ ] 📦[**MMHuman3D**]():
 - [ ] 📦[**MMAction2**]():
@@ -189,7 +189,7 @@ model_app=yolov3|yolov5|yolov8|yolonas|ppyoloe|torchvision-detection|torchvision
 - [x] 📦[**MMYOLO**]()
 - [x] 📦[**MMDetection**]()
 - [ ] 📦[**MMDetection3D**]():
-- [ ] 📦[**MMSegmentation**]():
+- [x] 📦[**MMSegmentation**]():
 - [ ] 📦[**MMOCR**]():
 - [ ] 📦[**MMHuman3D**]():
 - [ ] 📦[**MMAction2**]():
