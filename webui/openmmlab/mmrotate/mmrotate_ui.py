@@ -8,6 +8,9 @@ import numpy as np
 import torch
 from mmdet.apis import inference_detector, init_detector, show_result_pyplot
 from mim import download
+import warnings
+
+warnings.filterwarnings("ignore")
 
 import mmrotate
 

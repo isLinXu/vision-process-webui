@@ -15,6 +15,9 @@ from mmdet.apis import inference_detector, init_detector, show_result_pyplot
 from mim import download
 
 import mmrotate
+import warnings
+
+warnings.filterwarnings("ignore")
 
 mmrorate_model_list = ['cfa_r50_fpn_1x_dota_le135', 'cfa_r50_fpn_40e_dota_oc',
                        'rotated_retinanet_obb_csl_gaussian_r50_fpn_fp16_1x_dota_le90',
