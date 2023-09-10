@@ -31,7 +31,7 @@ def save_image(img, img_path):
 
 textdet_model_list = ['DBNet', 'DRRG', 'FCENet', 'PANet', 'PSENet', 'TextSnake', 'MaskRCNN']
 textrec_model_list = ['ABINet', 'ASTER', 'CRNN', 'MASTER', 'NRTR', 'RobustScanner', 'SARNet', 'SATRN', 'SVTR']
-textkie_model_list = ['SDMGR']
+textkie_model_list = ['SDMGR','SDMGR']
 
 
 def ocr_inference(inputs, out_dir, det, det_weights, rec, rec_weights, kie, kie_weights, device, batch_size):
@@ -63,7 +63,8 @@ def ocr_inference(inputs, out_dir, det, det_weights, rec, rec_weights, kie, kie_
     call_args['save_pred'] = True
     call_args['save_vis'] = True
     init_args['device'] = device
-
+    print("init_args", init_args)
+    print("call_args", call_args)
     ocr = MMOCRInferencer(**init_args)
     ocr(**call_args)
     save_vis_dir = './results/vis/'
@@ -185,8 +186,7 @@ if __name__ == '__main__':
     det_weights = gr.inputs.Textbox(default=None)
     rec = gr.inputs.Dropdown(label="Text Recognition Model", choices=[m for m in textrec_model_list], default='CRNN')
     rec_weights = gr.inputs.Textbox(default=None)
-    kie = gr.inputs.Dropdown(label="Key Information Extraction Model", choices=[m for m in textkie_model_list],
-                             default='SDMGR')
+    kie = gr.inputs.Textbox(default='SDMGR',label="Key Information Extraction Model")
     kie_weights = gr.inputs.Textbox(default=None)
     device = gr.inputs.Radio(choices=["cpu", "cuda"], label="Device used for inference", default="cpu")
     batch_size = gr.inputs.Number(default=1, label="Inference batch size")
