@@ -49,6 +49,9 @@ def ocr_inference(inputs, out_dir, det, det_weights, rec, rec_weights, kie, kie_
     if kie is not None:
         init_args['kie'] = kie
         init_args['kie_weights'] = None
+    if kie_weights is not None:
+        init_args['kie'] = None
+        init_args['kie_weights'] = kie_weights
 
     call_args['inputs'] = img_path
     call_args['out_dir'] = out_dir
