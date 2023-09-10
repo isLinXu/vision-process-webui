@@ -56,7 +56,7 @@ def predict_pose(img, model_name, out_dir):
     out_img = PIL.Image.open(out_img_path)
     return out_img
 
-out_dir = "./output"
+out_dir = "./output/visualizations/"
 if not os.path.exists(out_dir):
     os.makedirs(out_dir)
 download_test_image()
