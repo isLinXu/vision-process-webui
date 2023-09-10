@@ -190,7 +190,7 @@ if __name__ == '__main__':
     examples = [["demo_text_ocr.jpg", "results", "DBNet", None, "CRNN", None, "SDMGR", None, "cpu", 1],
                 ["demo_text_det.jpg", "results", "FCENet", None, "ASTER", None, "SDMGR", None, "cpu", 1],
                 ["demo_text_recog.jpg", "results", "PANet", None, "MASTER", None, "SDMGR", None, "cpu", 1],
-                ["demo_densetext_det.jpg", "results", "PSENet", None, "CRNN", None, "NRTR", None, "cpu", 1],
+                ["demo_densetext_det.jpg", "results", "PSENet", None, "CRNN", None, "SDMGR", None, "cpu", 1],
                 ["demo_kie.jpg", "results", "TextSnake", None, "RobustScanner", None, "SDMGR", None, "cpu", 1]
                 ]
 
