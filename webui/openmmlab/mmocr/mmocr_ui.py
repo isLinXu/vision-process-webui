@@ -11,6 +11,9 @@ import torch
 from PIL.Image import Image
 from mmocr.apis.inferencers import MMOCRInferencer
 
+import warnings
+
+warnings.filterwarnings("ignore")
 
 def save_image(img, img_path):
     # Convert PIL image to OpenCV image

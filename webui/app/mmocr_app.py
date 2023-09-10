@@ -1,6 +1,6 @@
 
 import os
-
+os.system("pip install gradio==3.42.0")
 os.system("pip install 'mmengine>=0.6.0'")
 os.system("pip install 'mmcv>=2.0.0rc4,<2.1.0'")
 os.system("pip install 'mmdet>=3.0.0,<4.0.0'")
@@ -18,6 +18,9 @@ import torch
 from PIL.Image import Image
 from mmocr.apis.inferencers import MMOCRInferencer
 
+import warnings
+
+warnings.filterwarnings("ignore")
 
 def save_image(img, img_path):
     # Convert PIL image to OpenCV image
