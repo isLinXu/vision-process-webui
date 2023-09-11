@@ -1,3 +1,12 @@
+
+import os
+os.system("pip install -U openmim")
+os.system("pip install mmengine")
+os.system("pip install mmcv")
+os.system("pip install mmdet")
+os.system("pip install mmpose")
+os.system("pip install mmaction2")
+
 import argparse
 import fnmatch
 import os.path
