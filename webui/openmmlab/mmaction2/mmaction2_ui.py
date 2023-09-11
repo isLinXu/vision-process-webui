@@ -416,6 +416,6 @@ if __name__ == '__main__':
     # gradio demo
     iface = gr.Interface(fn=mmaction_inference,
                          inputs=[input_video, mmaction2_models, device, label, out_filename],
-                         outputs=output_video,
+                         outputs=output_video,examples=examples,
                          title=title, description=description, article=article)
     iface.launch()
