@@ -78,13 +78,13 @@ More people are welcome to contribute and use!
 
 ## 🔨OpenMMLab
 
-
 | [![](https://user-images.githubusercontent.com/59380685/266564924-9bf09e70-9c3c-4970-9d99-91b8409e95d3.png)](https://openxlab.org.cn/apps/detail/gatilin/mmpretrain-webui) | [![](https://user-images.githubusercontent.com/59380685/266564614-9a6a296c-cdf5-4d11-9458-49501d88f1bc.png)](https://openxlab.org.cn/apps/detail/gatilin/mmyolo-webui) | [![](https://user-images.githubusercontent.com/59380685/266564542-3b198cfd-6aa0-4676-8b4e-12a0f8c04de9.png)](https://openxlab.org.cn/apps/detail/gatilin/mmdetection-webui) | [![](https://user-images.githubusercontent.com/59380685/266565159-831cc038-a841-4c53-9503-42daf78fcea2.png)](https://openxlab.org.cn/apps/detail/gatilin/mmpose-webui) |
-|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------:| :----------------------------------------------------------: |
-|                                                         [**MMPreTrain**](https://github.com/open-mmlab/mmpretrain)                                                         |                                                           [**MMYOLO**](https://github.com/open-mmlab/mmyolo)                                                           |                                                        [**MMDetection**](https://github.com/open-mmlab/mmdetection)                                                         |      [**MMPose**](https://github.com/open-mmlab/mmpose)      |
-|                               [![](https://user-images.githubusercontent.com/59380685/266798007-f91c6dbd-4385-4fb9-bc1f-8fc4099e9368.png)](https://openxlab.org.cn/apps/detail/gatilin/mmsegmentation-webui)                               |                             [![](https://user-images.githubusercontent.com/59380685/266800686-9317f836-a3e0-4722-9701-76f246fc16d7.png)](https://openxlab.org.cn/apps/detail/gatilin/mmrotate-webui)                             |                               [![](https://user-images.githubusercontent.com/59380685/266822288-3a466298-f44b-42f0-b749-fbd04a55020b.png)](https://openxlab.org.cn/apps/detail/gatilin/mmocr-webui)                                |                                                              |
-|                                                     [**MMSegmentation**](https://github.com/open-mmlab/mmsegmentation)                                                     |                                                         [**MMRotate**](https://github.com/open-mmlab/mmrotate)                                                         |                                                              [**MMOCR**](https://github.com/open-mmlab/mmocr)                                                               |                                                              |
-
+| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+|  [**MMPreTrain**](https://github.com/open-mmlab/mmpretrain)  |      [**MMYOLO**](https://github.com/open-mmlab/mmyolo)      | [**MMDetection**](https://github.com/open-mmlab/mmdetection) |      [**MMPose**](https://github.com/open-mmlab/mmpose)      |
+| [![](https://user-images.githubusercontent.com/59380685/266798007-f91c6dbd-4385-4fb9-bc1f-8fc4099e9368.png)](https://openxlab.org.cn/apps/detail/gatilin/mmsegmentation-webui) | [![](https://user-images.githubusercontent.com/59380685/266800686-9317f836-a3e0-4722-9701-76f246fc16d7.png)](https://openxlab.org.cn/apps/detail/gatilin/mmrotate-webui) | [![](https://user-images.githubusercontent.com/59380685/266822288-3a466298-f44b-42f0-b749-fbd04a55020b.png)](https://openxlab.org.cn/apps/detail/gatilin/mmocr-webui) | ![][(https://user-images.githubusercontent.com/59380685/267138438-a38246af-911f-45cc-89cc-0c5afb24d9e3.png)](https://openxlab.org.cn/apps/detail/gatilin/mmaction-webui) |
+| [**MMSegmentation**](https://github.com/open-mmlab/mmsegmentation) |    [**MMRotate**](https://github.com/open-mmlab/mmrotate)    |       [**MMOCR**](https://github.com/open-mmlab/mmocr)       |   [**MMAction2**](https://github.com/open-mmlab/mmaction2)   |
+|                                                              |                                                              |                                                              |                                                              |
+|                                                              |                                                              |                                                              |                                                              |
 
 ## 🔨classification
 | ![](https://user-images.githubusercontent.com/59380685/265667039-ce3f2122-4317-4c57-9bab-9ebc792ca23b.png) |
@@ -206,6 +206,7 @@ model_app=yolov3|yolov5|yolov8|yolonas|ppyoloe|torchvision-detection|torchvision
 
 # 🧾TODO
 ## support more models and libraries
+### OpenMMLab
 - [x] 📦[**MMYOLO**]()
 - [x] 📦[**MMDetection**]()
 - [ ] 📦[**MMDetection3D**]():
@@ -221,6 +222,17 @@ model_app=yolov3|yolov5|yolov8|yolonas|ppyoloe|torchvision-detection|torchvision
 - [ ] 📦[**MMGeneration**]():
 - [ ] 📦[**MMEditing**]():
 - [ ] 📦[**MMFlow**]():
+
+### detectron2
+
+## EasyCV
+
+- [] 📦[**Classification**](https://github.com/alibaba/EasyCV/blob/master/docs/source/model_zoo_cls.md):
+- [] 📦[**Detection**](https://github.com/alibaba/EasyCV/blob/master/docs/source/model_zoo_det.md):
+- [] 📦[**Segmentation**](https://github.com/alibaba/EasyCV/blob/master/docs/source/model_zoo_seg.md):
+- [] 📦[**Pose Estimation**](https://github.com/alibaba/EasyCV/blob/master/docs/source/model_zoo_pose.md)
+
+
 
 ## docker image build
 - pass
