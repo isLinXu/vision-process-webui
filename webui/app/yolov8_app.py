@@ -95,7 +95,7 @@ class YOLOv8WebUI:
             inference_button.click(self.inference, inputs=[type, input, checkbox, conf, iou, device, max_det, line_width, cpu],
                                    outputs=output)
 
-        app.launch(share=True)
+        app.launch()
 
 if __name__ == '__main__':
     web_ui = YOLOv8WebUI()

@@ -1,5 +1,5 @@
-
 import os
+
 os.system("pip install -U openmim")
 os.system("pip install mmengine")
 os.system("pip install mmcv")
@@ -21,6 +21,7 @@ from mmaction.visualization import ActionVisualizer
 from mim import download
 
 import warnings
+
 warnings.filterwarnings("ignore")
 
 import gradio as gr
@@ -425,6 +426,6 @@ if __name__ == '__main__':
     # gradio demo
     iface = gr.Interface(fn=mmaction_inference,
                          inputs=[input_video, mmaction2_models, device, label, out_filename],
-                         outputs=output_video,examples=examples,
+                         outputs=output_video, examples=examples,
                          title=title, description=description, article=article)
     iface.launch()

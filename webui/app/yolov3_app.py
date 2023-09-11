@@ -112,4 +112,4 @@ if __name__ == '__main__':
     )
 
     # Run Gradio interface
-    iface.launch(share=True)
+    iface.launch()
