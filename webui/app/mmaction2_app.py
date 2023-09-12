@@ -1,5 +1,6 @@
 import os
 
+os.system("pip install moviepy")
 os.system("pip install -U openmim")
 os.system("pip install mmengine")
 os.system("pip install mmcv")
