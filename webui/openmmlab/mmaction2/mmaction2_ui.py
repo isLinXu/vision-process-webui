@@ -397,13 +397,13 @@ if __name__ == '__main__':
     output_video = gr.Video(label="Output video")
 
     examples = [['zelda.mp4', 'tsn_imagenet-pretrained-r50_8xb32-1x1x3-100e_kinetics400-rgb', "cpu",
-                 'label_map/kinetics/label_map_k400.txt', "demo_dst.mp4"],
+                 'label_map/kinetics/kinetics_label_map_k400.txt', "demo_dst.mp4"],
                 ['shaowei.mp4', 'slowfast_r50_8xb8-4x16x1-256e_kinetics400-rgb', "cpu",
-                 'label_map/kinetics/label_map_k400.txt', "demo_dst.mp4"],
+                 'label_map/kinetics/kinetics_label_map_k400.txt', "demo_dst.mp4"],
                 ['baoguo.mp4', 'slowonly_r50_8xb16-4x16x1-256e_kinetics400-rgb', "cpu",
-                 'label_map/kinetics/label_map_k400.txt', "demo_dst.mp4"],
+                 'label_map/kinetics/kinetics_label_map_k400.txt', "demo_dst.mp4"],
                 ['cxk.mp4', 'slowfast-acrn_kinetics400-pretrained-r50_8xb8-8x8x1-cosine-10e_ava21-rgb', "cpu",
-                 'label_map/kinetics/label_map_k400.txt', "demo_dst.mp4"]
+                 'label_map/kinetics/kinetics_label_map_k400.txt', "demo_dst.mp4"]
                 ]
 
     title = "MMAction2 web demo"
