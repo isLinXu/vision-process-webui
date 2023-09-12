@@ -355,6 +355,9 @@ def download_test_video():
     torch.hub.download_url_to_file(
         'https://user-images.githubusercontent.com/59380685/267197812-b4be4451-b694-4717-b8cf-545e36e506c1.mp4',
         'cxk.mp4')
+    torch.hub.download_url_to_file(
+        'https://user-images.githubusercontent.com/59380685/267234378-2cddbf73-9e5d-45a9-b3d3-56aa2b994abe.mp4',
+        'baoguo.mp4')
 
 
 def download_label_map_txt():
