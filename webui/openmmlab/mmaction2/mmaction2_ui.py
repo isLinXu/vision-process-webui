@@ -5,6 +5,7 @@ import os.path as osp
 from operator import itemgetter
 from typing import Optional, Tuple
 
+import torch
 from mmengine import Config, DictAction
 
 from mmaction.apis import inference_recognizer, init_recognizer
@@ -196,6 +197,15 @@ mmaction2_models_list = [
     'stgcnpp_8xb16-bone-motion-u100-80e_ntu60-xsub-keypoint-3d'
 ]
 
+labelmap_list = [
+    'kinetics_label_map_k400.txt', 'kinetics_label_map_k600.txt', 'kinetics_label_map_k700.txt',
+    'kinetics_label_map_k710.txt', 'diving48_label_map.txt', 'gym_label_map.txt',
+    'hmdb51_label_map.txt', 'jester_label_map.txt', 'mit_label_map.txt',
+    'mmit_label_map.txt', 'multisports_label_map.txt', 'skeleton_label_map_gym99.txt',
+    'skeleton_label_map_ntu60.txt', 'sthv1_label_map.txt', 'sthv2_label_map.txt', 'ucf101_label_map.txt',
+]
+
+
 
 def parse_args():
     parser = argparse.ArgumentParser(description='MMAction2 demo')
@@ -316,6 +326,85 @@ def download_cfg_checkpoint_model_name(model_name):
              dest_root='./checkpoint')
 
 
+def download_test_video():
+    # Images
+    torch.hub.download_url_to_file(
+        'https://user-images.githubusercontent.com/59380685/267197615-0e372587-9f42-428a-8f3b-e4e6f17e8b1a.mp4',
+        'demo.mp4')
+    torch.hub.download_url_to_file(
+        'https://user-images.githubusercontent.com/59380685/267197620-56ee9562-ba3a-4ac4-977a-6df1cd693c39.mp4',
+        'zelda.mp4')
+    torch.hub.download_url_to_file(
+        'https://user-images.githubusercontent.com/59380685/267197784-b8bff32a-6655-4777-a3f4-49070d480a76.mp4',
+        'test_video_structuralize.mp4')
+    torch.hub.download_url_to_file(
+        'https://user-images.githubusercontent.com/59380685/267197798-9f88e0b9-1889-494a-a886-2e1e9ed43327.mp4',
+        'shaowei.mp4')
+    torch.hub.download_url_to_file(
+        'https://user-images.githubusercontent.com/59380685/267197804-953056d5-1351-4c5c-8459-f4e8f6815836.mp4',
+        'demo_skeleton.mp4')
+    torch.hub.download_url_to_file(
+        'https://user-images.githubusercontent.com/59380685/267197812-b4be4451-b694-4717-b8cf-545e36e506c1.mp4',
+        'cxk.mp4')
+
+
+def download_label_map_txt():
+    torch.hub.download_url_to_file(
+        'https://github.com/isLinXu/issues/files/12579936/ucf101_label_map.txt',
+        'ucf101_label_map.txt')
+    torch.hub.download_url_to_file(
+        'https://github.com/isLinXu/issues/files/12579940/gym_label_map.txt',
+        'gym_label_map.txt')
+    torch.hub.download_url_to_file(
+        'https://github.com/isLinXu/issues/files/12579943/diving48_label_map.txt',
+        'diving48_label_map.txt')
+    torch.hub.download_url_to_file(
+        'https://github.com/isLinXu/issues/files/12579947/hmdb51_label_map.txt',
+        'hmdb51_label_map.txt')
+    torch.hub.download_url_to_file(
+        'https://github.com/isLinXu/issues/files/12579949/jester_label_map.txt',
+        'jester_label_map.txt')
+    torch.hub.download_url_to_file(
+        'https://github.com/isLinXu/issues/files/12579951/kinetics_label_map_k400.txt',
+        'kinetics_label_map_k400.txt')
+    torch.hub.download_url_to_file(
+        'https://github.com/isLinXu/issues/files/12579952/kinetics_label_map_k600.txt',
+        'kinetics_label_map_k600.txt')
+    torch.hub.download_url_to_file(
+        'https://github.com/isLinXu/issues/files/12579953/kinetics_label_map_k700.txt',
+        'kinetics_label_map_k700.txt')
+    torch.hub.download_url_to_file(
+        'https://github.com/isLinXu/issues/files/12579954/kinetics_label_map_k710.txt',
+        'kinetics_label_map_k710.txt')
+    torch.hub.download_url_to_file(
+        'https://github.com/isLinXu/issues/files/12579955/mit_label_map.txt',
+        'mit_label_map.txt')
+    torch.hub.download_url_to_file(
+        'https://github.com/isLinXu/issues/files/12579957/mmit_label_map.txt',
+        'mmit_label_map.txt')
+    torch.hub.download_url_to_file(
+        'https://github.com/isLinXu/issues/files/12579960/multisports_label_map.txt',
+        'multisports_label_map.txt')
+    torch.hub.download_url_to_file(
+        'https://github.com/isLinXu/issues/files/12579961/skeleton_label_map_ntu60.txt',
+        'mmit_label_map.txt')
+    torch.hub.download_url_to_file(
+        'https://github.com/isLinXu/issues/files/12579960/multisports_label_map.txt',
+        'multisports_label_map.txt')
+    torch.hub.download_url_to_file(
+        'https://github.com/isLinXu/issues/files/12579961/skeleton_label_map_ntu60.txt',
+        'skeleton_label_map_ntu60.txt')
+    torch.hub.download_url_to_file(
+        'https://github.com/isLinXu/issues/files/12579962/skeleton_label_map_gym99.txt',
+        'skeleton_label_map_gym99.txt')
+    torch.hub.download_url_to_file(
+        'https://github.com/isLinXu/issues/files/12579965/sthv1_label_map.txt',
+        'sthv1_label_map.txt')
+    torch.hub.download_url_to_file(
+        'https://github.com/isLinXu/issues/files/12579967/sthv2_label_map.txt',
+        'sthv2_label_map.txt')
+
+
 def mmaction_inference(video, mmaction2_models, device, label, out_filename):
     args = parse_args()
     path = "./checkpoint"
@@ -388,22 +477,28 @@ def mmaction_inference(video, mmaction2_models, device, label, out_filename):
 
 
 if __name__ == '__main__':
+    print("Downloading test video and model...")
+    download_test_video()
+    print("Downloading label map txt...")
+    download_label_map_txt()
+
     input_video = gr.Video(type='mp4', label="Original video")
     mmaction2_models = gr.inputs.Dropdown(label="MMAction2 models", choices=[x for x in mmaction2_models_list],
                                           default='tsn_imagenet-pretrained-r50_8xb32-1x1x3-100e_kinetics400-rgb')
     device = gr.inputs.Radio(label="Device", choices=["cpu", "cuda:0"], default="cpu")
-    label = gr.inputs.Textbox(label="Label file", default="label_map/kinetics/label_map_k400.txt")
+    # label = gr.inputs.Textbox(label="Label file", default="label_map/kinetics/label_map_k400.txt")
+    label = gr.inputs.Dropdown(label="Label file", choices=[x for x in labelmap_list], default='kinetics_label_map_k400.txt')
     out_filename = gr.inputs.Textbox(label="Output filename", default="demo_dst.mp4")
     output_video = gr.Video(label="Output video")
 
     examples = [['zelda.mp4', 'tsn_imagenet-pretrained-r50_8xb32-1x1x3-100e_kinetics400-rgb', "cpu",
-                 'label_map/kinetics/kinetics_label_map_k400.txt', "demo_dst.mp4"],
+                 'kinetics_label_map_k400.txt', "demo_dst.mp4"],
                 ['shaowei.mp4', 'slowfast_r50_8xb8-4x16x1-256e_kinetics400-rgb', "cpu",
-                 'label_map/kinetics/kinetics_label_map_k400.txt', "demo_dst.mp4"],
+                 'kinetics_label_map_k400.txt', "demo_dst.mp4"],
                 ['baoguo.mp4', 'slowonly_r50_8xb16-4x16x1-256e_kinetics400-rgb', "cpu",
-                 'label_map/kinetics/kinetics_label_map_k400.txt', "demo_dst.mp4"],
+                 'kinetics_label_map_k400.txt', "demo_dst.mp4"],
                 ['cxk.mp4', 'slowfast-acrn_kinetics400-pretrained-r50_8xb8-8x8x1-cosine-10e_ava21-rgb', "cpu",
-                 'label_map/kinetics/kinetics_label_map_k400.txt', "demo_dst.mp4"]
+                 'kinetics_label_map_k400.txt', "demo_dst.mp4"]
                 ]
 
     title = "MMAction2 web demo"
