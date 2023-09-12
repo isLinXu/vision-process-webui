@@ -215,7 +215,7 @@ model_app=yolov3|yolov5|yolov8|yolonas|ppyoloe|torchvision-detection|torchvision
 - [x] 📦[**MMSegmentation**]():
 - [x] 📦[**MMOCR**]():
 - [ ] 📦[**MMHuman3D**]():
-- [ ] 📦[**MMAction2**]():
+- [x] 📦[**MMAction2**]():
 - [ ] 📦[**MMTracking**]():
 - [x] 📦[**MMRotate**]():
 - [x] 📦[**MMPreTrain**]():
@@ -226,6 +226,7 @@ model_app=yolov3|yolov5|yolov8|yolonas|ppyoloe|torchvision-detection|torchvision
 - [ ] 📦[**MMFlow**]():
 
 ### detectron2
+- [] building...
 
 ## EasyCV
 
@@ -237,10 +238,10 @@ model_app=yolov3|yolov5|yolov8|yolonas|ppyoloe|torchvision-detection|torchvision
 
 
 ## docker image build
-- pass
+- [] building...
 
 ## merge all ui.py in one
-- pass
+- [] building...
 
 
 # 🌸Reference
