@@ -229,22 +229,26 @@ model_app=yolov3|yolov5|yolov8|yolonas|ppyoloe|torchvision-detection|torchvision
 - [ ] 📦[**MMFlow**]():
 
 ### detectron2
-- [] building...
+- [ ] building...
 
 ## EasyCV
 
-- [] 📦[**Classification**](https://github.com/alibaba/EasyCV/blob/master/docs/source/model_zoo_cls.md):
-- [] 📦[**Detection**](https://github.com/alibaba/EasyCV/blob/master/docs/source/model_zoo_det.md):
-- [] 📦[**Segmentation**](https://github.com/alibaba/EasyCV/blob/master/docs/source/model_zoo_seg.md):
-- [] 📦[**Pose Estimation**](https://github.com/alibaba/EasyCV/blob/master/docs/source/model_zoo_pose.md)
+- [ ] 📦[**Classification**](https://github.com/alibaba/EasyCV/blob/master/docs/source/model_zoo_cls.md):
+- [ ] 📦[**Detection**](https://github.com/alibaba/EasyCV/blob/master/docs/source/model_zoo_det.md):
+- [ ] 📦[**Segmentation**](https://github.com/alibaba/EasyCV/blob/master/docs/source/model_zoo_seg.md):
+- [ ] 📦[**Pose Estimation**](https://github.com/alibaba/EasyCV/blob/master/docs/source/model_zoo_pose.md)
 
+## AdaDet
+- [ ] building...
 
+## PaddleDetection
+- [ ] building...
 
 ## docker image build
-- [] building...
+- [ ] building...
 
 ## merge all ui.py in one
-- [] building...
+- [ ] building...
 
 
 # 🌸Reference
