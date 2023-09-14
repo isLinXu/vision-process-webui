@@ -5,7 +5,7 @@ os.system("pip install mmdet==2.25.1")
 os.system("git clone https://github.com/open-mmlab/mmtracking.git")
 os.system("pip install -r mmtracking/requirements.txt")
 os.system("pip install -v -e mmtracking/")
-
+os.system("pip install 'mmtrack'")
 import os
 import os.path as osp
 import gradio as gr
