@@ -241,6 +241,9 @@ model_app=yolov3|yolov5|yolov8|yolonas|ppyoloe|torchvision-detection|torchvision
 ## AdaDet
 - [ ] building...
 
+## gluon-cv
+- [ ] building...
+
 ## PaddleDetection
 - [ ] building...
 
@@ -283,5 +286,8 @@ model_app=yolov3|yolov5|yolov8|yolonas|ppyoloe|torchvision-detection|torchvision
 - [**MIM**](https://github.com/open-mmlab/mim): MIM installs OpenMMLab packages.
 - [**MMEval**](https://github.com/open-mmlab/mmeval): OpenMMLab machine learning evaluation library.
 - [**Playground**](https://github.com/open-mmlab/playground): A central hub for gathering and showcasing amazing projects built upon OpenMMLab.
-
-
+- [**detectron2**](https://github.com/facebookresearch/detectron2): Detectron2 is a platform for object detection, segmentation and other visual recognition tasks.
+- [**gluon-cv**](https://github.com/dmlc/gluon-cv):Gluon CV Toolkit
+- [**autogluon**](https://github.com/autogluon/autogluon): AutoGluon: AutoML for Image, Text, Time Series, and Tabular Data
+- [**EasyCV**](https://github.com/alibaba/EasyCV): An all-in-one toolkit for computer vision
+- [AdaDet](https://github.com/modelscope/AdaDet):AdaDet: A Development Toolkit for Object Detection based on ModelScope
