@@ -27,25 +27,25 @@ More people are welcome to contribute and use!
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
 - [x] 📦[**MMDetection**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmdetection-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/mmdetection-weibui/summary)<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/gatilin/mmdetetction-webui">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
-- [ ] 📦[**MMDetection3D**]():
+- [ ] 📦[**MMDetection3D**](): building...
 - [x] 📦[**MMSegmentation**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmsegmentation-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/mmsegmentation-webui/summary)<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="(https://huggingface.co/spaces/gatilin/mmsegmentation-webui">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
 - [x] 📦[**MMOCR**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmocr-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/mmocr-weibui/summary)<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/gatilin/mmocr-webui">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
 - [x] 📦[**MMRotate**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmrotate-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/mmrotate-webui/summary)<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/gatilin/mmaction2-webui">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
-- [ ] 📦[**MMHuman3D**]():
+- [ ] 📦[**MMHuman3D**](): building...
 - [x] 📦[**MMAction2**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmaction-webui)<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/gatilin/mmrotate-webui">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
-- [ ] 📦[**MMTracking**]():
+- [x] 📦[**MMTracking**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmtracking-webui)
 - [x] 📦[**MMPreTrain**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmpretrain-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/mmpretrain-webui/summary)<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/gatilin/mmpretrain_webui">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
 - [x] 📦[**MMPose**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmpose-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/mmpose-webui/summary)<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/gatilin/mmpose-webui">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
-- [ ] 📦[**MMagic**]():
-- [ ] 📦[**MMGeneration**]():
-- [ ] 📦[**MMEditing**]():
-- [ ] 📦[**MMFlow**]():
+- [ ] 📦[**MMagic**](): building...
+- [ ] 📦[**MMGeneration**](): building...
+- [ ] 📦[**MMEditing**](): building...
+- [ ] 📦[**MMFlow**](): building...
 
 ## detection
 - [x] 📦[**yolov8-app**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/yolov8-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/yolov8-webui/summary)<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/gatilin/yolov8-webui">
@@ -219,7 +219,7 @@ model_app=yolov3|yolov5|yolov8|yolonas|ppyoloe|torchvision-detection|torchvision
 - [x] 📦[**MMOCR**]():
 - [ ] 📦[**MMHuman3D**]():
 - [x] 📦[**MMAction2**]():
-- [ ] 📦[**MMTracking**]():
+- [x] 📦[**MMTracking**]():
 - [x] 📦[**MMRotate**]():
 - [x] 📦[**MMPreTrain**]():
 - [x] 📦[**MMPose**]():
@@ -287,7 +287,9 @@ model_app=yolov3|yolov5|yolov8|yolonas|ppyoloe|torchvision-detection|torchvision
 - [**MMEval**](https://github.com/open-mmlab/mmeval): OpenMMLab machine learning evaluation library.
 - [**Playground**](https://github.com/open-mmlab/playground): A central hub for gathering and showcasing amazing projects built upon OpenMMLab.
 - [**detectron2**](https://github.com/facebookresearch/detectron2): Detectron2 is a platform for object detection, segmentation and other visual recognition tasks.
+- [**detrex**](https://github.com/IDEA-Research/detrex): detrex is a research platform for DETR-based object detection, segmentation, pose estimation and other visual recognition tasks.
 - [**gluon-cv**](https://github.com/dmlc/gluon-cv):Gluon CV Toolkit
 - [**autogluon**](https://github.com/autogluon/autogluon): AutoGluon: AutoML for Image, Text, Time Series, and Tabular Data
 - [**EasyCV**](https://github.com/alibaba/EasyCV): An all-in-one toolkit for computer vision
-- [AdaDet](https://github.com/modelscope/AdaDet):AdaDet: A Development Toolkit for Object Detection based on ModelScope
+- [**AdaDet**](https://github.com/modelscope/AdaDet):AdaDet: A Development Toolkit for Object Detection based on ModelScope
+- [**mediapipe**](https://developers.google.com/mediapipe):MediaPipe Solutions provides a suite of libraries and tools for you to quickly apply artificial intelligence (AI) and machine learning (ML) techniques in your applications.
