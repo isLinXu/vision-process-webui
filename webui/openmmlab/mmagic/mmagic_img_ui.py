@@ -47,7 +47,39 @@ app_list = ['text_to_image', 'image_to_image', '3d_aware_generation',
             'image_matting', 'image_restoration', 'image_colorization']
 
 
-def infer_image(text_prompts, image, app, model_name):
+def text_to_image_app(text_prompts, image, model_name):
+    pass
+
+
+def image_to_image_app(image, model_name):
+    pass
+
+
+def three_d_aware_generation_app(image, model_name):
+    pass
+
+
+def image_super_resolution_app(image, model_name):
+    pass
+
+
+def image_inpainting_app(image, model_name):
+    pass
+
+
+def image_matting_app(image, model_name):
+    pass
+
+
+def image_restoration_app(image, model_name):
+    pass
+
+
+def image_colorization_app(image, model_name):
+    pass
+
+
+def infer_image(app, text_prompts, image, model_name):
     if app == 'text_to_image':
         sd_inferencer = MMagicInferencer(model_name=model_name)
         result = sd_inferencer.infer(text=text_prompts, image=image)
@@ -62,9 +94,9 @@ def infer_image(text_prompts, image, app, model_name):
 
 
 input_components = [
+    gr.inputs.Radio(choices=app_list, label="MMagic Model", default="text_to_image"),
     gr.inputs.Textbox(label="Text Prompts", default="A panda is having dinner at KFC"),
     gr.inputs.Image(type='pil', label="Input Image"),
-    gr.inputs.Radio(choices=app_list, label="MMagic Model", default="text_to_image"),
     gr.inputs.Dropdown(choices=mmagic_model_list, label="MMagic Model", default="stable_diffusion")
 ]
 
