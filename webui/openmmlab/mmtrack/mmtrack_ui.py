@@ -124,7 +124,7 @@ if __name__ == '__main__':
     score_thr = gr.inputs.Slider(minimum=0.0, maximum=1.0, default=0.3, label="The threshold of score to filter bboxes.")
     output_video = gr.Video(type="mp4", label="Output Image")
 
-    title = "MMOCR web demo"
+    title = "MMTracking web demo"
     description = "<div align='center'><img src='https://raw.githubusercontent.com/open-mmlab/mmtracking/master/resources/mmtrack-logo.png' width='450''/><div>" \
                   "<p style='text-align: center'><a href='https://github.com/open-mmlab/mmtracking'>MMTracking</a> MMTracking是一款基于PyTorch的视频目标感知开源工具箱，是OpenMMLab项目的一部分。" \
                   "OpenMMLab Video Perception Toolbox. It supports Video Object Detection (VID), Multiple Object Tracking (MOT), Single Object Tracking (SOT), Video Instance Segmentation (VIS) with a unified framework..</p>"
