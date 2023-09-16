@@ -45,6 +45,7 @@ class Text_to_image:
                     label='text prompt',
                     elem_classes='input_text',
                     interactive=True,
+                    default='A photo of a cat',
                 )
                 output = gr.Image(
                     label='Result',

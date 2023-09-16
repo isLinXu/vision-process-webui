@@ -36,6 +36,7 @@ class Text_to_image:
                     label='text prompt',
                     elem_classes='input_text',
                     interactive=True,
+                    default='A photo of a cat',
                 )
                 output = gr.Image(
                     label='Result',
@@ -52,6 +53,12 @@ class Text_to_image:
                     inputs=[select_model, image_input, text_input],
                     outputs=output,
                 )
+
+        run_button.click(
+            self.inference,
+            inputs=[select_model, image_input, text_input],
+            outputs=output,
+        )
 
     def inference(self, select_model, image_input, text_input):
         from mmagic.apis import MMagicInferencer

@@ -42,7 +42,7 @@ More people are welcome to contribute and use!
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
 - [x] 📦[**MMPose**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmpose-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/mmpose-webui/summary)<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/gatilin/mmpose-webui">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
-- [ ] 📦[**MMagic**](): building...
+- [x] 📦[**MMagic**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmagic-img-webui)
 - [ ] 📦[**MMGeneration**](): building...
 - [ ] 📦[**MMEditing**](): building...
 - [ ] 📦[**MMFlow**](): building...
@@ -223,7 +223,7 @@ model_app=yolov3|yolov5|yolov8|yolonas|ppyoloe|torchvision-detection|torchvision
 - [x] 📦[**MMRotate**]():
 - [x] 📦[**MMPreTrain**]():
 - [x] 📦[**MMPose**]():
-- [ ] 📦[**MMagic**]():
+- [x] 📦[**MMagic**]():
 - [ ] 📦[**MMGeneration**]():
 - [ ] 📦[**MMEditing**]():
 - [ ] 📦[**MMFlow**]():
