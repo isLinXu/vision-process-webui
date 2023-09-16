@@ -98,7 +98,21 @@ def infer_image(app, text_prompts, image, model_name):
         # Create a MMagicInferencer instance and infer
         editor = MMagicInferencer('pix2pix')
         result = editor.infer(img=save_dir, result_out_dir=result_out_dir)
-    return result
+        output_pil = PIL.Image.open(result_out_dir)
+        return output_pil
+    elif app == '3d_aware_generation':
+        pass
+    elif app == 'image_super_resolution':
+        pass
+    elif app == 'image_inpainting':
+        pass
+    elif app == 'image_matting':
+        pass
+    elif app == 'image_restoration':
+        pass
+    elif app == 'image_colorization':
+        pass
+
 
 
 input_components = [
