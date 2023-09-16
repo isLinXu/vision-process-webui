@@ -159,8 +159,14 @@ class Image_super_resolution():
 
 
 if __name__ == '__main__':
-    title = 'MMagic Inference Demo'
+    title = "MMagic web demo"
+    description = "<div align='center'><img src='https://raw.githubusercontent.com/open-mmlab/mmagic/main/docs/en/_static/image/mmagic-logo.png' width='450''/><div>" \
+                  "<p style='text-align: center'><a href='https://github.com/open-mmlab/mmagic'>MMagic</a> MMagic 是基于 PyTorch 的图像&视频编辑和生成开源工具箱。是 OpenMMLab 项目的成员之一。" \
+                  "OpenMMLab's Next Generation Video Understanding Toolbox and Benchmark.</p>"
+    article = "<p style='text-align: center'><a href='https://github.com/open-mmlab/mmagic'>MMagic</a></p>" \
+              "<p style='text-align: center'><a href='https://github.com/isLinXu'>gradio build by gatilin</a></a></p>"
     with gr.Blocks(analytics_enabled=False, title=title) as demo:
+        gr.Markdown(description)
         with gr.Tabs():
             with gr.TabItem('text_to_image'):
                 Text_to_image()
@@ -168,6 +174,5 @@ if __name__ == '__main__':
                 Image_to_image()
             with gr.TabItem('Image_super_resolution'):
                 Image_super_resolution()
-                pass
-
+        gr.Markdown(article)
     demo.queue().launch(share=True)
