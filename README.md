@@ -124,7 +124,9 @@ More people are welcome to contribute and use!
 ---
 
 # 🆕News
-- [x] (2023-09-12): 
+- [x] (2023-09-16): `mmagic`
+- [x] (2023-09-14): `mmtracking`
+- [x] (2023-09-12): `mmaction2`
 - [x] (2023-09-10): `mmocr、mmroate、mmsegmentation`
 - [x] (2023-09-08): `mmyolo、mmpretrain、mmdetection、mmpose`
 - [x] (2023-09-07): `yolov3、yolov5、yolov8、yolo_nas、yolox、torchvision-detection、mobile-sam、timm-classification`
