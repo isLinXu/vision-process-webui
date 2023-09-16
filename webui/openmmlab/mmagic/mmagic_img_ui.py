@@ -1,4 +1,6 @@
 import os
+
+import PIL
 # os.system("pip install 'mmcv>=2.0.0'")
 # os.system("pip install 'mmengine'")
 # os.system("pip install 'mmagic'")
@@ -47,11 +49,16 @@ app_list = ['text_to_image', 'image_to_image', '3d_aware_generation',
             'image_matting', 'image_restoration', 'image_colorization']
 
 
-def text_to_image_app(text_prompts, image, model_name):
-    pass
+def text_to_image_app(text_prompts, model_name):
+    from mmagic.apis import MMagicInferencer
+    sd_inferencer = MMagicInferencer(model_name=model_name)
+    result_out_dir = 'output/sd_res.png'
+    sd_inferencer.infer(text=text_prompts, result_out_dir=result_out_dir)
+    return result_out_dir
 
 
 def image_to_image_app(image, model_name):
+
     pass
 
 
@@ -81,8 +88,9 @@ def image_colorization_app(image, model_name):
 
 def infer_image(app, text_prompts, image, model_name):
     if app == 'text_to_image':
-        sd_inferencer = MMagicInferencer(model_name=model_name)
-        result = sd_inferencer.infer(text=text_prompts, image=image)
+        res_out = text_to_image_app(text_prompts, model_name)
+        output_pil = PIL.Image.open(res_out)
+        return output_pil
     elif app == 'image_to_image':
         save_dir = 'input_img.jpg'
         result_out_dir = 'output_img.jpg'
