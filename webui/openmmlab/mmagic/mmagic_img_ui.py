@@ -124,4 +124,4 @@ input_components = [
 
 output_components = gr.outputs.Image(type='pil', label="Output Image")
 
-gr.Interface(fn=infer_image, inputs=input_components, outputs=output_components).launch()
+gr.Interface(fn=infer_image, inputs=input_components, outputs=output_components).launch(share=True)
