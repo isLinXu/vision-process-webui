@@ -18,6 +18,8 @@ from detectron2.engine.defaults import DefaultPredictor
 from detectron2.utils.video_visualizer import VideoVisualizer
 from detectron2.utils.visualizer import ColorMode, Visualizer
 
+import warnings
+warnings.filterwarnings("ignore")
 
 class VisualizationDemo:
     def __init__(self, cfg, device, instance_mode=ColorMode.IMAGE, parallel=False):
@@ -232,8 +234,34 @@ class AsyncPredictor:
         return len(self.procs) * 5
 
 
-def dtectron2_instance_inference(image, config_file, ckpts, device):
+detectron2_model_list = {
+    "COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x":{
+        "config_file": "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml",
+        "ckpts": "detectron2://COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x/137849600/model_final_f10217.pkl"
+    },
+}
+
+
+# def dtectron2_instance_inference(image, config_file, ckpts, device):
+#     cfg = get_cfg()
+#     cfg.merge_from_file(config_file)
+#     cfg.MODEL.WEIGHTS = ckpts
+#     cfg.MODEL.DEVICE = "cpu"
+#     cfg.output = "output_img.jpg"
+#     visualization_demo = VisualizationDemo(cfg, device=device)
+#     if image:
+#         intput_path = "intput_img.jpg"
+#         image.save(intput_path)
+#         image = read_image(intput_path, format="BGR")
+#         predictions, vis_output = visualization_demo.run_on_image(image)
+#         output_image = PIL.Image.fromarray(vis_output.get_image())
+#         # print("predictions: ", predictions)
+#         return output_image
+
+def dtectron2_instance_inference(image, input_model_name, device):
     cfg = get_cfg()
+    config_file = detectron2_model_list[input_model_name]["config_file"]
+    ckpts = detectron2_model_list[input_model_name]["ckpts"]
     cfg.merge_from_file(config_file)
     cfg.MODEL.WEIGHTS = ckpts
     cfg.MODEL.DEVICE = "cpu"
@@ -248,14 +276,30 @@ def dtectron2_instance_inference(image, config_file, ckpts, device):
         # print("predictions: ", predictions)
         return output_image
 
+def download_test_img():
+    # Images
+    torch.hub.download_url_to_file(
+        'https://user-images.githubusercontent.com/59380685/268517006-d8d4d3b3-964a-4f4d-8458-18c7eb75a4f2.jpg',
+        '000000502136.jpg')
+
+
 if __name__ == '__main__':
     input_image = gr.inputs.Image(type='pil', label='Input Image')
-    input_config_file = gr.inputs.Textbox(label='Config File', default="configs/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml")
-    input_ckpt_file = gr.inputs.Textbox(label='Ckpt File', default="detectron2://COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x/137849600/model_final_f10217.pkl")
+    input_model_name = gr.inputs.Dropdown(list(detectron2_model_list.keys()), label="Model Name", default="COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x")
     input_device = gr.inputs.Dropdown(["cpu", "cuda"], label="Devices", default="cpu")
     output_image = gr.outputs.Image(type='pil', label='Output Image')
     output_predictions = gr.outputs.Textbox(type='text', label='Output Predictions')
 
+    title = "Detectron2 web demo"
+    description = "<div align='center'><img src='https://raw.githubusercontent.com/facebookresearch/detectron2/8c4a333ceb8df05348759443d0206302485890e0/.github/Detectron2-Logo-Horz.svg' width='450''/><div>" \
+                  "<p style='text-align: center'><a href='https://github.com/facebookresearch/detectron2'>Detectron2</a> Detectron2 是 Facebook AI Research 的下一代库，提供最先进的检测和分割算法。它是Detectron 和maskrcnn-benchmark的后继者 。它支持 Facebook 中的许多计算机视觉研究项目和生产应用。" \
+                  "Detectron2 is a platform for object detection, segmentation and other visual recognition tasks..</p>"
+    article = "<p style='text-align: center'><a href='https://github.com/facebookresearch/detectron2'>Detectron2</a></p>" \
+              "<p style='text-align: center'><a href='https://github.com/facebookresearch/detectron2'>gradio build by gatilin</a></a></p>"
+    download_test_img()
+
+    examples = [["000000502136.jpg", "COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x", "cpu"]]
     gr.Interface(fn=dtectron2_instance_inference,
-                 inputs=[input_image, input_config_file, input_ckpt_file, input_device],
-                 outputs=output_image).launch()
+                 inputs=[input_image, input_model_name, input_device],
+                 outputs=output_image,examples=examples,
+                 title=title, description=description, article=article).launch()
