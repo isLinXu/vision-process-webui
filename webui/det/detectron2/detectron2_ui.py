@@ -39,11 +39,9 @@ class VisualizationDemo:
         self.parallel = parallel
         if parallel:
             num_gpu = torch.cuda.device_count()
-            print("num_gpu: ", num_gpu)
             self.predictor = AsyncPredictor(cfg, num_gpus=num_gpu)
         else:
             cfg.defrost()
-            # print("cfg: ", cfg)
             cfg.MODEL.DEVICE = device
 
             self.predictor = DefaultPredictor(cfg)
@@ -235,21 +233,62 @@ class AsyncPredictor:
 
 
 detectron2_model_list = {
+    # Cityscapes
+    "Cityscapes/mask_rcnn_R_50_FPN":{
+        "config_file": "configs/Cityscapes/mask_rcnn_R_50_FPN.yaml",
+        "ckpts": "detectron2://Cityscapes/"
+    },
+    # COCO-Detection
     "COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x":{
         "config_file": "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml",
         "ckpts": "detectron2://COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x/137849600/model_final_f10217.pkl"
     },
-    "COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_1x.yaml":{
+    "COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_1x":{
         "config_file": "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_1x.yaml",
         "ckpts": "detectron2://COCO-InstanceSegmentation/"
     },
-
-
+    "COCO-InstanceSegmentation/mask_rcnn_R_50_DC5_1x":{
+        "config_file": "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_DC5_1x.yaml",
+        "ckpts": "detectron2://COCO-InstanceSegmentation/"
+    },
+    "COCO-InstanceSegmentation/mask_rcnn_R_50_DC5_3x": {
+        "config_file": "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_DC5_3x.yaml",
+        "ckpts": "detectron2://COCO-InstanceSegmentation/"
+    },
+    "COCO-InstanceSegmentation/mask_rcnn_R_50_C4_1x": {
+        "config_file": "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_C4_1x.yaml",
+        "ckpts": "detectron2://COCO-InstanceSegmentation/"
+    },
+    "COCO-InstanceSegmentation/mask_rcnn_R_50_C4_3x": {
+        "config_file": "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_C4_3x.yaml",
+        "ckpts": "detectron2://COCO-InstanceSegmentation/"
+    },
+    "COCO-InstanceSegmentation/mask_rcnn_R_101_C4_3x": {
+        "config_file": "configs/COCO-InstanceSegmentation/mask_rcnn_R_101_C4_3x.yaml",
+        "ckpts": "detectron2://COCO-InstanceSegmentation/"
+    },
+    "COCO-InstanceSegmentation/mask_rcnn_R_101_DC5_3x": {
+        "config_file": "configs/COCO-InstanceSegmentation/mask_rcnn_R_101_DC5_3x.yaml",
+        "ckpts": "detectron2://COCO-InstanceSegmentation/"
+    },
+    "COCO-InstanceSegmentation/mask_rcnn_R_101_FPN_3x": {
+        "config_file": "configs/COCO-InstanceSegmentation/mask_rcnn_R_101_FPN_3x.yaml",
+        "ckpts": "detectron2://COCO-InstanceSegmentation/"
+    },
+    "COCO-InstanceSegmentation/mask_rcnn_X_101_32x8d_FPN_3x": {
+        "config_file": "configs/COCO-InstanceSegmentation/mask_rcnn_X_101_32x8d_FPN_3x.yaml",
+        "ckpts": "detectron2://COCO-InstanceSegmentation/"
+    },
+    # COCO-Detection
+    "COCO-Detection/mask_rcnn_X_101_32x8d_FPN_3x": {
+        "config_file": "configs/COCO-Detection/mask_rcnn_X_101_32x8d_FPN_3x.yaml",
+        "ckpts": "detectron2://COCO-Detection/"
+    },
 }
 
 
 
-def dtectron2_instance_inference(image, input_model_name, device):
+def dtectron2_instance_inference(image, input_model_name, confidence_threshold, device):
     cfg = get_cfg()
     config_file = detectron2_model_list[input_model_name]["config_file"]
     ckpts = detectron2_model_list[input_model_name]["ckpts"]
@@ -257,6 +296,9 @@ def dtectron2_instance_inference(image, input_model_name, device):
     cfg.MODEL.WEIGHTS = ckpts
     cfg.MODEL.DEVICE = "cpu"
     cfg.output = "output_img.jpg"
+    cfg.MODEL.RETINANET.SCORE_THRESH_TEST = confidence_threshold
+    cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = confidence_threshold
+    cfg.MODEL.PANOPTIC_FPN.COMBINE.INSTANCES_CONFIDENCE_THRESH = confidence_threshold
     visualization_demo = VisualizationDemo(cfg, device=device)
     if image:
         intput_path = "intput_img.jpg"
@@ -277,6 +319,7 @@ def download_test_img():
 if __name__ == '__main__':
     input_image = gr.inputs.Image(type='pil', label='Input Image')
     input_model_name = gr.inputs.Dropdown(list(detectron2_model_list.keys()), label="Model Name", default="COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x")
+    input_prediction_threshold = gr.inputs.Slider(minimum=0.0, maximum=1.0, step=0.01, default=0.25, label="Confidence Threshold")
     input_device = gr.inputs.Dropdown(["cpu", "cuda"], label="Devices", default="cpu")
     output_image = gr.outputs.Image(type='pil', label='Output Image')
     output_predictions = gr.outputs.Textbox(type='text', label='Output Predictions')
@@ -289,8 +332,8 @@ if __name__ == '__main__':
               "<p style='text-align: center'><a href='https://github.com/facebookresearch/detectron2'>gradio build by gatilin</a></a></p>"
     download_test_img()
 
-    examples = [["000000502136.jpg", "COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x", "cpu"]]
+    examples = [["000000502136.jpg", "COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x", 0.25, "cpu"]]
     gr.Interface(fn=dtectron2_instance_inference,
-                 inputs=[input_image, input_model_name, input_device],
+                 inputs=[input_image, input_model_name, input_prediction_threshold, input_device],
                  outputs=output_image,examples=examples,
                  title=title, description=description, article=article).launch()
