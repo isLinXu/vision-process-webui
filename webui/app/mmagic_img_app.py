@@ -186,4 +186,4 @@ if __name__ == '__main__':
                 Image_super_resolution()
         gr.Markdown(article)
 
-    demo.queue().launch(share=True)
+    demo.queue().launch()
