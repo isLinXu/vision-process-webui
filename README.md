@@ -49,6 +49,7 @@ More people are welcome to contribute and use!
 - [ ] 📦[**MMEditing**](): building...
 - [ ] 📦[**MMFlow**](): building...
 
+
 ## detectron2
 - [x] 📦[**detectron2**](): [![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/detectron2-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/detectron2-weibui/summary)<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/gatilin/detectron2">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
