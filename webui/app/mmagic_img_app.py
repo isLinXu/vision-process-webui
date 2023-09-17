@@ -14,8 +14,6 @@ from mmagic.apis import MMagicInferencer
 import warnings
 
 warnings.filterwarnings("ignore")
-MMagicInferencer(model_name='stable_diffusion')
-MMagicInferencer(model_name='pix2pix')
 
 class Text_to_image:
     model_list = ['stable_diffusion', 'controlnet', 'disco_diffusion']
