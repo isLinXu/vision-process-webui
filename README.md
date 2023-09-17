@@ -49,6 +49,10 @@ More people are welcome to contribute and use!
 - [ ] 📦[**MMEditing**](): building...
 - [ ] 📦[**MMFlow**](): building...
 
+## detectron2
+- [x] 📦[**detectron2**](): [![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/detectron2-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/detectron2-weibui/summary)<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/gatilin/detectron2">
+    <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
+
 ## detection
 - [x] 📦[**yolov8-app**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/yolov8-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/yolov8-webui/summary)<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/gatilin/yolov8-webui">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
@@ -92,6 +96,14 @@ More people are welcome to contribute and use!
 |                                                              |                                                              |                                                              |                                                              |
 
 
+## 🔨detectron2
+| ![](https://user-images.githubusercontent.com/59380685/268517889-4ff3f3c5-83ef-45f8-a4e6-ffed69ce7a21.png) | ![](https://user-images.githubusercontent.com/59380685/268518389-da51a1ce-5438-4032-bbe2-4afd657d757d.png) |      |      |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ---- | ---- |
+|                                                              |                                                              |      |      |
+|                                                              |                                                              |      |      |
+
+
+
 ## 🔨classification
 | ![](https://user-images.githubusercontent.com/59380685/265667039-ce3f2122-4317-4c57-9bab-9ebc792ca23b.png) |
 | ------------------------------------------------------------ |
@@ -126,6 +138,7 @@ More people are welcome to contribute and use!
 ---
 
 # 🆕News
+- [x] (2023-09-18): `detectron2`
 - [x] (2023-09-16): `mmagic`
 - [x] (2023-09-14): `mmtracking`
 - [x] (2023-09-12): `mmaction2`
@@ -233,7 +246,7 @@ model_app=yolov3|yolov5|yolov8|yolonas|ppyoloe|torchvision-detection|torchvision
 - [ ] 📦[**MMFlow**]():
 
 ### detectron2
-- [ ] building...
+- [x] 📦[**detectron2**](): 
 
 ## EasyCV
 
