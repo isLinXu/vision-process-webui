@@ -239,24 +239,15 @@ detectron2_model_list = {
         "config_file": "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml",
         "ckpts": "detectron2://COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x/137849600/model_final_f10217.pkl"
     },
+    "COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_1x.yaml":{
+        "config_file": "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_1x.yaml",
+        "ckpts": "detectron2://COCO-InstanceSegmentation/"
+    },
+
+
 }
 
 
-# def dtectron2_instance_inference(image, config_file, ckpts, device):
-#     cfg = get_cfg()
-#     cfg.merge_from_file(config_file)
-#     cfg.MODEL.WEIGHTS = ckpts
-#     cfg.MODEL.DEVICE = "cpu"
-#     cfg.output = "output_img.jpg"
-#     visualization_demo = VisualizationDemo(cfg, device=device)
-#     if image:
-#         intput_path = "intput_img.jpg"
-#         image.save(intput_path)
-#         image = read_image(intput_path, format="BGR")
-#         predictions, vis_output = visualization_demo.run_on_image(image)
-#         output_image = PIL.Image.fromarray(vis_output.get_image())
-#         # print("predictions: ", predictions)
-#         return output_image
 
 def dtectron2_instance_inference(image, input_model_name, device):
     cfg = get_cfg()

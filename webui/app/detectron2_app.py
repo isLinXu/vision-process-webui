@@ -244,23 +244,6 @@ detectron2_model_list = {
     },
 }
 
-
-# def dtectron2_instance_inference(image, config_file, ckpts, device):
-#     cfg = get_cfg()
-#     cfg.merge_from_file(config_file)
-#     cfg.MODEL.WEIGHTS = ckpts
-#     cfg.MODEL.DEVICE = "cpu"
-#     cfg.output = "output_img.jpg"
-#     visualization_demo = VisualizationDemo(cfg, device=device)
-#     if image:
-#         intput_path = "intput_img.jpg"
-#         image.save(intput_path)
-#         image = read_image(intput_path, format="BGR")
-#         predictions, vis_output = visualization_demo.run_on_image(image)
-#         output_image = PIL.Image.fromarray(vis_output.get_image())
-#         # print("predictions: ", predictions)
-#         return output_image
-
 def dtectron2_instance_inference(image, input_model_name, device):
     cfg = get_cfg()
     config_file = detectron2_model_list[input_model_name]["config_file"]
@@ -280,11 +263,15 @@ def dtectron2_instance_inference(image, input_model_name, device):
         return output_image
 
 def download_test_img():
+    import shutil
+    torch.hub.download_url_to_file(
+        'https://github.com/isLinXu/issues/files/12643351/configs.zip',
+        'configs.zip')
     # Images
     torch.hub.download_url_to_file(
         'https://user-images.githubusercontent.com/59380685/268517006-d8d4d3b3-964a-4f4d-8458-18c7eb75a4f2.jpg',
         '000000502136.jpg')
-
+    shutil.unpack_archive('configs.zip', 'configs', 'zip')
 
 if __name__ == '__main__':
     input_image = gr.inputs.Image(type='pil', label='Input Image')
