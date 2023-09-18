@@ -1,3 +1,5 @@
+import os
+os.system("pip install 'git+https://github.com/facebookresearch/detectron2.git'")
 import PIL.Image
 import gradio as gr
 import torch
