@@ -1,6 +1,6 @@
 import os
 os.system("python -m pip install git+https://github.com/facebookresearch/detectron2.git@v0.6#egg=detectron2")
-import PIL.Image
+
 import gradio as gr
 import torch
 import numpy as np
@@ -19,7 +19,7 @@ from detectron2.data import MetadataCatalog
 from detectron2.engine.defaults import DefaultPredictor
 from detectron2.utils.video_visualizer import VideoVisualizer
 from detectron2.utils.visualizer import ColorMode, Visualizer
-
+import PIL.Image
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -424,29 +424,30 @@ def download_test_img():
     torch.hub.download_url_to_file(
         'https://user-images.githubusercontent.com/59380685/268517006-d8d4d3b3-964a-4f4d-8458-18c7eb75a4f2.jpg',
         '000000502136.jpg')
-    shutil.unpack_archive('configs.zip', 'configs', 'zip')
-
+    shutil.unpack_archive('configs.zip', "./", 'zip')
 
 if __name__ == '__main__':
     download_test_img()
-    input_image = gr.inputs.Image(type='pil', label='Input Image')
-    input_model_name = gr.inputs.Dropdown(list(detectron2_model_list.keys()), label="Model Name", default="COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x")
-    input_prediction_threshold = gr.inputs.Slider(minimum=0.0, maximum=1.0, step=0.01, default=0.25, label="Confidence Threshold")
-    input_device = gr.inputs.Dropdown(["cpu", "cuda"], label="Devices", default="cpu")
-    output_image = gr.outputs.Image(type='pil', label='Output Image')
-    output_predictions = gr.outputs.Textbox(type='text', label='Output Predictions')
+    if os.path.exists("configs"):
+        print("configs exists")
+        input_image = gr.inputs.Image(type='pil', label='Input Image')
+        input_model_name = gr.inputs.Dropdown(list(detectron2_model_list.keys()), label="Model Name", default="COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x")
+        input_prediction_threshold = gr.inputs.Slider(minimum=0.0, maximum=1.0, step=0.01, default=0.25, label="Confidence Threshold")
+        input_device = gr.inputs.Dropdown(["cpu", "cuda"], label="Devices", default="cpu")
+        output_image = gr.outputs.Image(type='pil', label='Output Image')
+        output_predictions = gr.outputs.Textbox(type='text', label='Output Predictions')
 
-    title = "Detectron2 web demo"
-    description = "<div align='center'><img src='https://raw.githubusercontent.com/facebookresearch/detectron2/8c4a333ceb8df05348759443d0206302485890e0/.github/Detectron2-Logo-Horz.svg' width='450''/><div>" \
-                  "<p style='text-align: center'><a href='https://github.com/facebookresearch/detectron2'>Detectron2</a> Detectron2 是 Facebook AI Research 的下一代库，提供最先进的检测和分割算法。它是Detectron 和maskrcnn-benchmark的后继者 。它支持 Facebook 中的许多计算机视觉研究项目和生产应用。" \
-                  "Detectron2 is a platform for object detection, segmentation and other visual recognition tasks..</p>"
-    article = "<p style='text-align: center'><a href='https://github.com/facebookresearch/detectron2'>Detectron2</a></p>" \
-              "<p style='text-align: center'><a href='https://github.com/facebookresearch/detectron2'>gradio build by gatilin</a></a></p>"
+        title = "Detectron2 web demo"
+        description = "<div align='center'><img src='https://raw.githubusercontent.com/facebookresearch/detectron2/8c4a333ceb8df05348759443d0206302485890e0/.github/Detectron2-Logo-Horz.svg' width='450''/><div>" \
+                      "<p style='text-align: center'><a href='https://github.com/facebookresearch/detectron2'>Detectron2</a> Detectron2 是 Facebook AI Research 的下一代库，提供最先进的检测和分割算法。它是Detectron 和maskrcnn-benchmark的后继者 。它支持 Facebook 中的许多计算机视觉研究项目和生产应用。" \
+                      "Detectron2 is a platform for object detection, segmentation and other visual recognition tasks..</p>"
+        article = "<p style='text-align: center'><a href='https://github.com/facebookresearch/detectron2'>Detectron2</a></p>" \
+                  "<p style='text-align: center'><a href='https://github.com/facebookresearch/detectron2'>gradio build by gatilin</a></a></p>"
 
 
 
-    examples = [["000000502136.jpg", "COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x", 0.25, "cpu"]]
-    gr.Interface(fn=dtectron2_instance_inference,
-                 inputs=[input_image, input_model_name, input_prediction_threshold, input_device],
-                 outputs=output_image,examples=examples,
-                 title=title, description=description, article=article).launch()
+        examples = [["000000502136.jpg", "COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x", 0.25, "cpu"]]
+        gr.Interface(fn=dtectron2_instance_inference,
+                     inputs=[input_image, input_model_name, input_prediction_threshold, input_device],
+                     outputs=output_image,examples=examples,
+                     title=title, description=description, article=article).launch()
