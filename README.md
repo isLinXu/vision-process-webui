@@ -249,8 +249,9 @@ model_app=yolov3|yolov5|yolov8|yolonas|ppyoloe|torchvision-detection|torchvision
 - [ ] 📦[**MMEditing**]():
 - [ ] 📦[**MMFlow**]():
 
-### detectron2
+### detectron2 series
 - [x] 📦[**detectron2**](): 
+- [x] 📦[**detrex**]():
 
 ## EasyCV
 
