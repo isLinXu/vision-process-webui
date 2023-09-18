@@ -19,7 +19,86 @@ from detectron2.data.detection_utils import read_image
 from detectron2.utils.logger import setup_logger
 
 import warnings
+
 warnings.filterwarnings("ignore")
+
+detrex_model_list = {
+    # DETR
+    "detr/detr_r50_300ep": {
+        "configs": "projects/detr/configs/detr_r50_300ep.py",
+        "ckpts": "https://github.com/IDEA-Research/detrex-storage/releases/download/v0.1.0/converted_detr_r50_500ep.pth"
+    },
+    "detr/detr_r50_dc5_300ep": {
+        "configs": "projects/detr/configs/detr_r50_dc5_300ep.py",
+        "ckpts": "https://github.com/IDEA-Research/detrex-storage/releases/download/v0.3.0/converted_detr_r50_dc5.pth"
+    },
+    "detr/detr_r101_300ep.py": {
+        "configs": "projects/detr/configs/detr_r101_300ep.py",
+        "ckpts": "https://github.com/IDEA-Research/detrex-storage/releases/download/v0.1.0/converted_detr_r101_500ep.pth"
+    },
+    "detr/detr_r101_dc5_300ep.py": {
+        "configs": "projects/detr/configs/detr_r101_dc5_300ep.py",
+        "ckpts": "https://github.com/IDEA-Research/detrex-storage/releases/download/v0.3.0/converted_detr_r101_dc5.pth"
+    },
+    # Deformable-DETR
+    "deformable_detr/deformable_detr_r50_with_box_refinement_50ep": {
+        "configs": "projects/deformable_detr/configs/deformable_detr_r50_with_box_refinement_50ep.py",
+        "ckpts": "https://github.com/IDEA-Research/detrex-storage/releases/download/v0.1.1/deformable_detr_with_box_refinement_50ep_new.pth"
+    },
+    "deformable_detr/deformable_detr_r50_two_stage_50ep": {
+        "configs": "projects/deformable_detr/configs/deformable_detr_r50_two_stage_50ep.py",
+        "ckpts": "https://github.com/IDEA-Research/detrex-storage/releases/download/v0.1.1/deformable_detr_r50_two_stage_50ep_new.pth"
+    },
+    # Anchor-DETR
+    "anchor_detr/anchor_detr_r50_50ep":{
+        "configs":"projects/anchor_detr/configs/anchor_detr_r50_50ep.py",
+        "ckpts":"https://github.com/IDEA-Research/detrex-storage/releases/download/v0.3.0/anchor_detr_r50_50ep.pth"
+    },
+    "anchor_detr/anchor_detr_r50_50ep_(converted)":{
+        "configs":"projects/anchor_detr/configs/anchor_detr_r50_50ep.py",
+        "ckpts":"https://github.com/IDEA-Research/detrex-storage/releases/download/v0.3.0/converted_anchor_detr_r50_50ep.pth"
+    },
+    "anchor_detr/anchor_detr_r50_dc5_50ep":{
+        "configs":"projects/anchor_detr/configs/anchor_detr_r50_dc5_50ep.py",
+        "ckpts":"https://github.com/IDEA-Research/detrex-storage/releases/download/v0.3.0/converted_anchor_detr_r50_dc5_50ep.pth"
+    },
+    "anchor_detr/anchor_detr_r101_50ep":{
+        "configs":"projects/anchor_detr/configs/anchor_detr_r101_dc5_50ep.py",
+        "ckpts":"https://github.com/IDEA-Research/detrex-storage/releases/download/v0.3.0/converted_anchor_detr_r101_dc5_50ep.pth"
+    },
+    "anchor_detr/anchor_detr_r101_dc5_50ep":{
+        "configs":"projects/anchor_detr/configs/anchor_detr_r101_dc5_50ep.py",
+        "ckpts":"https://github.com/IDEA-Research/detrex-storage/releases/download/v0.3.0/converted_anchor_detr_r101_50ep.pth"
+    },
+    # Conditional-DETR
+
+
+    # DAB-DETR
+
+
+    # DN-DETR
+
+
+    # DINO
+
+
+    # Pretrained DINO with Swin-Transformer Backbone
+
+
+    # Pretrained DINO with FocalNet Backbone
+
+
+    # Pretrained DINO with ViTDet Backbone
+
+
+
+    # H-Deformable-DETR
+
+
+    # DETA
+
+}
+
 
 def setup(args):
     cfg = LazyConfig.load(args.config_file)
@@ -104,6 +183,10 @@ def test_opencv_video_format(codec, file_ext):
         return False
 
 
+# def download_ckpts_and_image():
+#     torch.hub.download_url_to_file("https://dl.fbaipublicfiles.com/dino/dino_deitsmall16_pretrain/dino_deitsmall16_pretrain.pth", "dino_deitsmall16_pretrain.pth")
+
+
 def run_detection(input_file, output_file, configs, ckpts, input_confidence, device):
     mp.set_start_method("spawn", force=True)
     args = get_parser().parse_args([
@@ -111,7 +194,7 @@ def run_detection(input_file, output_file, configs, ckpts, input_confidence, dev
         "--input", input_file,
         "--output", output_file,
         "--confidence-threshold", str(input_confidence),
-        "--opts", "train.init_checkpoint="+ckpts
+        "--opts", "train.init_checkpoint=" + ckpts
     ])
     setup_logger(name="fvcore")
     logger = setup_logger()
@@ -163,9 +246,6 @@ def run_detection(input_file, output_file, configs, ckpts, input_confidence, dev
                     out_filename = args.output
                 visualized_output.save(out_filename)
 
-# def download_ckpts_and_image():
-
-
 
 def detect_image(input_image, configs, ckpts, input_confidence, device):
     input_dir = "input.jpg"
@@ -173,6 +253,7 @@ def detect_image(input_image, configs, ckpts, input_confidence, device):
     output_image = "output.jpg"
     run_detection(input_dir, output_image, configs, ckpts, input_confidence, device)
     return output_image
+
 
 if __name__ == '__main__':
     input_image = gr.inputs.Image(type='pil', label="Input Image")
