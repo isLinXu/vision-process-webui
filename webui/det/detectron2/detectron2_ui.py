@@ -1,5 +1,6 @@
 import os
-os.system("pip install detectron2")
+os.system("git clone https://github.com/facebookresearch/detectron2.git")
+os.system("pip install -e detectron2")
 import PIL.Image
 import gradio as gr
 import torch
