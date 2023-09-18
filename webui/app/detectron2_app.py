@@ -241,7 +241,7 @@ detectron2_model_list = {
     # Cityscapes
     "Cityscapes/mask_rcnn_R_50_FPN":{
         "config_file": "configs/Cityscapes/mask_rcnn_R_50_FPN.yaml",
-        "ckpts": "detectron2://Cityscapes/"
+        "ckpts": "detectron2://Cityscapes/mask_rcnn_R_50_FPN/142423278/model_final_af9cf5.pkl"
     },
     # COCO-Detection
     "COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x":{
@@ -250,44 +250,148 @@ detectron2_model_list = {
     },
     "COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_1x":{
         "config_file": "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_1x.yaml",
-        "ckpts": "detectron2://COCO-InstanceSegmentation/"
+        "ckpts": "detectron2://COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_1x/137260431/model_final_a54504.pkl"
     },
     "COCO-InstanceSegmentation/mask_rcnn_R_50_DC5_1x":{
         "config_file": "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_DC5_1x.yaml",
-        "ckpts": "detectron2://COCO-InstanceSegmentation/"
+        "ckpts": "detectron2://COCO-InstanceSegmentation/mask_rcnn_R_50_DC5_1x/137260150/model_final_4f86c3.pkl"
     },
     "COCO-InstanceSegmentation/mask_rcnn_R_50_DC5_3x": {
         "config_file": "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_DC5_3x.yaml",
-        "ckpts": "detectron2://COCO-InstanceSegmentation/"
+        "ckpts": "detectron2://COCO-InstanceSegmentation/mask_rcnn_R_50_DC5_3x/137849551/model_final_84107b.pkl"
     },
     "COCO-InstanceSegmentation/mask_rcnn_R_50_C4_1x": {
         "config_file": "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_C4_1x.yaml",
-        "ckpts": "detectron2://COCO-InstanceSegmentation/"
+        "ckpts": "detectron2://COCO-InstanceSegmentation/mask_rcnn_R_50_C4_1x/137259246/model_final_9243eb.pkl"
     },
     "COCO-InstanceSegmentation/mask_rcnn_R_50_C4_3x": {
         "config_file": "configs/COCO-InstanceSegmentation/mask_rcnn_R_50_C4_3x.yaml",
-        "ckpts": "detectron2://COCO-InstanceSegmentation/"
+        "ckpts": "detectron2://COCO-InstanceSegmentation/mask_rcnn_R_50_C4_3x/137849525/model_final_4ce675.pkl"
     },
     "COCO-InstanceSegmentation/mask_rcnn_R_101_C4_3x": {
         "config_file": "configs/COCO-InstanceSegmentation/mask_rcnn_R_101_C4_3x.yaml",
-        "ckpts": "detectron2://COCO-InstanceSegmentation/"
+        "ckpts": "detectron2://COCO-InstanceSegmentation/mask_rcnn_R_101_C4_3x/138363239/model_final_a2914c.pkl"
     },
     "COCO-InstanceSegmentation/mask_rcnn_R_101_DC5_3x": {
         "config_file": "configs/COCO-InstanceSegmentation/mask_rcnn_R_101_DC5_3x.yaml",
-        "ckpts": "detectron2://COCO-InstanceSegmentation/"
+        "ckpts": "detectron2://COCO-InstanceSegmentation/mask_rcnn_R_101_DC5_3x/138363294/model_final_0464b7.pkl"
     },
     "COCO-InstanceSegmentation/mask_rcnn_R_101_FPN_3x": {
         "config_file": "configs/COCO-InstanceSegmentation/mask_rcnn_R_101_FPN_3x.yaml",
-        "ckpts": "detectron2://COCO-InstanceSegmentation/"
+        "ckpts": "detectron2://COCO-InstanceSegmentation/mask_rcnn_R_101_FPN_3x/138205316/model_final_a3ec72.pkl"
     },
     "COCO-InstanceSegmentation/mask_rcnn_X_101_32x8d_FPN_3x": {
         "config_file": "configs/COCO-InstanceSegmentation/mask_rcnn_X_101_32x8d_FPN_3x.yaml",
-        "ckpts": "detectron2://COCO-InstanceSegmentation/"
+        "ckpts": "detectron2://COCO-InstanceSegmentation/mask_rcnn_X_101_32x8d_FPN_3x/139653917/model_final_2d9806.pkl"
     },
     # COCO-Detection
-    "COCO-Detection/mask_rcnn_X_101_32x8d_FPN_3x": {
-        "config_file": "configs/COCO-Detection/mask_rcnn_X_101_32x8d_FPN_3x.yaml",
-        "ckpts": "detectron2://COCO-Detection/"
+    "COCO-Detection/fast_rcnn_R_50_FPN_1x": {
+        "config_file": "configs/COCO-Detection/fast_rcnn_R_50_FPN_1x.yaml",
+        "ckpts": "detectron2://COCO-Detection/faster_rcnn_R_50_FPN_1x/137257794/model_final_b275ba.pkl"
+    },
+    "COCO-Detection/faster_rcnn_R_50_C4_1x": {
+        "config_file": "configs/COCO-Detection/faster_rcnn_R_50_C4_1x.yaml",
+        "ckpts": "detectron2://COCO-Detection/faster_rcnn_R_50_C4_1x/137257644/model_final_721ade.pkl"
+    },
+    "COCO-Detection/faster_rcnn_R_50_DC5_1x": {
+        "config_file": "configs/COCO-Detection/faster_rcnn_R_50_DC5_1x.yaml",
+        "ckpts": "detectron2://COCO-Detection/faster_rcnn_R_50_DC5_1x/137847829/model_final_51d356.pkl"
+    },
+    "COCO-Detection/faster_rcnn_R_50_DC5_3x": {
+        "config_file": "configs/COCO-Detection/faster_rcnn_R_50_DC5_3x.yaml",
+        "ckpts": "detectron2://COCO-Detection/faster_rcnn_R_50_DC5_3x/137849425/model_final_68d202.pkl"
+    },
+    "COCO-Detection/faster_rcnn_R_50_FPN_1x": {
+        "config_file": "configs/COCO-Detection/faster_rcnn_R_50_FPN_1x.yaml",
+        "ckpts": "detectron2://COCO-Detection/faster_rcnn_R_50_FPN_1x/137257794/model_final_b275ba.pkl"
+    },
+    "COCO-Detection/faster_rcnn_R_101_C4_3x": {
+        "config_file": "configs/COCO-Detection/faster_rcnn_R_101_C4_3x.yaml",
+        "ckpts": "detectron2://COCO-Detection/faster_rcnn_R_101_C4_3x/138204752/model_final_298dad.pkl"
+    },
+    "COCO-Detection/faster_rcnn_R_101_DC5_3x": {
+        "config_file": "configs/COCO-Detection/faster_rcnn_R_101_DC5_3x.yaml",
+        "ckpts": "detectron2://COCO-Detection/faster_rcnn_R_101_DC5_3x/138204841/model_final_3e0943.pkl"
+    },
+    "COCO-Detection/faster_rcnn_R_101_FPN_3x": {
+        "config_file": "configs/COCO-Detection/faster_rcnn_R_101_FPN_3x.yaml",
+        "ckpts": "detectron2://COCO-Detection/faster_rcnn_R_101_FPN_3x/137851257/model_final_f6e8b1.pkl"
+    },
+    "COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x": {
+        "config_file": "configs/COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x.yaml",
+        "ckpts": "detectron2://COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x/139173657/model_final_68b088.pkl"
+    },
+    "COCO-Detection/retinanet_R_50_FPN_1x": {
+        "config_file": "configs/COCO-Detection/retinanet_R_50_FPN_1x.yaml",
+        "ckpts": "detectron2://COCO-Detection/retinanet_R_50_FPN_1x/190397773/model_final_bfca0b.pkl"
+    },
+    "COCO-Detection/retinanet_R_50_FPN_3x": {
+        "config_file": "configs/COCO-Detection/retinanet_R_50_FPN_3x.yaml",
+        "ckpts": "detectron2://COCO-Detection/retinanet_R_50_FPN_3x/190397829/model_final_5bd44e.pkl"
+    },
+    "COCO-Detection/retinanet_R_101_FPN_3x": {
+        "config_file": "configs/COCO-Detection/retinanet_R_101_FPN_3x.yaml",
+        "ckpts": "detectron2://COCO-Detection/retinanet_R_50_FPN_3x/190397829/model_final_5bd44e.pkl"
+    },
+    "COCO-Detection/rpn_R_50_C4_1x": {
+        "config_file": "configs/COCO-Detection/rpn_R_50_C4_1x.yaml",
+        "ckpts": "detectron2://COCO-Detection/rpn_R_50_C4_1x/137258005/model_final_450694.pkl"
+    },
+    "COCO-Detection/rpn_R_50_FPN_1x": {
+        "config_file": "configs/COCO-Detection/rpn_R_50_FPN_1x.yaml",
+        "ckpts": "detectron2://COCO-Detection/rpn_R_50_FPN_1x/137258492/model_final_02ce48.pkl"
+    },
+    # COCO-Keypoints
+    "COCO-Keypoints/keypoint_rcnn_R_50_FPN_1x": {
+        "config_file": "configs/COCO-Keypoints/keypoint_rcnn_R_50_FPN_1x.yaml",
+        "ckpts": "detectron2://COCO-Keypoints/keypoint_rcnn_R_50_FPN_1x/137261548/model_final_04e291.pkl"
+    },
+    "COCO-Keypoints/keypoint_rcnn_R_50_FPN_3x": {
+        "config_file": "configs/COCO-Keypoints/keypoint_rcnn_R_50_FPN_3x.yaml",
+        "ckpts": "detectron2://COCO-Keypoints/keypoint_rcnn_R_50_FPN_3x/137849621/model_final_a6e10b.pkl"
+    },
+    "COCO-Keypoints/keypoint_rcnn_R_101_FPN_3x": {
+        "config_file": "configs/COCO-Keypoints/keypoint_rcnn_R_101_FPN_3x.yaml",
+        "ckpts": "detectron2://COCO-Keypoints/keypoint_rcnn_R_101_FPN_3x/138363331/model_final_997cc7.pkl"
+    },
+    "COCO-Keypoints/keypoint_rcnn_X_101_32x8d_FPN_3x": {
+        "config_file": "configs/COCO-Keypoints/keypoint_rcnn_X_101_32x8d_FPN_3x.yaml",
+        "ckpts": "detectron2://COCO-Keypoints/keypoint_rcnn_X_101_32x8d_FPN_3x/139686956/model_final_5ad38f.pkl"
+    },
+    # COCO-PanopticSegmentation
+    "COCO-PanopticSegmentation/panoptic_fpn_R_50_1x": {
+        "config_file": "configs/COCO-PanopticSegmentation/panoptic_fpn_R_50_1x.yaml",
+        "ckpts": "detectron2://COCO-PanopticSegmentation/panoptic_fpn_R_50_1x/139514544/model_final_dbfeb4.pkl"
+    },
+    "COCO-PanopticSegmentation/panoptic_fpn_R_50_3x": {
+        "config_file": "configs/COCO-PanopticSegmentation/panoptic_fpn_R_50_3x.yaml",
+        "ckpts": "detectron2://COCO-PanopticSegmentation/panoptic_fpn_R_50_3x/139514569/model_final_c10459.pkl"
+    },
+    "COCO-PanopticSegmentation/panoptic_fpn_R_101_3x": {
+        "config_file": "configs/COCO-PanopticSegmentation/panoptic_fpn_R_101_3x.yaml",
+        "ckpts": "detectron2://COCO-PanopticSegmentation/panoptic_fpn_R_101_3x/139514519/model_final_cafdb1.pkl"
+    },
+    # LVISv0.5-InstanceSegmentation
+    "LVISv0.5-InstanceSegmentation/mask_rcnn_R_50_FPN_1x": {
+        "config_file": "configs/LVISv0.5-InstanceSegmentation/mask_rcnn_R_50_FPN_1x.yaml",
+        "ckpts": "detectron2://LVISv0.5-InstanceSegmentation/mask_rcnn_R_50_FPN_1x/144219072/model_final_571f7c.pkl"
+    },
+    "LVISv0.5-InstanceSegmentation/mask_rcnn_R_101_FPN_1x": {
+        "config_file": "configs/LVISv0.5-InstanceSegmentation/mask_rcnn_R_101_FPN_1x.yaml",
+        "ckpts": "detectron2://LVISv0.5-InstanceSegmentation/mask_rcnn_R_101_FPN_1x/144219035/model_final_824ab5.pkl"
+    },
+    "LVISv0.5-InstanceSegmentation/mask_rcnn_X_101_32x8d_FPN_1x": {
+        "config_file": "configs/LVISv0.5-InstanceSegmentation/mask_rcnn_X_101_32x8d_FPN_1x.yaml",
+        "ckpts": "detectron2://LVISv0.5-InstanceSegmentation/mask_rcnn_X_101_32x8d_FPN_1x/144219108/model_final_5e3439.pkl"
+    },
+    # PascalVOC-Detection
+    "PascalVOC-Detection/faster_rcnn_R_50_C4": {
+        "config_file": "configs/PascalVOC-Detection/faster_rcnn_R_50_C4.yaml",
+        "ckpts": "detectron2://PascalVOC-Detection/faster_rcnn_R_50_C4/142202221/model_final_b1acc2.pkl"
+    },
+    "PascalVOC-Detection/faster_rcnn_R_50_FPN": {
+        "config_file": "configs/PascalVOC-Detection/faster_rcnn_R_50_FPN.yaml",
+        "ckpts": "detectron2://Cityscapes/mask_rcnn_R_50_FPN/142423278/model_final_af9cf5.pkl"
     },
 }
 
