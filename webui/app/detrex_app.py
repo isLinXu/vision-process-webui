@@ -1,4 +1,5 @@
 import os
+os.system("pip install torch torchvision")
 os.system("git clone https://github.com/IDEA-Research/detrex.git")
 # os.system("python -m pip install git+https://github.com/facebookresearch/detectron2.git@v0.6#egg=detectron2")
 os.system("python -m pip install git+https://github.com/IDEA-Research/detrex.git@v0.5.0#egg=detrex")
