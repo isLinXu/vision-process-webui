@@ -12,9 +12,9 @@ import warnings
 warnings.filterwarnings("ignore")
 
 
-def object_detection(img_pil, confidence_threshold, device):
+def object_detection(img_pil, model_name, confidence_threshold, device):
     # 加载模型
-    p = pipeline(task='image-object-detection', model='damo/cv_tinynas_object-detection_damoyolo', device=device)
+    p = pipeline(task='image-object-detection', model=model_name, device=device)
 
     # 传入图片进行推理
     result = p(img_pil)
@@ -42,6 +42,18 @@ def object_detection(img_pil, confidence_threshold, device):
     return img_pil
 
 
+damo_model_list = [
+    'damo/cv_cspnet_image-object-detection_yolox',
+    'damo/cv_cspnet_image-object-detection_yolox_nano_coco',
+    'damo/cv_swinl_image-object-detection_dino',
+    'damo/cv_tinynas_object-detection_damoyolo',
+    'damo/cv_tinynas_object-detection_damoyolo-m',
+    'damo/cv_tinynas_object-detection_damoyolo-t',
+    'damo/cv_vit_object-detection_coco',
+    'damo/cv_tinynas_detection',
+]
+
+
 def download_test_image():
     # Images
     torch.hub.download_url_to_file(
@@ -59,6 +71,8 @@ if __name__ == '__main__':
     download_test_image()
     # 定义输入和输出
     input_image = gr.inputs.Image(type='pil')
+    model_name = gr.inputs.Dropdown(choices=[m for m in damo_model_list], label='Model',
+                                    default='damo/cv_tinynas_object-detection_damoyolo')
     input_slide = gr.inputs.Slider(minimum=0, maximum=1, step=0.05, default=0.5, label="Confidence Threshold")
     input_device = gr.inputs.Radio(["cpu", "cuda", "gpu"], default="cpu")
     output_image = gr.outputs.Image(type='pil')
@@ -77,7 +91,7 @@ if __name__ == '__main__':
     gr.Interface(
         fn=object_detection,
         inputs=[
-            input_image, input_slide, input_device
+            input_image, model_name, input_slide, input_device
         ],
         outputs=output_image,
         title=title,
