@@ -1,6 +1,7 @@
 
 
 import os
+os.system("pip install torch torchvision torchaudio")
 os.system("pip install 'mmcv>=2.0.0'")
 os.system("pip install 'mmengine'")
 os.system("pip install 'mmagic'")
