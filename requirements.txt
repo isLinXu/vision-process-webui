@@ -2,7 +2,8 @@ git+https://github.com/facebookresearch/detectron2.git@v0.6#egg=detectron2
 ultralytics~=8.0.169
 wget~=3.2
 opencv-python~=4.6.0.66
-
+torch
+torchvision
 numpy~=1.23.0
 pillow~=9.4.0
 gradio~=3.42.0
