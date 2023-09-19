@@ -6,8 +6,8 @@ os.system("pip install 'mmcv>=2.0.0'")
 os.system("pip install 'mmengine'")
 os.system("pip install 'mmagic'")
 os.system("pip install albumentations")
-os.system("pip install av")
-os.system("pip install accelerate")
+# os.system("pip install av")
+# os.system("pip install accelerate")
 
 import PIL
 import gradio as gr
