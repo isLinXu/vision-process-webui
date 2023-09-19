@@ -1,7 +1,8 @@
 import os
 os.system("git clone https://github.com/IDEA-Research/detrex.git")
 os.system("python -m pip install git+https://github.com/facebookresearch/detectron2.git@v0.6#egg=detectron2")
-os.system("cd detrex && pip install -e .")
+os.system("python -m pip install git+https://github.com/IDEA-Research/detrex.git@v0.5.0#egg=detrex")
+# os.system("cd detrex && pip install -e .")
 # os.system("pip install fairscale")
 
 import argparse
