@@ -142,6 +142,7 @@ More people are welcome to contribute and use!
 ---
 
 # 🆕News
+- [x] (2023-09-20): `detrex`
 - [x] (2023-09-18): `detectron2`
 - [x] (2023-09-16): `mmagic`
 - [x] (2023-09-14): `mmtracking`
