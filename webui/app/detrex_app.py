@@ -4,8 +4,9 @@ os.system("git clone https://github.com/IDEA-Research/detrex.git")
 os.system("python -m pip install git+https://github.com/IDEA-Research/detrex.git@v0.5.0#egg=detrex")
 os.system("git submodule sync")
 os.system("git submodule update --init")
+os.system("pip install fairscale")
 # os.system("cd detrex && pip install -e .")
-# os.system("pip install fairscale")
+
 
 import argparse
 import glob
