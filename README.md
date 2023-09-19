@@ -58,6 +58,9 @@ More people are welcome to contribute and use!
 - [x] 📦[**detrex**](): [![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/detrex-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/detrex-webui/summary)<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/gatilin/detrex-webui">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
 
+## AdaDet&&modelscope
+- [x] 📦[**DAMO-YOLO**]():   
+
 ## detection
 - [x] 📦[**yolov8-app**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/yolov8-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/yolov8-webui/summary)<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/gatilin/yolov8-webui">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
@@ -143,7 +146,7 @@ More people are welcome to contribute and use!
 ---
 
 # 🆕News
-- [x] (2023-09-20): `detrex`
+- [x] (2023-09-20): `detrex、damo-yolo`
 - [x] (2023-09-18): `detectron2`
 - [x] (2023-09-16): `mmagic`
 - [x] (2023-09-14): `mmtracking`
@@ -263,6 +266,7 @@ model_app=yolov3|yolov5|yolov8|yolonas|ppyoloe|torchvision-detection|torchvision
 - [ ] 📦[**Pose Estimation**](https://github.com/alibaba/EasyCV/blob/master/docs/source/model_zoo_pose.md)
 
 ## AdaDet
+- [x] 📦[**DAMO-YOLO**](): 
 - [ ] building...
 
 ## gluon-cv
@@ -317,3 +321,4 @@ model_app=yolov3|yolov5|yolov8|yolonas|ppyoloe|torchvision-detection|torchvision
 - [**EasyCV**](https://github.com/alibaba/EasyCV): An all-in-one toolkit for computer vision
 - [**AdaDet**](https://github.com/modelscope/AdaDet):AdaDet: A Development Toolkit for Object Detection based on ModelScope
 - [**mediapipe**](https://developers.google.com/mediapipe):MediaPipe Solutions provides a suite of libraries and tools for you to quickly apply artificial intelligence (AI) and machine learning (ML) techniques in your applications.
+- [**dlib**](https://github.com/davisking/dlib):A toolkit for making real world machine learning and data analysis applications in C++
