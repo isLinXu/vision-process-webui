@@ -1,11 +1,10 @@
 
 
 import os
-os.system("pip install torch torchvision torchaudio")
 os.system("pip install 'mmcv>=2.0.0'")
 os.system("pip install 'mmengine'")
-os.system("pip install 'mmagic'")
-os.system("pip install albumentations")
+os.system("pip install 'mmagic' -i https://pypi.tuna.tsinghua.edu.cn/simple")
+os.system("pip install albumentations -i https://pypi.tuna.tsinghua.edu.cn/simple")
 # os.system("pip install av")
 # os.system("pip install accelerate")
 
