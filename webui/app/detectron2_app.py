@@ -427,7 +427,7 @@ def download_test_img():
     torch.hub.download_url_to_file(
         'https://user-images.githubusercontent.com/59380685/268517006-d8d4d3b3-964a-4f4d-8458-18c7eb75a4f2.jpg',
         '000000502136.jpg')
-    shutil.unpack_archive('configs.zip', 'configs', 'zip')
+    shutil.unpack_archive('configs.zip', './', 'zip')
 
 if __name__ == '__main__':
     input_image = gr.inputs.Image(type='pil', label='Input Image')
