@@ -1,9 +1,10 @@
 
 import os
-# os.system("pip install tensorflow")
+os.system("pip install tensorflow")
 os.system("pip install modelscope")
 os.system("pip install thop")
-os.system("pip install easydict ")
+os.system("pip install easydict")
+
 
 import gradio as gr
 import PIL.Image as Image
@@ -84,9 +85,9 @@ if __name__ == '__main__':
     input_device = gr.inputs.Radio(["cpu", "cuda", "gpu"], default="cpu")
     output_image = gr.outputs.Image(type='pil')
 
-    examples = [['bus.jpg', 0.45, "cpu"],
-                ['dogs.jpg', 0.45, "cpu"],
-                ['zidane.jpg', 0.45, "cpu"]]
+    examples = [['bus.jpg', "damo/cv_tinynas_object-detection_damoyolo", 0.45, "cpu"],
+                ['dogs.jpg', "damo/cv_tinynas_object-detection_damoyolo", 0.45, "cpu"],
+                ['zidane.jpg', "damo/cv_tinynas_object-detection_damoyolo", 0.45, "cpu", ]]
     title = "DAMO-YOLO web demo"
     description = "<div align='center'><img src='https://raw.githubusercontent.com/tinyvision/DAMO-YOLO/master/assets/logo.png' width='800''/><div>" \
                   "<p style='text-align: center'><a href='https://github.com/tinyvision/DAMO-YOLO'>DAMO-YOLO</a> DAMO-YOLO DAMO-YOLO DAMO-YOLO：一种快速准确的目标检测方法，采用了一些新技术，包括 NAS 主干、高效的 RepGFPN、ZeroHead、AlignedOTA 和蒸馏增强。" \
