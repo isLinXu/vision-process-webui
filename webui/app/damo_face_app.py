@@ -2,6 +2,7 @@
 import os
 
 os.system("pip install mmcv-full==1.7.0")
+os.system("pip install 'mmengine'")
 os.system("pip install 'mmdet'")
 os.system("pip install tensorflow")
 os.system("pip install modelscope")
