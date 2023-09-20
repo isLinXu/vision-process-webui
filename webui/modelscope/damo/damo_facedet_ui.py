@@ -16,7 +16,7 @@ warnings.filterwarnings("ignore")
 # 定义推理函数
 def detect_faces(img_pil, model_name):
     # 定义模型
-    face_detection = pipeline(task=Tasks.face_detection, model='damo/cv_ddsar_face-detection_iclr23-damofd')
+    face_detection = pipeline(task=Tasks.face_detection, model=model_name)
     img_dir = "input_img.jpg"
     img_pil.save(img_dir)
     # 进行人脸检测
