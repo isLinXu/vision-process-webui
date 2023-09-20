@@ -1,6 +1,6 @@
 
 import os
-os.system("pip install tensorflow")
+# os.system("pip install tensorflow")
 os.system("pip install modelscope")
 os.system("pip install thop")
 os.system("pip install easydict ")
