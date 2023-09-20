@@ -1,5 +1,6 @@
 
 import os
+
 os.system("pip install mmcv-full==1.7.0")
 os.system("pip install 'mmdet'")
 os.system("pip install tensorflow")
