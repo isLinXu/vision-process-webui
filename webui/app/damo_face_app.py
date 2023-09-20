@@ -1,3 +1,9 @@
+
+import os
+os.system("pip install mmcv-full==1.7.0")
+os.system("pip install tensorflow")
+os.system("pip install modelscope")
+
 import cv2
 import gradio as gr
 import numpy as np
