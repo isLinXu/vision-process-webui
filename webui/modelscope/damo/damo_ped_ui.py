@@ -1,12 +1,3 @@
-
-import os
-os.system("pip install mmcv-full==1.7.0")
-os.system("pip install 'mmengine==0.8.1'")
-os.system("pip install 'mmdet==2.25.1'")
-
-os.system("pip install tensorflow")
-os.system("pip install modelscope")
-
 import cv2
 import gradio as gr
 import numpy as np
@@ -25,7 +16,8 @@ warnings.filterwarnings("ignore")
 # 定义推理函数
 def detect_faces(img_pil, model_name):
     # 定义模型
-    face_detection = pipeline(task=Tasks.face_detection, model=model_name)
+    face_detection = pipeline(task=Tasks.domain_specific_object_detection,
+                              model=model_name)
     img_dir = "input_img.jpg"
     img_pil.save(img_dir)
     # 进行人脸检测
@@ -35,6 +27,7 @@ def detect_faces(img_pil, model_name):
     # 将结果转换为 Gradio 的输出格式
     img_out_pil = Image.fromarray(cv2.cvtColor(img_cv, cv2.COLOR_BGR2RGB))
     return img_out_pil
+
 
 def download_test_image():
     # Images
@@ -46,10 +39,18 @@ def download_test_image():
         '000000000110.jpg')
 
 
-easyface_model_list = ['damo/cv_ddsar_face-detection_iclr23-damofd',
-                       'damo/cv_resnet101_face-detection_cvpr22papermogface',
-                       'damo/cv_resnet50_face-detection_retinaface',
-                       'damo/cv_manual_face-detection_mtcnn']
+easyface_model_list = [
+    'damo/cv_tinynas_human-detection_damoyolo',
+    'damo/cv_tinynas_head-detection_damoyolo',
+    'damo/cv_yolox-pai_hand-detection',
+    'damo/cv_tinynas_object-detection_damoyolo_facemask',
+    'damo/cv_tinynas_object-detection_damoyolo_safety-helmet',
+    'damo/cv_tinynas_object-detection_damoyolo_cigarette',
+    'damo/cv_tinynas_object-detection_damoyolo_phone',
+    'damo/cv_tinynas_object-detection_damoyolo_traffic_sign',
+    'damo/cv_yolox_image-object-detection-auto',
+    'damo/cv_tinynas_object-detection_damoyolo_smokefire'
+]
 
 if __name__ == '__main__':
     download_test_image()
