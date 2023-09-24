@@ -63,7 +63,8 @@ More people are welcome to contribute and use!
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
 - [x] 📦[**DAMO-FD**](): [![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/damo-facedet-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/damo-facedet-webui/summary)<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/gatilin/damo-facedet-webui">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
-
+- [x] 📦[**DAMO-OCR**](): [![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/damo-ocr-webui)<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/gatilin/damo-ocr-webui">
+    <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
 
 ## detection
 - [x] 📦[**yolov8-app**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/yolov8-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/yolov8-webui/summary)<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/gatilin/yolov8-webui">
@@ -150,6 +151,7 @@ More people are welcome to contribute and use!
 ---
 
 # 🆕News
+- [x] (2023-09-24): 
 - [x] (2023-09-20): `detrex、damo-yolo、easy-face`
 - [x] (2023-09-18): `detectron2`
 - [x] (2023-09-16): `mmagic`
