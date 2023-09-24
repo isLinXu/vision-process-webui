@@ -16,6 +16,10 @@ import torch
 from modelscope.pipelines import pipeline
 from modelscope.utils.constant import Tasks
 
+import warnings
+
+warnings.filterwarnings("ignore")
+
 def ocr_recognition(img_url):
     ocr_recognition = pipeline(Tasks.ocr_recognition, model='damo/cv_convnextTiny_ocr-recognition-general_damo')
     result = ocr_recognition(img_url)
@@ -25,7 +29,7 @@ def download_test_image():
     # Images
     torch.hub.download_url_to_file(
         'https://github.com/isLinXu/issues/assets/59380685/6cdbe53c-eb34-4310-8bd4-18b0a1aff803',
-        '../ocr_test.jpg')
+        'ocr_test.jpg')
 
 download_test_image()
 input_image = gr.inputs.Image()
