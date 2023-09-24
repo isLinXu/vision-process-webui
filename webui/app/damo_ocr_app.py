@@ -29,7 +29,7 @@ def download_test_image():
     # Images
     torch.hub.download_url_to_file(
         'https://github.com/isLinXu/issues/assets/59380685/6cdbe53c-eb34-4310-8bd4-18b0a1aff803',
-        '../ocr_test.jpg')
+        'ocr_test.jpg')
 
 download_test_image()
 input_image = gr.inputs.Image()
