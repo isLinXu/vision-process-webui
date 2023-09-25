@@ -1,9 +1,3 @@
-import os
-
-os.system("pip install opencv-python")
-os.system("pip install tensorflow")
-os.system("pip install modelscope")
-
 import gradio as gr
 import cv2
 import PIL.Image as Image
@@ -14,7 +8,6 @@ from modelscope.pipelines import pipeline
 from modelscope.utils.constant import Tasks
 
 import warnings
-
 warnings.filterwarnings("ignore")
 
 
