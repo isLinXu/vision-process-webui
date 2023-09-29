@@ -27,14 +27,14 @@ More people are welcome to contribute and use!
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
 - [x] 📦[**MMDetection**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmdetection-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/mmdetection-weibui/summary)<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/gatilin/mmdetetction-webui">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
-- [ ] 📦[**MMDetection3D**](): building...
+- [ ] 📦[**MMDetection3D**](): [![building](https://badgen.net/badge/icon/building?&label)]()
 - [x] 📦[**MMSegmentation**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmsegmentation-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/mmsegmentation-webui/summary)<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="(https://huggingface.co/spaces/gatilin/mmsegmentation-webui">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
 - [x] 📦[**MMOCR**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmocr-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/mmocr-webui/summary)<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/gatilin/mmocr-webui">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
 - [x] 📦[**MMRotate**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmrotate-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/mmrotate-webui/summary)<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/gatilin/mmaction2-webui">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
-- [ ] 📦[**MMHuman3D**](): building...
+- [ ] 📦[**MMHuman3D**](): [![building](https://badgen.net/badge/icon/building?&label)]()
 - [x] 📦[**MMAction2**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmaction-webui)<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/gatilin/mmrotate-webui">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
 - [x] 📦[**MMTracking**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmtracking-webui)<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/gatilin/mmagic-img-webui">
@@ -45,10 +45,9 @@ More people are welcome to contribute and use!
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
 - [x] 📦[**MMagic**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/mmagic-image-webui)<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/gatilin/mmagic-img-webui">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
-- [ ] 📦[**MMGeneration**](): building...
-- [ ] 📦[**MMEditing**](): building...
-- [ ] 📦[**MMFlow**](): building...
-
+- [ ] 📦[**MMGeneration**](): [![building](https://badgen.net/badge/icon/building?&label)]()
+- [ ] 📦[**MMEditing**](): [![building](https://badgen.net/badge/icon/building?&label)]()
+- [ ] 📦[**MMFlow**](): [![building](https://badgen.net/badge/icon/building?&label)]()
 
 ## detectron2
 - [x] 📦[**detectron2**](): [![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/detectron2_webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/detectron2-webui/summary)<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/gatilin/detectron2">
@@ -151,7 +150,7 @@ More people are welcome to contribute and use!
 ---
 
 # 🆕News
-- [x] (2023-09-24): 
+- [x] (2023-09-29): update README.md
 - [x] (2023-09-20): `detrex、damo-yolo、easy-face`
 - [x] (2023-09-18): `detectron2`
 - [x] (2023-09-16): `mmagic`
@@ -207,7 +206,29 @@ More people are welcome to contribute and use!
 - [x] **FCN-ResNet50**([src]() | [code](webui/seg/torchvision_seg_ui.py))
 - [x] **FCN-ResNet101**([src]() | [code](webui/seg/torchvision_seg_ui.py))
 - [x] **LRR**([src]() | [code](webui/seg/torchvision_seg_ui.py))
-- [ ] UNet()
+- [x] UNet()
+
+
+# 📢实际意义与作用
+这是一个包含主要视觉任务与开源视觉库的Gradio推理仓库，它的总体意义和作用如下：
+
+- 方便性：为开发者和研究者提供了一个方便的平台，他们可以在其中测试和比较不同的模型和算法。同时，用户可以通过上传图像来测试不同的视觉任务，而无需自己编写代码。
+
+- 教育性：可以帮助用户更好地理解和使用视觉库，并且可以作为学习深度学习和计算机视觉的教育资源。
+
+- 社区性：可以促进开源社区的发展和知识共享，因为它集成了多个开源视觉库，用户可以轻松地比较和测试不同的库和模型。
+
+- 实用性：包含了常见的视觉任务，如图像分类、目标检测、语义分割、人脸识别等，这些任务都是在实际应用中非常有用的。
+
+- 开放性：是开源的，任何人都可以访问和使用它，这意味着它可以被不同的人和组织使用和扩展，从而进一步推动计算机视觉和深度学习的发展。
+
+- 速度和效率：使用 Gradio 进行推理，这意味着用户可以快速地上传图像并查看模型的预测结果，而无需等待长时间的训练和推理过程。
+
+- 可重复性：提供了一个可重复的测试平台，用户可以使用相同的数据和模型来测试不同的库和算法，从而比较它们的性能和准确性。
+
+- 可扩展性：可以轻松地扩展到其他视觉任务和库，因为它是基于 Gradio 和开源视觉库构建的。
+
+- 可视化：可以帮助用户更好地理解模型的预测结果，因为它可以将预测结果可视化为图像或其他形式的输出，从而使用户更容易理解和解释模型的行为。
 
 # 📖Usage
 
@@ -287,6 +308,7 @@ model_app=yolov3|yolov5|yolov8|yolonas|ppyoloe|torchvision-detection|torchvision
 
 ## merge all ui.py in one
 - [ ] building...
+
 
 
 # 🌸Reference
