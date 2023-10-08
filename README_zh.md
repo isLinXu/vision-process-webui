@@ -177,6 +177,32 @@
 
 # 🗓support list
 
+|      Model      | Nums |                        list                        |
+| :-------------: | :--: | :------------------------------------------------: |
+|     yolov3      |  3   |    [model_list](models/list/yolo_model_list.py)    |
+|     yolov5      |  4   |    [model_list](models/list/yolo_model_list.py)    |
+|      yolox      |  5   |    [model_list](models/list/yolo_model_list.py)    |
+|     yolonas     |  3   |    [model_list](models/list/yolo_model_list.py)    |
+|     yolov8      |  4   |    [model_list](models/list/yolo_model_list.py)    |
+|      timm       |  20  |     [model_list](models/list/timm_cls_list.py)     |
+| torchvision_cls |  14  | [model_list](models/list/torchvision_cls_list.py)  |
+| torchvision_det |  6   | [model_list](models/list/torchvision_det_list.py)  |
+|   detectron2    |  36  | [model_list](models/list/detectron2_model_list.py) |
+|     detrex      |  61  |   [model_list](models/list/detrex_model_list.py)   |
+|   mmpretrain    | 545  | [model_list](models/list/mmpretrain_model_list.py) |
+|     mmyolo      |  74  |   [model_list](models/list/mmyolo_model_list.py)   |
+|   mmdetection   | 559  |   [model_list](models/list/mmdet_model_list.py)    |
+| mmsegmentation  | 622  |   [model_list](models/list/mmseg_model_list.py)    |
+|      mmocr      |  17  |   [model_list](models/list/mmocr_model_list.py)    |
+|    mmaction2    | 180  | [model_list](models/list/mmaction2_model_list.py)  |
+|    mmrorate     |  50  |  [model_list](models/list/mmrotate_model_list.py)  |
+|     mmpose      |  10  |   [model_list](models/list/mmpose_model_list.py)   |
+|     mmagic      |  14  |   [model_list](models/list/mmagic_model_list.py)   |
+|    damo_face    |  4   |    [model_list](models/list/damo_face_list.py)     |
+|    damo_yolo    |  8   |    [model_list](models/list/yolo_model_list.py)    |
+|                 |      |                                                    |
+|                 |      |                                                    |
+
 ## 🔨classification
 
 - [x] **VGG16**([src](https://arxiv.org/abs/1409.1556) | [code](webui/cls/torchvision_cls_ui.py))
