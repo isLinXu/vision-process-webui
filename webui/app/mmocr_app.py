@@ -3,7 +3,7 @@ import os
 os.system("pip install gradio==3.42.0")
 os.system("pip install 'mmengine>=0.6.0'")
 os.system("pip install 'mmcv>=2.0.0rc4,<2.1.0'")
-os.system("pip install 'mmdet>=3.0.0,<4.0.0'")
+os.system("pip install 'mmdet>=3.0.0rc5, < 3.2.0'")
 os.system("pip install mmocr")
 
 import json
