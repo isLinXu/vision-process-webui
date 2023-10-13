@@ -7,7 +7,6 @@ import warnings
 warnings.filterwarnings("ignore")
 
 # 获取 ImageNet 类别列表
-imagenet_classes = []
 with open("../../data/imagenet_classes.txt") as f:
     imagenet_classes = [line.strip() for line in f.readlines()]
 
