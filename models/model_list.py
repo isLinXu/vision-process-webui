@@ -23,6 +23,33 @@ from list.detrex_model_list import detrex_model_list
 from list.detectron2_model_list import detectron2_model_list
 
 
+'''
+update 2023-11-02
+yolov5_model_list: 4
+yolonas_model_list: 3
+yolov3_model_list: 3
+yolonas_model_list: 3
+ppyoloe_model_list: 3
+yolov8_model_list: 4
+yolox_model_list: 5
+mmpretrain_model_list: 545
+mmyolo_configs_list: 74
+mmdet_model_list: 559
+mmsegmentation_model_list: 622
+mmaction2_models_list: 180
+mmrorate_model_list: 50
+mmocr: 17
+mmpose_model_list: 10
+mmagic_model_list: 14
+damo_face_list: 4
+damo_yolo_list: 8
+timm_model_list: 20
+torchvision_cls_list: 14
+torchvision_det_list: 6
+rtdetr_model_list: 2
+detrex_model_list: 61
+detectron2_model_list: 36
+'''
 if __name__ == '__main__':
     print("yolov5_model_list:", len(yolov5_model_list))
     print("yolonas_model_list:", len(yolonas_model_list))
