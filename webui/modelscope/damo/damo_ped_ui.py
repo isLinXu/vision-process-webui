@@ -22,6 +22,7 @@ def detect_faces(img_pil, model_name):
     img_pil.save(img_dir)
     # 进行人脸检测
     result = face_detection(img_dir)
+    print("result:", result)
     # 可视化结果
     img_cv = draw_face_detection_result(img_dir, result)
     # 将结果转换为 Gradio 的输出格式
