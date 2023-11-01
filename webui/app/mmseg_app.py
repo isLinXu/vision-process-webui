@@ -1,7 +1,9 @@
 import os
 os.system("pip install ftfy")
 os.system("pip install 'mmengine>=0.6.0'")
-os.system("pip install 'mmcv>=2.0.0rc4,<2.1.0'")
+os.system("pip install -U openmim")
+# os.system("pip install 'mmcv>=2.0.0rc4,<2.1.0'")
+os.system("mim install 'mmcv>=2.0.0'")
 os.system("pip install mmsegmentation")
 
 import gradio as gr
