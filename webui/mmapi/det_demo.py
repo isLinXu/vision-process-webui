@@ -4,54 +4,64 @@ import json
 import requests
 import cv2
 import numpy as np
-from urllib.request import urlretrieve, urlopen
+from urllib.request import urlopen
+import random
 
-def detect_objects(image_url, config_file="mmlab_config.json"):
-    # 读取JSON文件中的内容
-    with open(config_file, "r") as file:
-        credentials = json.load(file)
+class ObjectDetector:
+    def __init__(self, config_file="mmlab_config.json"):
+        with open(config_file, "r") as file:
+            credentials = json.load(file)
+        self.access_token = credentials["access_token"]
+        self.config = credentials
+        self.conf_threshold = 0.45
 
-    # 获取access_token
-    access_token = credentials["access_token"]
+    # @staticmethod
+    def draw_detections(self, image, detections):
+        for item in detections:
+            label = item["label"]
+            score = float(item["onfidence"])
+            bbox = item["coordinate"]
 
-    url = "https://platform.openmmlab.com/gw/model-inference/openapi/v1/detection"
+            color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+            if score < self.conf_threshold:
+                continue
+            x1, y1, x2, y2 = bbox
+            cv2.rectangle(image, (int(x1), int(y1)), (int(x2), int(y2)), color, 2)
+            cv2.putText(image, f"{label} {score:.2f}", (int(x1), int(y1) - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
 
-    body = {
-      "resource": image_url,
-      "resourceType": "URL",
-      "backend": "PyTorch",
-      "requestType": "SYNC",
-      "algorithm": "YOLOX"
-    }
+        return image
 
-    headers = {
-      'Authorization': access_token
-    }
+    def detect_objects(self, image_url):
+        url = "https://platform.openmmlab.com/gw/model-inference/openapi/v1/detection"
 
-    response = requests.post(url, headers=headers, json=body)
-    detection_data = response.json()["data"]["result"]["top_n_result"]
+        body = {
+          "resource": image_url,
+          "resourceType": "URL",
+          "backend": "PyTorch",
+          "requestType": "SYNC",
+          "algorithm": "YOLOX"
+        }
 
-    # 下载图像
-    image = np.asarray(bytearray(urlopen(image_url).read()), dtype="uint8")
-    image = cv2.imdecode(image, cv2.IMREAD_COLOR)
+        headers = {
+          'Authorization': self.access_token
+        }
 
-    # 在图像上绘制检测框和标签
-    for item in detection_data:
-        print("item: ", item)
-        label = item["label"]
-        score = float(item["onfidence"])
-        bbox = item["coordinate"]
+        response = requests.post(url, headers=headers, json=body)
+        detection_data = response.json()["data"]["result"]["top_n_result"]
 
-        x1, y1, x2, y2 = bbox
-        cv2.rectangle(image, (int(x1), int(y1)), (int(x2), int(y2)), (0, 255, 0), 2)
-        cv2.putText(image, f"{label} {score:.2f}", (int(x1), int(y1) - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+        image = np.asarray(bytearray(urlopen(image_url).read()), dtype="uint8")
+        image = cv2.imdecode(image, cv2.IMREAD_COLOR)
 
-    # 保存图像
-    cv2.imwrite("output.jpg", image)
+        image = self.draw_detections(image, detection_data)
 
-    return detection_data
+        cv2.imshow("Result", image)
+        cv2.waitKey(0)
+        cv2.imwrite("output.jpg", image)
+
+        return detection_data
 
 # 示例用法
 image_url = "https://oss.openmmlab.com/web-demo/static/one.e9be6cd7.jpg"
-detections = detect_objects(image_url)
+detector = ObjectDetector()
+detections = detector.detect_objects(image_url)
 print(detections)
