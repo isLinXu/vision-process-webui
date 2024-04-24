@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 # pip3 install requests
 # pip3 install opencv-python
+# https://platform.openmmlab.com/docs/zh-CN/open-api/guides/image-segmentation
 
 import requests
 import json
@@ -19,7 +20,8 @@ class MMLabInference:
 
     def get_classification_result(self):
         url = "https://platform.openmmlab.com/gw/model-inference/openapi/v1/classification"
-
+        algorithm_list = ["Swin-Transformer", "VGG", "SEResNet", "ShuffleNet v1", "ShuffleNet v2", "FP16", "MobileNetV2", "ResNet", "ResNeXt"]
+        backend_list = ["PyTorch", "TensorRT", "ONNXRuntime", "OpenPPL"]
         body = {
             "resource": "https://oss.openmmlab.com/web-demo/static/one.b7608e9b.jpg",
             "resourceType": "URL",
