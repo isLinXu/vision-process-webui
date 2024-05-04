@@ -1,4 +1,5 @@
 import os
+import shutil
 
 import requests
 import torch
@@ -10,10 +11,20 @@ import warnings
 
 warnings.filterwarnings("ignore")
 
+
 class YOLOv5WebUI:
     def __init__(self):
         self.download_test_img()
 
+    def save_tempfile_to_file(self, tempfile_obj, target_file_path):
+        # 获取临时文件的文件名
+        temp_file_path = tempfile_obj.name
+
+        # 使用shutil.copy()函数将临时文件复制到目标文件
+        shutil.copy(temp_file_path, target_file_path)  # 注意这里使用的是temp_file_path，而不是tempfile_obj
+
+    def save_file(self,file_path, local_model_path):
+        shutil.copy(file_path, local_model_path)
     def download_test_img(self):
         # Images
         torch.hub.download_url_to_file(
@@ -26,7 +37,7 @@ class YOLOv5WebUI:
             'https://user-images.githubusercontent.com/59380685/266264600-9d0c26ca-8ba6-45f2-b53b-4dc98460c43e.jpg',
             'zidane.jpg')
 
-    def detect_objects(self, img, conf, iou, line_width, device, model_type, model_path):
+    def detect_objects(self, img, conf, iou, line_width, device, model_type, model_path, dataset):
         # choose model type
         if model_type == "yolov5n":
             self.model = torch.hub.load('ultralytics/yolov5', 'yolov5n', device=device)
@@ -38,11 +49,16 @@ class YOLOv5WebUI:
             self.model = torch.hub.load('ultralytics/yolov5', 'yolov5l', device=device)
         elif model_type == "yolov5x":
             self.model = torch.hub.load('ultralytics/yolov5', 'yolov5x', device=device)
+        elif model_type == "custom":
+            if model_path is None:
+                return f"Error: Model file not found. Please upload a valid model file."
+                # Save the uploaded file
+            local_model_path = "./custom_model.pt"
+            self.save_tempfile_to_file(model_path, local_model_path)
+            print("local_model_path:", local_model_path)
+            # self.model = torch.hub.load('.cache/torch/hub/ultralytics_yolov5_master', 'custom', path=local_model_path, device=device, source='local')
+            self.model = torch.hub.load('ultralytics/yolov5', 'custom', path=local_model_path, device=device)
 
-        if model_type not in ["yolov5n", "yolov5s", "yolov5m", "yolov5l", "yolov5x"]:
-            self.model = torch.hub.load('ultralytics/yolov5', 'custom', path=model_path, device=device)
-
-        # Convert input image to numpy array
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         # Convert numpy array to PIL image
         img = Image.fromarray(img)
@@ -76,9 +92,9 @@ if __name__ == '__main__':
     detector = YOLOv5WebUI()
 
     examples = [
-        ['bus.jpg', 0.25, 0.45, 2, "cpu", "yolov5n", "yolov5s.pt"],
-        ['dogs.jpg', 0.25, 0.45, 2, "cpu", "yolov5s", "yolov5s.pt"],
-        ['zidane.jpg', 0.25, 0.45, 2, "cpu", "yolov5m", "yolov5s.pt"]
+        ['bus.jpg', 0.25, 0.45, 2, "cpu", "yolov5n", None, "coco"],
+        ['dogs.jpg', 0.25, 0.45, 2, "cpu", "yolov5s", None, "coco"],
+        ['zidane.jpg', 0.25, 0.45, 2, "cpu", "yolov5m", None, "coco"]
     ]
 
     # Define Gradio interface
@@ -91,9 +107,10 @@ if __name__ == '__main__':
                                  label="IoU Threshold"),
                 gr.inputs.Number(default=2, label="Line Width"),
                 gr.inputs.Radio(["cpu", "cuda"], label="Device", default="cpu"),
-                gr.inputs.Radio(["yolov5n", "yolov5s", "yolov5m", "yolov5l", "yolov5x"],
+                gr.inputs.Radio(["yolov5n", "yolov5s", "yolov5m", "yolov5l", "yolov5x", "custom"],
                                 label="Model Type", default="yolov5n"),
-                gr.inputs.Textbox(default="yolov5s.pt", label="Model Path")],
+                gr.inputs.File(label="Model Path"),
+                gr.inputs.Dropdown(["coco", "voc", "imagenet"], label="Dataset")],
         outputs="image",
         examples=examples,
         title="YOLOv5 Object Detector",
