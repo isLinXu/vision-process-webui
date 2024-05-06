@@ -5,7 +5,7 @@ os.system("pip install supervision==0.18.0")
 os.system("pip install timm==0.9.12")
 os.system("pip install onnx==1.15.0")
 os.system("pip install onnxsim==0.4.35")
-os.system("pip install git+https://github.com/facebookresearch/segment-anything.git")
+os.system("pip install 'git+https://github.com/facebookresearch/segment-anything.git'")
 
 import cv2
 import gradio as gr
