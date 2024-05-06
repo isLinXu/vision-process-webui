@@ -129,8 +129,10 @@ if __name__ == '__main__':
     import subprocess
 
     # 设置下载链接和文件名
-    efficientvit_sam_url = "https://huggingface.co/han-cai/efficientvit-sam/resolve/main"
+    # efficientvit_sam_url = "https://huggingface.co/han-cai/efficientvit-sam/resolve/main"
+    efficientvit_sam_url = "https://hf-mirror.com/mit-han-lab/efficientvit-sam/blob/main/"
     efficientvit_sam_model = "xl1.pt"
+
 
     # 检查文件是否已经存在，如果不存在则下载
     if not os.path.exists(efficientvit_sam_model):
