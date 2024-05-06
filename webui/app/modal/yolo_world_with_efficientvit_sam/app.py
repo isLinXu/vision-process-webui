@@ -1,5 +1,12 @@
 # """Fast text to segmentation with yolo-world and efficient-vit sam."""
 import os
+os.system("pip install 'inference[yolo-world]==0.9.13'")
+os.system("pip install supervision==0.18.0")
+os.system("pip install timm==0.9.12")
+os.system("pip install onnx==1.15.0")
+os.system("pip install onnxsim==0.4.35")
+os.system("pip install git+https://github.com/facebookresearch/segment-anything.git")
+
 import cv2
 import gradio as gr
 import numpy as np
