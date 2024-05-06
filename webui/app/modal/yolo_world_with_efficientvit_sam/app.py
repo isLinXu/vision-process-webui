@@ -1,11 +1,13 @@
 # """Fast text to segmentation with yolo-world and efficient-vit sam."""
 import os
-os.system("pip install 'inference[yolo-world]==0.9.13'")
-os.system("pip install supervision==0.18.0")
-os.system("pip install timm==0.9.12")
-os.system("pip install onnx==1.15.0")
-os.system("pip install onnxsim==0.4.35")
-os.system("pip install git+https://github.com/facebookresearch/segment-anything.git")
+# os.system("pip install 'inference[yolo-world]==0.9.13'")
+# os.system("pip install supervision==0.18.0")
+# os.system("pip install timm==0.9.12")
+# os.system("pip install onnx==1.15.0")
+# os.system("pip install onnxsim==0.4.35")
+# os.system("pip install git+https://github.com/facebookresearch/segment-anything.git")
+
+
 
 import cv2
 import gradio as gr
@@ -70,7 +72,31 @@ class ImageSegmenter:
             output_image = annotator.annotate(output_image, detections)
         return cv2.cvtColor(output_image, cv2.COLOR_BGR2RGB)
 
+import requests
 
+efficientvit_sam_url = "https://huggingface.co/han-cai/efficientvit-sam/resolve/main"
+efficientvit_sam_model = "xl1.pt"
+
+def download_file(url, file_name):
+    if not os.path.isfile(file_name):
+        print(f"Download {file_name}...")
+        response = requests.get(f"{url}/{file_name}")
+        with open(file_name, "wb") as f:
+            f.write(response.content)
+
+download_file(efficientvit_sam_url, efficientvit_sam_model)
+
+def download_test_image():
+    # Images
+    torch.hub.download_url_to_file(
+        'https://user-images.githubusercontent.com/59380685/266264420-21575a83-4057-41cf-8a4a-b3ea6f332d79.jpg',
+        'bus.jpg')
+    torch.hub.download_url_to_file(
+        'https://user-images.githubusercontent.com/59380685/266264536-82afdf58-6b9a-4568-b9df-551ee72cb6d9.jpg',
+        'dogs.jpg')
+    torch.hub.download_url_to_file(
+        'https://user-images.githubusercontent.com/59380685/266264600-9d0c26ca-8ba6-45f2-b53b-4dc98460c43e.jpg',
+        'zidane.jpg')
 def create_app():
     segmenter = ImageSegmenter()
     download_test_image()
@@ -88,21 +114,24 @@ def create_app():
         description="...",
         examples=[
             [
-             "/Users/gatilin/PycharmProjects/vision-process-webui/images/demo.jpg"
-            ],
-            [
-                os.path.join(os.path.dirname(__file__), "examples/livingroom.jpg"),
-                "table, lamp, dog, sofa, plant, clock, carpet, frame on the wall",
+                os.path.join(os.path.dirname(__file__), "bus.jpg"),
+                "bus",
                 0.05,
                 0.5
             ],
             [
-                os.path.join(os.path.dirname(__file__), "examples/cat_and_dogs.jpg"),
-                "cat, dog",
-                0.2,
+                os.path.join(os.path.dirname(__file__), "dogs.jpg"),
+                "dog",
+                0.05,
                 0.5
             ],
-        ],
+            [
+                os.path.join(os.path.dirname(__file__), "zidane.jpg"),
+                "person",
+                0.05,
+                0.5
+            ],
+        ]
     )
 
 
