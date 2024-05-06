@@ -88,7 +88,7 @@ def download_test_image():
     os.system("unzip Makefile.zip")
 def create_app():
     segmenter = ImageSegmenter()
-    download_test_image()
+    # download_test_image()
     return gr.Interface(
         fn=segmenter.detect,
         inputs=[
@@ -127,19 +127,6 @@ def create_app():
 
 if __name__ == '__main__':
     import os
-    import urllib.request
-
-    import os
-    import subprocess
-
-    # 设置下载链接和文件名
-    # efficientvit_sam_url = "https://huggingface.co/han-cai/efficientvit-sam/resolve/main"
-    # efficientvit_sam_url = "https://hf-mirror.com/mit-han-lab/efficientvit-sam/blob/main/"
-    # efficientvit_sam_model = "xl1.pt"
-    #
-    # # 检查文件是否已经存在，如果不存在则下载
-    # if not os.path.exists(efficientvit_sam_model):
-    #     print("Downloading", efficientvit_sam_model, "...")
-    #     subprocess.run(["wget", f"{efficientvit_sam_url}/{efficientvit_sam_model}"], check=True)
+    download_test_image()
     app = create_app()
     app.launch(server_name="0.0.0.0")
