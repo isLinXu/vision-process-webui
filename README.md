@@ -81,6 +81,7 @@ More people are welcome to contribute and use!
 - [x] 📦[**torchvision-detection-webui**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/torchvision-detection-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/torchvision-detection-webui/summary)<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/gatilin/torchvision-detection-webui">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
 
+
 ## classification
 - [x] 📦[**torchvision-classification-app**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/torchvision-classification-webui#build-configuration)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/torchvision-cls-app/summary)<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/gatilin/torchvision-cls-app">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
@@ -150,6 +151,8 @@ More people are welcome to contribute and use!
 ---
 
 # 🆕News
+- [x] (2024-05-06): add `yolo_world_with_efficientvit_sam`
+- [x] (2024-05-04): support upload model for inference. 
 - [x] (2023-09-29): update README.md
 - [x] (2023-09-20): `detrex、damo-yolo、easy-face`
 - [x] (2023-09-18): `detectron2`
