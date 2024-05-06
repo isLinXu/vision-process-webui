@@ -70,19 +70,6 @@ class ImageSegmenter:
             output_image = annotator.annotate(output_image, detections)
         return cv2.cvtColor(output_image, cv2.COLOR_BGR2RGB)
 
-import requests
-
-efficientvit_sam_url = "https://huggingface.co/han-cai/efficientvit-sam/resolve/main"
-efficientvit_sam_model = "xl1.pt"
-
-def download_file(url, file_name):
-    if not os.path.isfile(file_name):
-        print(f"Download {file_name}...")
-        response = requests.get(f"{url}/{file_name}")
-        with open(file_name, "wb") as f:
-            f.write(response.content)
-
-download_file(efficientvit_sam_url, efficientvit_sam_model)
 
 def download_test_image():
     # Images
@@ -133,6 +120,21 @@ def create_app():
     )
 
 
+
 if __name__ == '__main__':
+    import os
+    import urllib.request
+
+    import os
+    import subprocess
+
+    # 设置下载链接和文件名
+    efficientvit_sam_url = "https://huggingface.co/han-cai/efficientvit-sam/resolve/main"
+    efficientvit_sam_model = "xl1.pt"
+
+    # 检查文件是否已经存在，如果不存在则下载
+    if not os.path.exists(efficientvit_sam_model):
+        print("Downloading", efficientvit_sam_model, "...")
+        subprocess.run(["wget", f"{efficientvit_sam_url}/{efficientvit_sam_model}"], check=True)
     app = create_app()
     app.launch(server_name="0.0.0.0")
