@@ -27,7 +27,7 @@ class ImageSegmenter:
         self.annotators = self.load_annotators()
 
     def load_yolo_world(self):
-        os.system("make model")
+        # os.system("make model")
         return YOLOWorld(model_id="yolo_world/l")
 
     def load_sam(self):
@@ -129,9 +129,9 @@ def create_app():
 
 if __name__ == '__main__':
     import os
-    download_test_image()
     from openxlab.model import download
     # download model
     download(model_repo='gatilin/efficientvit-sam', model_name='xl1', output='models', overwrite=True)
+    download_test_image()
     app = create_app()
     app.launch(server_name="0.0.0.0")
