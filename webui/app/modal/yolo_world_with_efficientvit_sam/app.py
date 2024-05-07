@@ -132,7 +132,7 @@ if __name__ == '__main__':
         print("Downloading", efficientvit_sam_model, "...")
         subprocess.run(["wget", "--retry-connrefused", "--waitretry=1", "--timeout=30", "--tries=10",
                         f"{efficient_model_url}"], check=True)
-
+    os.rename("main?filepath=xl1.pt&sign=7be6c4457e189f3af70709a488a8c4c2&nonce=1715065019324", "xl1.pt")
     download_test_image()
     app = create_app()
     app.launch(server_name="0.0.0.0")
