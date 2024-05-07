@@ -96,29 +96,11 @@ def create_app():
         allow_flagging="never",
         title="Fast Text to Segmentation with YOLO-World + EfficientViT SAM",
         description="...",
-        examples=[
-            [
-                os.path.join(os.path.dirname(__file__), "bus.jpg"),
-                "bus",
-                0.05,
-                0.5
-            ],
-            [
-                os.path.join(os.path.dirname(__file__), "dogs.jpg"),
-                "dog",
-                0.05,
-                0.5
-            ],
-            [
-                os.path.join(os.path.dirname(__file__), "zidane.jpg"),
-                "person",
-                0.05,
-                0.5
-            ],
+        examples=[["bus.jpg","bus",0.05,0.5],
+                  ["dogs.jpg","dog",0.05,0.5],
+                  ["zidane.jpg","person",0.05,0.5],
         ]
     )
-
-
 
 if __name__ == '__main__':
     import os
