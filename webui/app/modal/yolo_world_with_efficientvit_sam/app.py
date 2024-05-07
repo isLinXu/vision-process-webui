@@ -6,6 +6,8 @@ os.system("pip install timm==0.9.12")
 os.system("pip install onnx==1.15.0")
 os.system("pip install onnxsim==0.4.35")
 os.system("pip install segment-anything")
+os.system("pip install efficientvit==0.1.0")
+os.system("pip install openxlab")
 
 import cv2
 import gradio as gr
@@ -128,5 +130,8 @@ def create_app():
 if __name__ == '__main__':
     import os
     download_test_image()
+    from openxlab.model import download
+    # download model
+    download(model_repo='gatilin/efficientvit-sam', model_name='xl1', output='models', overwrite=True)
     app = create_app()
     app.launch(server_name="0.0.0.0")
