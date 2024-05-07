@@ -6,8 +6,6 @@ os.system("pip install timm==0.9.12")
 os.system("pip install onnx==1.15.0")
 os.system("pip install onnxsim==0.4.35")
 os.system("pip install segment-anything")
-os.system("pip install efficientvit==0.1.0")
-os.system("pip install openxlab")
 
 import cv2
 import gradio as gr
@@ -27,7 +25,6 @@ class ImageSegmenter:
         self.annotators = self.load_annotators()
 
     def load_yolo_world(self):
-        # os.system("make model")
         return YOLOWorld(model_id="yolo_world/l")
 
     def load_sam(self):
@@ -84,10 +81,6 @@ def download_test_image():
     torch.hub.download_url_to_file(
         'https://user-images.githubusercontent.com/59380685/266264600-9d0c26ca-8ba6-45f2-b53b-4dc98460c43e.jpg',
         'zidane.jpg')
-    torch.hub.download_url_to_file(
-        'https://github.com/isLinXu/issues/files/15222996/Makefile.zip',
-        'Makefile.zip')
-    os.system("unzip Makefile.zip")
 def create_app():
     segmenter = ImageSegmenter()
     # download_test_image()
@@ -129,9 +122,17 @@ def create_app():
 
 if __name__ == '__main__':
     import os
-    from openxlab.model import download
-    # download model
-    download(model_repo='gatilin/efficientvit-sam', model_name='xl1', output='models', overwrite=True)
+    import os
+    import subprocess
+    # 设置下载链接和文件名
+    efficientvit_sam_model = "xl1.pt"
+    efficient_model_url = "https://download.openxlab.org.cn/repos/file/gatilin/efficientvit-sam/main?filepath=xl1.pt&sign=7be6c4457e189f3af70709a488a8c4c2&nonce=1715065019324"
+    # 检查文件是否已经存在，如果不存在则下载
+    if not os.path.exists(efficientvit_sam_model):
+        print("Downloading", efficientvit_sam_model, "...")
+        subprocess.run(["wget", "--retry-connrefused", "--waitretry=1", "--timeout=30", "--tries=10",
+                        f"{efficient_model_url}"], check=True)
+
     download_test_image()
     app = create_app()
     app.launch(server_name="0.0.0.0")
