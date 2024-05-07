@@ -66,6 +66,8 @@ More people are welcome to contribute and use!
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
 
 ## detection
+
+- [x] 📦[**yolo_world_with_efficientvit_sam**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/yolo_world_with_efficientvit_sam)
 - [x] 📦[**yolov8-app**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/yolov8-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/yolov8-webui/summary)<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/gatilin/yolov8-webui">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" alt="Open in Spaces"></a>
 - [x] 📦[**yolov5-app**]():[![Open in OpenXLab](https://cdn-static.openxlab.org.cn/app-center/openxlab_app.svg)](https://openxlab.org.cn/apps/detail/gatilin/yolov5-webui)[![Open in ModelScope](https://badgen.net/badge/icon/modelscope?icon=deepscan&label)](https://www.modelscope.cn/studios/isLinXu/yolov5-webui/summary)<a src="https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Spaces-blue" href="https://huggingface.co/spaces/gatilin/yolov5-webui">
