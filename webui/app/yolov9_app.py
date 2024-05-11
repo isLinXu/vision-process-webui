@@ -4,7 +4,7 @@ import torch
 import wget
 import os
 
-os.system("pip install yolov9pip-0.0.4")
+os.system("pip install yolov9pip==0.0.4")
 
 
 def download_models(model_type):
@@ -134,16 +134,19 @@ def app():
         )
 
 
-gradio_app = gr.Blocks()
-with gradio_app:
-    gr.HTML(
-        """
-        <h1 style='text-align: center'>
-        YOLOv9: Learning What You Want to Learn Using Programmable Gradient Information
-        </h1>
-        """)
-    with gr.Row():
-        with gr.Column():
-            app()
-download_test_image()
-gradio_app.launch(debug=True)
+
+
+if __name__ == '__main__':
+    download_test_image()
+    gradio_app = gr.Blocks()
+    with gradio_app:
+        gr.HTML(
+            """
+            <h1 style='text-align: center'>
+            YOLOv9: Learning What You Want to Learn Using Programmable Gradient Information
+            </h1>
+            """)
+        with gr.Row():
+            with gr.Column():
+                app()
+    gradio_app.launch(debug=True)
