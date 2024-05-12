@@ -5,6 +5,7 @@ import wget
 import os
 
 os.system("pip install yolov9pip==0.0.4")
+os.system("pip install gradio==4.29.0")
 
 import requests
 
@@ -28,11 +29,11 @@ def download_models(model_type):
     else:
         raise ValueError("Invalid model type. Choose from 'yolov9-c', 'yolov9-e', 'gelan-e', or 'gelan-c'.")
 
-    # filename = wget.download(url)
-    # return filename
-    filename = os.path.basename(url)
-    download_file(url, filename)
+    filename = wget.download(url)
     return filename
+    # filename = os.path.basename(url)
+    # download_file(url, filename)
+    # return filename
 
 def yolov9_inference(img_path, model_type, image_size, conf_threshold, iou_threshold):
     import yolov9
