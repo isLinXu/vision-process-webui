@@ -16,6 +16,9 @@ def download_file(url, target_path):
         for chunk in response.iter_content(chunk_size=8192):
             f.write(chunk)
 
+import requests
+from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
 
 def download_models(model_type):
     if model_type == "yolov9-c":
@@ -29,8 +32,37 @@ def download_models(model_type):
     else:
         raise ValueError("Invalid model type. Choose from 'yolov9-c', 'yolov9-e', 'gelan-e', or 'gelan-c'.")
 
-    filename = wget.download(url)
+    # Set up retry mechanism
+    session = requests.Session()
+    retries = Retry(total=5, backoff_factor=1, status_forcelist=[502, 503, 504])
+    adapter = HTTPAdapter(max_retries=retries)
+    session.mount('http://', adapter)
+    session.mount('https://', adapter)
+
+    # Download the file
+    response = session.get(url, stream=True)
+    response.raise_for_status()
+
+    filename = url.split('/')[-1]
+    with open(filename, 'wb') as f:
+        for chunk in response.iter_content(chunk_size=8192):
+            if chunk:
+                f.write(chunk)
     return filename
+# def download_models(model_type):
+#     if model_type == "yolov9-c":
+#         url = 'https://github.com/WongKinYiu/yolov9/releases/download/v0.1/yolov9-c.pt'
+#     elif model_type == "yolov9-e":
+#         url = 'https://github.com/WongKinYiu/yolov9/releases/download/v0.1/yolov9-e.pt'
+#     elif model_type == "gelan-c":
+#         url = 'https://github.com/WongKinYiu/yolov9/releases/download/v0.1/gelan-c.pt'
+#     elif model_type == "gelan-e":
+#         url = 'https://github.com/WongKinYiu/yolov9/releases/download/v0.1/gelan-e.pt'
+#     else:
+#         raise ValueError("Invalid model type. Choose from 'yolov9-c', 'yolov9-e', 'gelan-e', or 'gelan-c'.")
+#
+#     filename = wget.download(url)
+#     return filename
     # filename = os.path.basename(url)
     # download_file(url, filename)
     # return filename
