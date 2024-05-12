@@ -6,6 +6,15 @@ import os
 
 os.system("pip install yolov9pip==0.0.4")
 
+import requests
+
+def download_file(url, target_path):
+    response = requests.get(url, stream=True)
+    response.raise_for_status()
+    with open(target_path, "wb") as f:
+        for chunk in response.iter_content(chunk_size=8192):
+            f.write(chunk)
+
 
 def download_models(model_type):
     if model_type == "yolov9-c":
@@ -19,9 +28,11 @@ def download_models(model_type):
     else:
         raise ValueError("Invalid model type. Choose from 'yolov9-c', 'yolov9-e', 'gelan-e', or 'gelan-c'.")
 
-    filename = wget.download(url)
+    # filename = wget.download(url)
+    # return filename
+    filename = os.path.basename(url)
+    download_file(url, filename)
     return filename
-
 
 def yolov9_inference(img_path, model_type, image_size, conf_threshold, iou_threshold):
     import yolov9
