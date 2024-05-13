@@ -4,6 +4,9 @@ import torch
 import wget
 import os
 
+from requests.adapters import HTTPAdapter
+from urllib3 import Retry
+
 os.system("pip install yolov9pip==0.0.4")
 os.system("pip install gradio==4.29.0")
 
@@ -16,9 +19,9 @@ def download_file(url, target_path):
         for chunk in response.iter_content(chunk_size=8192):
             f.write(chunk)
 
-import requests
-from requests.adapters import HTTPAdapter
-from requests.packages.urllib3.util.retry import Retry
+# import requests
+# from requests.adapters import HTTPAdapter
+# from requests.packages.urllib3.util.retry import Retry
 
 def download_models(model_type):
     if model_type == "yolov9-c":
@@ -153,29 +156,29 @@ def app():
             outputs=[output_numpy],
         )
 
-        gr.Examples(
-            examples=[
-                [
-                    "zidane.jpg", "yolov9-c", 640, 0.4, 0.5,
-                ],
-                [
-                    "bus.jpg", "yolov9-c", 640, 0.4, 0.5,
-                ],
-                [
-                    "dogs.jpg", "yolov9-c", 640, 0.4, 0.5,
-                ],
-            ],
-            fn=yolov9_inference,
-            inputs=[
-                img_path,
-                model_type,
-                image_size,
-                conf_threshold,
-                iou_threshold,
-            ],
-            outputs=[output_numpy],
-            cache_examples=True,
-        )
+        # gr.Examples(
+        #     examples=[
+        #         [
+        #             "zidane.jpg", "yolov9-c", 640, 0.4, 0.5,
+        #         ],
+        #         [
+        #             "bus.jpg", "yolov9-c", 640, 0.4, 0.5,
+        #         ],
+        #         [
+        #             "dogs.jpg", "yolov9-c", 640, 0.4, 0.5,
+        #         ],
+        #     ],
+        #     fn=yolov9_inference,
+        #     inputs=[
+        #         img_path,
+        #         model_type,
+        #         image_size,
+        #         conf_threshold,
+        #         iou_threshold,
+        #     ],
+        #     outputs=[output_numpy],
+        #     cache_examples=True,
+        # )
 
 
 
