@@ -8,7 +8,7 @@ from requests.adapters import HTTPAdapter
 from urllib3 import Retry
 
 os.system("pip install yolov9pip==0.0.4")
-os.system("pip install gradio==4.29.0")
+os.system("pip install gradio==3.18.0")
 
 import requests
 
